@@ -1,0 +1,87 @@
+---
+name: design-intelligence
+description: Use when choosing UI style, palette, or UX rules. Offline 88 styles / 192 palettes / 119 UX rules; --persist writes per-project MASTER.md.
+version: 1.0.0
+author: Aamir Zameer (Hermes Agent); catalog data derived from nextlevelbuilder/ui-ux-pro-max-skill (MIT)
+license: MIT
+platforms: [linux]
+metadata:
+  hermes:
+    tags: [design, ui, ux, palette, typography, client-work, no-faces, offline]
+    related_skills: [frontend-design, popular-web-designs, claude-design, bilingual-rtl-client-site, sketch, ui-effect-libraries]
+---
+
+# Design Intelligence (offline catalog + brand gates)
+
+Local, zero-network design decision engine. Search a curated catalog, then lock a per-project
+design system to a `MASTER.md` that later builds read instead of re-guessing style every time.
+
+## When to Use
+
+- Picking a visual direction for a client site, landing page, dashboard, or deck.
+- Choosing an exact palette / font pairing and needing CSS import + Tailwind config.
+- Auditing an existing page against UX rules (a11y, forms, motion, anti-patterns).
+- At the start of any client build, to persist a design source-of-truth (`MASTER.md`).
+
+## Quick commands
+
+```bash
+S=~/.hermes/skills/creative/design-intelligence/scripts/ds.py
+python3 $S catalogs                                     # what's in the catalog
+python3 $S search "b2b industrial supplier" --catalog styles -n 5
+python3 $S search "monochrome" --catalog colors -n 5
+python3 $S search "arabic bilingual" --catalog typography -n 5
+python3 $S system "bilingual B2B industrial equipment supplier, lead-gen" \
+        --stack html-tailwind --persist ~/clients/<name>/site
+python3 $S stack html-tailwind "hero section" -n 8
+python3 $S system "<query>" --json                      # machine-readable
+```
+
+Catalogs: `styles` (88) · `colors` (192) · `products` (192) · `typography` (74) ·
+`ux` (119) · `app` (32) · `motion` (17) · `charts` (25) · `icons` (105) · `landing` (34).
+Stacks: astro, html-tailwind, nextjs, nuxtjs, react, shadcn, svelte, uno, vue.
+
+## Workflow
+
+1. **Query the catalog** with the *client's business*, not a vibe word — `system` matches on
+   product/industry row first, then derives palette, type, UX and motion.
+2. **Read `MASTER.md`** it prints. Fix anything that fights the brand gates below.
+3. `--persist <dir>` writes `MASTER.md` next to the build; commit it. Re-run only when the
+   client's business changes, not per page.
+4. **Build against `MASTER.md`**, not from memory. If a choice isn't in the file, add it there.
+5. **Deploy preview first** (Cloudflare Pages preview URL), prod only after approval.
+
+## Brand gates — override the catalog, never the other way round
+
+| Gate | Rule |
+|---|---|
+| Faces | No human faces / living beings in client-facing work. Only exceptions: fire-lab, or Aamir's own approved photo on his own profile. Pick styles that read as abstract/product/architectural, and reject style rows that lean on people-photography. |
+| Copy | Client-facing text = pure English, AI-free, zero emoji, one-word brand, never Aamir's name. |
+| Iconography | No emoji-as-icon. Use the `icons` catalog (Phosphor/Lucide) with real import code. |
+| Top section | Readable brand logo + sharp hero. Blurry upscaled images = fake = rejected. |
+| Type floors | Body ≥ 16px, never < 12px; check contrast pairs from the `colors` row (`on-primary` vs `primary`). |
+| Bilingual (AR) | Arabic needs its own RTL pairing — don't mirror the Latin font. Keep both editions in one site dir (`ar.html` + `tools/build_ar.py` pattern). |
+
+## Pitfalls
+
+- **Don't install the upstream skill** (7 skills, 812 files, +1.5 MB font/icon dumps). This is the
+  project-scoped borrow: data + our own search script, nothing else.
+- `search` is keyword + field-weighted, not semantic. Bad query in, bad row out — use the client's
+  industry words, then refine with `-n`.
+- Style rows overlap by design; take 1 primary + 1 secondary max or the page loses identity.
+- `--persist` overwrites an existing `MASTER.md`; it never merges. Keep edits in the file, re-run
+  into a scratch dir if you're just exploring.
+- Motion catalog is GSAP-flavoured; skip the snippet if the page has no GSAP — take the duration
+  and easing only.
+
+## Verification
+
+```bash
+python3 $S catalogs                    # must list all catalogs (fails loudly if data/ missing)
+python3 $S system "SaaS analytics dashboard" --stack react | head -30
+```
+
+## Provenance
+
+Data CSVs derived from `nextlevelbuilder/ui-ux-pro-max-skill` (MIT) — see `data/NOTICE.md`.
+Search/aggregation script `scripts/ds.py` is ours (stdlib only, no network, no install).

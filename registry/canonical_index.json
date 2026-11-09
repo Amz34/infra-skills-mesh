@@ -1,0 +1,2346 @@
+[
+  {
+    "name": "agent-cost-per-task",
+    "category": "DEVOPS",
+    "trigger": "agent",
+    "desc": "Agent cost per task tool for devops operations.",
+    "usecase": "Agent cost per task tool for devops operations.",
+    "prompt": "Activate /agent for agent-cost-per-task: Agent cost per task tool for devops operations."
+  },
+  {
+    "name": "agent-memory-hygiene",
+    "category": "DEVOPS",
+    "trigger": "agent",
+    "desc": "Agent memory hygiene tool for devops operations.",
+    "usecase": "Automated garbage collection, disk recovery, and operational hygiene.",
+    "prompt": "Activate /agent for agent-memory-hygiene: Automated garbage collection, disk recovery, and operational hygiene."
+  },
+  {
+    "name": "agent-run-logging",
+    "category": "DEVOPS",
+    "trigger": "agent",
+    "desc": "Agent run logging tool for devops operations.",
+    "usecase": "Agent run logging tool for devops operations.",
+    "prompt": "Activate /agent for agent-run-logging: Agent run logging tool for devops operations."
+  },
+  {
+    "name": "agent-self-healing-loop",
+    "category": "DEVOPS",
+    "trigger": "agent",
+    "desc": "Use when making an agent fleet self-healing or crashproof",
+    "usecase": "Use when making an agent fleet self-healing or crashproof.",
+    "prompt": "Activate /agent for agent-self-healing-loop: Use when making an agent fleet self-healing or crashproof."
+  },
+  {
+    "name": "agent-skill-adoption-gate",
+    "category": "DEVOPS",
+    "trigger": "agent",
+    "desc": "Use when vetting or adopting a third-party agent skill.",
+    "usecase": "Use when vetting or adopting a third-party agent skill.",
+    "prompt": "Activate /agent for agent-skill-adoption-gate: Use when vetting or adopting a third-party agent skill."
+  },
+  {
+    "name": "agent-usage-audit",
+    "category": "DEVOPS",
+    "trigger": "agent",
+    "desc": "Agent usage audit tool for devops operations.",
+    "usecase": "Verify, audit, and benchmark compliance across agent usage audit.",
+    "prompt": "Activate /agent for agent-usage-audit: Verify, audit, and benchmark compliance across agent usage audit."
+  },
+  {
+    "name": "android-mobile-qa-artemis",
+    "category": "DEVOPS",
+    "trigger": "android",
+    "desc": "Use when QAing Android apps or phone UI automation.",
+    "usecase": "Use when QAing Android apps or phone UI automation.",
+    "prompt": "Activate /android for android-mobile-qa-artemis: Use when QAing Android apps or phone UI automation."
+  },
+  {
+    "name": "android-remote-support",
+    "category": "DEVOPS",
+    "trigger": "android",
+    "desc": "Android remote support tool for devops operations.",
+    "usecase": "Android remote support tool for devops operations.",
+    "prompt": "Activate /android for android-remote-support: Android remote support tool for devops operations."
+  },
+  {
+    "name": "attack-surface-self-audit",
+    "category": "DEVOPS",
+    "trigger": "attack",
+    "desc": "Use when auditing or hardening a VM's real attack surface",
+    "usecase": "Verify, audit, and benchmark compliance across attack surface self audit.",
+    "prompt": "Activate /attack for attack-surface-self-audit: Verify, audit, and benchmark compliance across attack surface self audit."
+  },
+  {
+    "name": "ci-lane",
+    "category": "DEVOPS",
+    "trigger": "cilane",
+    "desc": "Ci lane tool for devops operations.",
+    "usecase": "Ci lane tool for devops operations.",
+    "prompt": "Activate /cilane for ci-lane: Ci lane tool for devops operations."
+  },
+  {
+    "name": "cloud-vm-backup-dr",
+    "category": "DEVOPS",
+    "trigger": "cloud",
+    "desc": "Use when setting up cloud VM backup/DR or Drive OAuth.",
+    "usecase": "Use when setting up cloud VM backup/DR or Drive OAuth.",
+    "prompt": "Activate /cloud for cloud-vm-backup-dr: Use when setting up cloud VM backup/DR or Drive OAuth."
+  },
+  {
+    "name": "cloudflare-deploy",
+    "category": "DEVOPS",
+    "trigger": "cloudflare",
+    "desc": "Cloudflare deploy tool for devops operations.",
+    "usecase": "Spin up, configure, and automate zero-downtime deployment pipelines.",
+    "prompt": "Activate /cloudflare for cloudflare-deploy: Spin up, configure, and automate zero-downtime deployment pipelines."
+  },
+  {
+    "name": "cloudflare-pages-ops",
+    "category": "DEVOPS",
+    "trigger": "cloudflare",
+    "desc": "Deploy/manage Cloudflare Pages + Workers via wrangler CLI",
+    "usecase": "Deploy/manage Cloudflare Pages + Workers via wrangler CLI.",
+    "prompt": "Activate /cloudflare for cloudflare-pages-ops: Deploy/manage Cloudflare Pages + Workers via wrangler CLI."
+  },
+  {
+    "name": "cloudflare-pages-workers-ops",
+    "category": "DEVOPS",
+    "trigger": "cloudflare",
+    "desc": "Cloudflare Pages/Workers & wrangler login on headless VMs",
+    "usecase": "Cloudflare Pages/Workers & wrangler login on headless VMs.",
+    "prompt": "Activate /cloudflare for cloudflare-pages-workers-ops: Cloudflare Pages/Workers & wrangler login on headless VMs."
+  },
+  {
+    "name": "cloudflare-quick-tunnel",
+    "category": "DEVOPS",
+    "trigger": "cloudflare",
+    "desc": "Use when a local service needs a public HTTPS URL.",
+    "usecase": "Use when a local service needs a public HTTPS URL.",
+    "prompt": "Activate /cloudflare for cloudflare-quick-tunnel: Use when a local service needs a public HTTPS URL."
+  },
+  {
+    "name": "cron-watchdog",
+    "category": "DEVOPS",
+    "trigger": "cron",
+    "desc": "Use when a cron must wait for an external condition.",
+    "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+    "prompt": "Activate /cron for cron-watchdog: Real-time health monitoring, metric tracking, and anomaly detection."
+  },
+  {
+    "name": "dependency-hygiene",
+    "category": "DEVOPS",
+    "trigger": "dependency",
+    "desc": "Dependency hygiene tool for devops operations.",
+    "usecase": "Automated garbage collection, disk recovery, and operational hygiene.",
+    "prompt": "Activate /dependency for dependency-hygiene: Automated garbage collection, disk recovery, and operational hygiene."
+  },
+  {
+    "name": "docker-deploy-ops",
+    "category": "DEVOPS",
+    "trigger": "docker",
+    "desc": "Docker deploy ops tool for devops operations.",
+    "usecase": "Spin up, configure, and automate zero-downtime deployment pipelines.",
+    "prompt": "Activate /docker for docker-deploy-ops: Spin up, configure, and automate zero-downtime deployment pipelines."
+  },
+  {
+    "name": "external-uptime-monitoring",
+    "category": "DEVOPS",
+    "trigger": "external",
+    "desc": "Use when a server needs alerting that outlives it.",
+    "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+    "prompt": "Activate /external for external-uptime-monitoring: Real-time health monitoring, metric tracking, and anomaly detection."
+  },
+  {
+    "name": "fail-triage",
+    "category": "DEVOPS",
+    "trigger": "fail",
+    "desc": "Fail triage tool for devops operations.",
+    "usecase": "Fail triage tool for devops operations.",
+    "prompt": "Activate /fail for fail-triage: Fail triage tool for devops operations."
+  },
+  {
+    "name": "firewatch-ops",
+    "category": "DEVOPS",
+    "trigger": "firewatchops",
+    "desc": "Firewatch ops tool for devops operations.",
+    "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+    "prompt": "Activate /firewatchops for firewatch-ops: Real-time health monitoring, metric tracking, and anomaly detection."
+  },
+  {
+    "name": "flow-credits-image-gen",
+    "category": "DEVOPS",
+    "trigger": "flow",
+    "desc": "Use when image/video gen should burn free Flow credits.",
+    "usecase": "Use when image/video gen should burn free Flow credits.",
+    "prompt": "Activate /flow for flow-credits-image-gen: Use when image/video gen should burn free Flow credits."
+  },
+  {
+    "name": "free-flux-image-api",
+    "category": "DEVOPS",
+    "trigger": "free",
+    "desc": "Use when any task needs images/photos \u2014 fire fluxgen firs",
+    "usecase": "Use when any task needs images/photos \u2014 fire fluxgen firs.",
+    "prompt": "Activate /free for free-flux-image-api: Use when any task needs images/photos \u2014 fire fluxgen firs."
+  },
+  {
+    "name": "gcp-agent-registry-mcp-bridge",
+    "category": "DEVOPS",
+    "trigger": "gcpagentregistrymcpbridge",
+    "desc": "Gcp agent registry mcp bridge tool for devops operations.",
+    "usecase": "Gcp agent registry mcp bridge tool for devops operations.",
+    "prompt": "Activate /gcpagentregistrymcpbridge for gcp-agent-registry-mcp-bridge: Gcp agent registry mcp bridge tool for devops operations."
+  },
+  {
+    "name": "headless-browser-automation",
+    "category": "DEVOPS",
+    "trigger": "headless",
+    "desc": "Use when browser-exec fails on headless VMs.",
+    "usecase": "Use when browser-exec fails on headless VMs.",
+    "prompt": "Activate /headless for headless-browser-automation: Use when browser-exec fails on headless VMs."
+  },
+  {
+    "name": "headless-vm-virtual-audio",
+    "category": "DEVOPS",
+    "trigger": "headless",
+    "desc": "Use when a headless VM needs a mic or audio devices.",
+    "usecase": "Use when a headless VM needs a mic or audio devices.",
+    "prompt": "Activate /headless for headless-vm-virtual-audio: Use when a headless VM needs a mic or audio devices."
+  },
+  {
+    "name": "hermes-cron-delivery-routing",
+    "category": "DEVOPS",
+    "trigger": "hermes",
+    "desc": "Hermes cron delivery routing tool for devops operations.",
+    "usecase": "Hermes cron delivery routing tool for devops operations.",
+    "prompt": "Activate /hermes for hermes-cron-delivery-routing: Hermes cron delivery routing tool for devops operations."
+  },
+  {
+    "name": "hermes-token-cost-ops",
+    "category": "DEVOPS",
+    "trigger": "hermes",
+    "desc": "Use when API balance drains fast or tokens overconsume.",
+    "usecase": "Use when API balance drains fast or tokens overconsume.",
+    "prompt": "Activate /hermes for hermes-token-cost-ops: Use when API balance drains fast or tokens overconsume."
+  },
+  {
+    "name": "hermes-token-observability",
+    "category": "DEVOPS",
+    "trigger": "hermes",
+    "desc": "Hermes token observability tool for devops operations.",
+    "usecase": "Hermes token observability tool for devops operations.",
+    "prompt": "Activate /hermes for hermes-token-observability: Hermes token observability tool for devops operations."
+  },
+  {
+    "name": "host-disk-hygiene",
+    "category": "DEVOPS",
+    "trigger": "host",
+    "desc": "Host disk hygiene tool for devops operations.",
+    "usecase": "Automated garbage collection, disk recovery, and operational hygiene.",
+    "prompt": "Activate /host for host-disk-hygiene: Automated garbage collection, disk recovery, and operational hygiene."
+  },
+  {
+    "name": "hybrid-compute-infra",
+    "category": "DEVOPS",
+    "trigger": "hybrid",
+    "desc": "Use when setting up hybrid compute (Ollama, PII routing).",
+    "usecase": "Use when setting up hybrid compute (Ollama, PII routing).",
+    "prompt": "Activate /hybrid for hybrid-compute-infra: Use when setting up hybrid compute (Ollama, PII routing)."
+  },
+  {
+    "name": "inbound-content-guardrails",
+    "category": "DEVOPS",
+    "trigger": "inbound",
+    "desc": "Use when handling untrusted inbound content.",
+    "usecase": "Use when handling untrusted inbound content.",
+    "prompt": "Activate /inbound for inbound-content-guardrails: Use when handling untrusted inbound content."
+  },
+  {
+    "name": "infra-capability-audit",
+    "category": "DEVOPS",
+    "trigger": "infra",
+    "desc": "Infra capability audit tool for devops operations.",
+    "usecase": "Verify, audit, and benchmark compliance across infra capability audit.",
+    "prompt": "Activate /infra for infra-capability-audit: Verify, audit, and benchmark compliance across infra capability audit."
+  },
+  {
+    "name": "infra-dashboard-ops",
+    "category": "DEVOPS",
+    "trigger": "infra",
+    "desc": "Use when working on private infra dashboard (hermes-vnic)",
+    "usecase": "Use when working on private infra dashboard (hermes-vnic).",
+    "prompt": "Activate /infra for infra-dashboard-ops: Use when working on private infra dashboard (hermes-vnic)."
+  },
+  {
+    "name": "infra-hardening-crashproof",
+    "category": "DEVOPS",
+    "trigger": "infra",
+    "desc": "Use when hardening a cloud VM end-to-end.",
+    "usecase": "Use when hardening a cloud VM end-to-end.",
+    "prompt": "Activate /infra for infra-hardening-crashproof: Use when hardening a cloud VM end-to-end."
+  },
+  {
+    "name": "infra-status-dashboard",
+    "category": "DEVOPS",
+    "trigger": "infra",
+    "desc": "Infra status dashboard tool for devops operations.",
+    "usecase": "Infra status dashboard tool for devops operations.",
+    "prompt": "Activate /infra for infra-status-dashboard: Infra status dashboard tool for devops operations."
+  },
+  {
+    "name": "kanban-orchestrator",
+    "category": "DEVOPS",
+    "trigger": "kanban",
+    "desc": "Kanban orchestrator tool for devops operations.",
+    "usecase": "Kanban orchestrator tool for devops operations.",
+    "prompt": "Activate /kanban for kanban-orchestrator: Kanban orchestrator tool for devops operations."
+  },
+  {
+    "name": "kanban-worker",
+    "category": "DEVOPS",
+    "trigger": "kanban",
+    "desc": "Kanban worker tool for devops operations.",
+    "usecase": "Kanban worker tool for devops operations.",
+    "prompt": "Activate /kanban for kanban-worker: Kanban worker tool for devops operations."
+  },
+  {
+    "name": "link-safety-triage",
+    "category": "DEVOPS",
+    "trigger": "link",
+    "desc": "Use when judging a suspicious link or domain.",
+    "usecase": "Use when judging a suspicious link or domain.",
+    "prompt": "Activate /link for link-safety-triage: Use when judging a suspicious link or domain."
+  },
+  {
+    "name": "linux-overload-recovery",
+    "category": "DEVOPS",
+    "trigger": "linux",
+    "desc": "Linux overload recovery tool for devops operations.",
+    "usecase": "Linux overload recovery tool for devops operations.",
+    "prompt": "Activate /linux for linux-overload-recovery: Linux overload recovery tool for devops operations."
+  },
+  {
+    "name": "live-session-capture",
+    "category": "DEVOPS",
+    "trigger": "live",
+    "desc": "Use when joining/recording a live session (lc toolkit).",
+    "usecase": "Use when joining/recording a live session (lc toolkit).",
+    "prompt": "Activate /live for live-session-capture: Use when joining/recording a live session (lc toolkit)."
+  },
+  {
+    "name": "live-webinar-attendance",
+    "category": "DEVOPS",
+    "trigger": "live",
+    "desc": "Use when attending a live webinar for the user.",
+    "usecase": "Use when attending a live webinar for the user.",
+    "prompt": "Activate /live for live-webinar-attendance: Use when attending a live webinar for the user."
+  },
+  {
+    "name": "local-capability-lanes",
+    "category": "DEVOPS",
+    "trigger": "local",
+    "desc": "Use when running local doc/search/ML/decision lanes.",
+    "usecase": "Use when running local doc/search/ML/decision lanes.",
+    "prompt": "Activate /local for local-capability-lanes: Use when running local doc/search/ML/decision lanes."
+  },
+  {
+    "name": "mcp-tool-servers",
+    "category": "DEVOPS",
+    "trigger": "mcptoolservers",
+    "desc": "Use when wrapping integrations as MCP servers for agents.",
+    "usecase": "Use when wrapping integrations as MCP servers for agents.",
+    "prompt": "Activate /mcptoolservers for mcp-tool-servers: Use when wrapping integrations as MCP servers for agents."
+  },
+  {
+    "name": "model-tier-selection",
+    "category": "DEVOPS",
+    "trigger": "model",
+    "desc": "Use when selecting model/tier for a task \u2014 cost gate firs",
+    "usecase": "Use when selecting model/tier for a task \u2014 cost gate firs.",
+    "prompt": "Activate /model for model-tier-selection: Use when selecting model/tier for a task \u2014 cost gate firs."
+  },
+  {
+    "name": "n8n-headless-ops",
+    "category": "DEVOPS",
+    "trigger": "n8nheadlessops",
+    "desc": "Use when running n8n headless \u2014 CLI imports, webhooks, au",
+    "usecase": "Use when running n8n headless \u2014 CLI imports, webhooks, au.",
+    "prompt": "Activate /n8nheadlessops for n8n-headless-ops: Use when running n8n headless \u2014 CLI imports, webhooks, au."
+  },
+  {
+    "name": "n8n-workflow-ops",
+    "category": "DEVOPS",
+    "trigger": "n8nworkflowops",
+    "desc": "N8n workflow ops tool for devops operations.",
+    "usecase": "N8n workflow ops tool for devops operations.",
+    "prompt": "Activate /n8nworkflowops for n8n-workflow-ops: N8n workflow ops tool for devops operations."
+  },
+  {
+    "name": "oci-cloud-vm-ops",
+    "category": "DEVOPS",
+    "trigger": "ocicloudvmops",
+    "desc": "Use when managing OCI Always Free VMs/volumes.",
+    "usecase": "Use when managing OCI Always Free VMs/volumes.",
+    "prompt": "Activate /ocicloudvmops for oci-cloud-vm-ops: Use when managing OCI Always Free VMs/volumes."
+  },
+  {
+    "name": "ops-approval-gate",
+    "category": "DEVOPS",
+    "trigger": "opsapprovalgate",
+    "desc": "Ops approval gate tool for devops operations.",
+    "usecase": "Ops approval gate tool for devops operations.",
+    "prompt": "Activate /opsapprovalgate for ops-approval-gate: Ops approval gate tool for devops operations."
+  },
+  {
+    "name": "paper-trading-desk-ops",
+    "category": "DEVOPS",
+    "trigger": "paper",
+    "desc": "Paper trading desk ops tool for devops operations.",
+    "usecase": "Paper trading desk ops tool for devops operations.",
+    "prompt": "Activate /paper for paper-trading-desk-ops: Paper trading desk ops tool for devops operations."
+  },
+  {
+    "name": "persistent-browser-workflow",
+    "category": "DEVOPS",
+    "trigger": "persistent",
+    "desc": "Persistent browser workflow tool for devops operations.",
+    "usecase": "Persistent browser workflow tool for devops operations.",
+    "prompt": "Activate /persistent for persistent-browser-workflow: Persistent browser workflow tool for devops operations."
+  },
+  {
+    "name": "postgres-lane",
+    "category": "DEVOPS",
+    "trigger": "postgreslane",
+    "desc": "Postgres lane tool for devops operations.",
+    "usecase": "Postgres lane tool for devops operations.",
+    "prompt": "Activate /postgreslane for postgres-lane: Postgres lane tool for devops operations."
+  },
+  {
+    "name": "private-web-gating",
+    "category": "DEVOPS",
+    "trigger": "private",
+    "desc": "Private web gating tool for devops operations.",
+    "usecase": "Private web gating tool for devops operations.",
+    "prompt": "Activate /private for private-web-gating: Private web gating tool for devops operations."
+  },
+  {
+    "name": "reverse-engineering-lane",
+    "category": "DEVOPS",
+    "trigger": "reverse",
+    "desc": "Use when triaging or decompiling a binary/APK/firmware.",
+    "usecase": "Use when triaging or decompiling a binary/APK/firmware.",
+    "prompt": "Activate /reverse for reverse-engineering-lane: Use when triaging or decompiling a binary/APK/firmware."
+  },
+  {
+    "name": "rustdesk-headless-vm-access",
+    "category": "DEVOPS",
+    "trigger": "rustdesk",
+    "desc": "Use when giving a user RustDesk access to a headless VM.",
+    "usecase": "Use when giving a user RustDesk access to a headless VM.",
+    "prompt": "Activate /rustdesk for rustdesk-headless-vm-access: Use when giving a user RustDesk access to a headless VM."
+  },
+  {
+    "name": "saas-observability",
+    "category": "DEVOPS",
+    "trigger": "saas",
+    "desc": "Saas observability tool for devops operations.",
+    "usecase": "Saas observability tool for devops operations.",
+    "prompt": "Activate /saas for saas-observability: Saas observability tool for devops operations."
+  },
+  {
+    "name": "sap-integration-connectors",
+    "category": "DEVOPS",
+    "trigger": "sapintegrationconnectors",
+    "desc": "Use when doing SAP integration or SAP-facing client work.",
+    "usecase": "Use when doing SAP integration or SAP-facing client work.",
+    "prompt": "Activate /sapintegrationconnectors for sap-integration-connectors: Use when doing SAP integration or SAP-facing client work."
+  },
+  {
+    "name": "sdlc-review",
+    "category": "DEVOPS",
+    "trigger": "sdlc",
+    "desc": "Review Kanban handoffs and route verified outcomes.",
+    "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+    "prompt": "Activate /sdlc for sdlc-review: Inspect codebase architecture, run deep peer reviews, and catch bugs."
+  },
+  {
+    "name": "secrets-vault-ops",
+    "category": "DEVOPS",
+    "trigger": "secrets",
+    "desc": "Use when handling VM secrets - store, rotate, audit leaks",
+    "usecase": "Use when handling VM secrets - store, rotate, audit leaks.",
+    "prompt": "Activate /secrets for secrets-vault-ops: Use when handling VM secrets - store, rotate, audit leaks."
+  },
+  {
+    "name": "selfqa-instrument-calibration",
+    "category": "DEVOPS",
+    "trigger": "selfqa",
+    "desc": "Use when auditing your own QA gates or graders.",
+    "usecase": "Use when auditing your own QA gates or graders.",
+    "prompt": "Activate /selfqa for selfqa-instrument-calibration: Use when auditing your own QA gates or graders."
+  },
+  {
+    "name": "shopify-headless-ops",
+    "category": "DEVOPS",
+    "trigger": "shopify",
+    "desc": "Use when Shopify app/admin access chahiye headless VM pe.",
+    "usecase": "Use when Shopify app/admin access chahiye headless VM pe.",
+    "prompt": "Activate /shopify for shopify-headless-ops: Use when Shopify app/admin access chahiye headless VM pe."
+  },
+  {
+    "name": "sqlite-db-ops",
+    "category": "DEVOPS",
+    "trigger": "sqlite",
+    "desc": "Sqlite db ops tool for devops operations.",
+    "usecase": "Sqlite db ops tool for devops operations.",
+    "prompt": "Activate /sqlite for sqlite-db-ops: Sqlite db ops tool for devops operations."
+  },
+  {
+    "name": "telegram-bot-ops",
+    "category": "DEVOPS",
+    "trigger": "telegram",
+    "desc": "Use when running Telegram long-poll bots on servers.",
+    "usecase": "Use when running Telegram long-poll bots on servers.",
+    "prompt": "Activate /telegram for telegram-bot-ops: Use when running Telegram long-poll bots on servers."
+  },
+  {
+    "name": "telegram-gateway-ops",
+    "category": "DEVOPS",
+    "trigger": "telegram",
+    "desc": "Telegram gateway ops tool for devops operations.",
+    "usecase": "Telegram gateway ops tool for devops operations.",
+    "prompt": "Activate /telegram for telegram-gateway-ops: Telegram gateway ops tool for devops operations."
+  },
+  {
+    "name": "telegram-job-channel-ops",
+    "category": "DEVOPS",
+    "trigger": "telegram",
+    "desc": "Telegram job channel ops tool for devops operations.",
+    "usecase": "Telegram job channel ops tool for devops operations.",
+    "prompt": "Activate /telegram for telegram-job-channel-ops: Telegram job channel ops tool for devops operations."
+  },
+  {
+    "name": "untrusted-code-sandbox-lane",
+    "category": "DEVOPS",
+    "trigger": "untrusted",
+    "desc": "Use when sandboxing untrusted code or walling lane egress",
+    "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+    "prompt": "Activate /untrusted for untrusted-code-sandbox-lane: Inspect codebase architecture, run deep peer reviews, and catch bugs."
+  },
+  {
+    "name": "uptime-monitoring",
+    "category": "DEVOPS",
+    "trigger": "uptime",
+    "desc": "Uptime monitoring tool for devops operations.",
+    "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+    "prompt": "Activate /uptime for uptime-monitoring: Real-time health monitoring, metric tracking, and anomaly detection."
+  },
+  {
+    "name": "vm-disk-cleanup",
+    "category": "DEVOPS",
+    "trigger": "vmdiskcleanup",
+    "desc": "Use when a cloud VM disk is full or cleanup is requested.",
+    "usecase": "Automated garbage collection, disk recovery, and operational hygiene.",
+    "prompt": "Activate /vmdiskcleanup for vm-disk-cleanup: Automated garbage collection, disk recovery, and operational hygiene."
+  },
+  {
+    "name": "vm-infra-map",
+    "category": "DEVOPS",
+    "trigger": "vminframap",
+    "desc": "Vm infra map tool for devops operations.",
+    "usecase": "Vm infra map tool for devops operations.",
+    "prompt": "Activate /vminframap for vm-infra-map: Vm infra map tool for devops operations."
+  },
+  {
+    "name": "web-site-qa-lane",
+    "category": "DEVOPS",
+    "trigger": "websiteqalane",
+    "desc": "Use when auditing a live site: a11y, layout, SEO.",
+    "usecase": "Use when auditing a live site: a11y, layout, SEO.",
+    "prompt": "Activate /websiteqalane for web-site-qa-lane: Use when auditing a live site: a11y, layout, SEO."
+  },
+  {
+    "name": "airtable",
+    "category": "PRODUCTIVITY",
+    "trigger": "airtable",
+    "desc": "Airtable REST API via curl. Records CRUD, filters, upsert",
+    "usecase": "Airtable REST API via curl.",
+    "prompt": "Activate /airtable for airtable: Airtable REST API via curl."
+  },
+  {
+    "name": "asd-ste100-writing",
+    "category": "PRODUCTIVITY",
+    "trigger": "asdste100writing",
+    "desc": "Asd ste100 writing tool for productivity operations.",
+    "usecase": "Asd ste100 writing tool for productivity operations.",
+    "prompt": "Activate /asdste100writing for asd-ste100-writing: Asd ste100 writing tool for productivity operations."
+  },
+  {
+    "name": "bilingual-rtl-client-site",
+    "category": "PRODUCTIVITY",
+    "trigger": "bilingual",
+    "desc": "Add a genuine RTL Arabic edition/tab to a client site.",
+    "usecase": "Add a genuine RTL Arabic edition/tab to a client site.",
+    "prompt": "Activate /bilingual for bilingual-rtl-client-site: Add a genuine RTL Arabic edition/tab to a client site."
+  },
+  {
+    "name": "bim-revit-coach",
+    "category": "PRODUCTIVITY",
+    "trigger": "bimrevitcoach",
+    "desc": "Use when coaching Aamir BIM/Revit lessons & quizzes.",
+    "usecase": "Use when coaching Aamir BIM/Revit lessons & quizzes.",
+    "prompt": "Activate /bimrevitcoach for bim-revit-coach: Use when coaching Aamir BIM/Revit lessons & quizzes."
+  },
+  {
+    "name": "box",
+    "category": "PRODUCTIVITY",
+    "trigger": "box",
+    "desc": "Box tool for productivity operations.",
+    "usecase": "Box tool for productivity operations.",
+    "prompt": "Activate /box for box: Box tool for productivity operations."
+  },
+  {
+    "name": "chrome-print-pdf-production",
+    "category": "PRODUCTIVITY",
+    "trigger": "chrome",
+    "desc": "Use when producing branded PDFs from HTML via Chrome.",
+    "usecase": "Use when producing branded PDFs from HTML via Chrome.",
+    "prompt": "Activate /chrome for chrome-print-pdf-production: Use when producing branded PDFs from HTML via Chrome."
+  },
+  {
+    "name": "client-website-delivery",
+    "category": "PRODUCTIVITY",
+    "trigger": "client",
+    "desc": "Use when building or deploying a client website.",
+    "usecase": "Use when building or deploying a client website.",
+    "prompt": "Activate /client for client-website-delivery: Use when building or deploying a client website."
+  },
+  {
+    "name": "competitor-seo-analysis",
+    "category": "PRODUCTIVITY",
+    "trigger": "competitor",
+    "desc": "Use when client needs SEO gap analysis vs competitors.",
+    "usecase": "Use when client needs SEO gap analysis vs competitors.",
+    "prompt": "Activate /competitor for competitor-seo-analysis: Use when client needs SEO gap analysis vs competitors."
+  },
+  {
+    "name": "document-to-action-items",
+    "category": "PRODUCTIVITY",
+    "trigger": "document",
+    "desc": "Extract cited obligations, deadlines, tasks from document",
+    "usecase": "Extract cited obligations, deadlines, tasks from document.",
+    "prompt": "Activate /document for document-to-action-items: Extract cited obligations, deadlines, tasks from document."
+  },
+  {
+    "name": "docx",
+    "category": "PRODUCTIVITY",
+    "trigger": "docx",
+    "desc": "Create, read, edit, template, and review Word .docx files",
+    "usecase": "Create, read, edit, template, and review Word.",
+    "prompt": "Activate /docx for docx: Create, read, edit, template, and review Word."
+  },
+  {
+    "name": "google-forms-builder",
+    "category": "PRODUCTIVITY",
+    "trigger": "google",
+    "desc": "Google forms builder tool for productivity operations.",
+    "usecase": "Google forms builder tool for productivity operations.",
+    "prompt": "Activate /google for google-forms-builder: Google forms builder tool for productivity operations."
+  },
+  {
+    "name": "google-forms-responses-extraction",
+    "category": "PRODUCTIVITY",
+    "trigger": "google",
+    "desc": "Use when pulling Google Form responses and uploads.",
+    "usecase": "Use when pulling Google Form responses and uploads.",
+    "prompt": "Activate /google for google-forms-responses-extraction: Use when pulling Google Form responses and uploads."
+  },
+  {
+    "name": "google-workspace",
+    "category": "PRODUCTIVITY",
+    "trigger": "google",
+    "desc": "Gmail, Calendar, Drive, Docs, Sheets via gws CLI or Pytho",
+    "usecase": "Gmail, Calendar, Drive, Docs, Sheets via gws CLI or Pytho.",
+    "prompt": "Activate /google for google-workspace: Gmail, Calendar, Drive, Docs, Sheets via gws CLI or Pytho."
+  },
+  {
+    "name": "halal-investing-india",
+    "category": "PRODUCTIVITY",
+    "trigger": "halal",
+    "desc": "Halal investing india tool for productivity operations.",
+    "usecase": "Halal investing india tool for productivity operations.",
+    "prompt": "Activate /halal for halal-investing-india: Halal investing india tool for productivity operations."
+  },
+  {
+    "name": "job-application-packs",
+    "category": "PRODUCTIVITY",
+    "trigger": "jobapplicationpacks",
+    "desc": "Use when generating Aamir job-application packs.",
+    "usecase": "Use when generating Aamir job-application packs.",
+    "prompt": "Activate /jobapplicationpacks for job-application-packs: Use when generating Aamir job-application packs."
+  },
+  {
+    "name": "latex-overleaf-mcp",
+    "category": "PRODUCTIVITY",
+    "trigger": "latex",
+    "desc": "Use when authoring/compiling LaTeX PDFs or syncing Overle",
+    "usecase": "Use when authoring/compiling LaTeX PDFs or syncing Overle.",
+    "prompt": "Activate /latex for latex-overleaf-mcp: Use when authoring/compiling LaTeX PDFs or syncing Overle."
+  },
+  {
+    "name": "live-meeting-attendance",
+    "category": "PRODUCTIVITY",
+    "trigger": "live",
+    "desc": "Attend a live meeting for the user; capture + notes.",
+    "usecase": "Attend a live meeting for the user; capture + notes.",
+    "prompt": "Activate /live for live-meeting-attendance: Attend a live meeting for the user; capture + notes."
+  },
+  {
+    "name": "live-session-capture-notes",
+    "category": "PRODUCTIVITY",
+    "trigger": "live",
+    "desc": "Live session capture notes tool for productivity operations.",
+    "usecase": "Live session capture notes tool for productivity operations.",
+    "prompt": "Activate /live for live-session-capture-notes: Live session capture notes tool for productivity operations."
+  },
+  {
+    "name": "maps",
+    "category": "PRODUCTIVITY",
+    "trigger": "maps",
+    "desc": "Geocode, POIs, routes, timezones via OpenStreetMap/OSRM.",
+    "usecase": "Geocode, POIs, routes, timezones via OpenStreetMap/OSRM.",
+    "prompt": "Activate /maps for maps: Geocode, POIs, routes, timezones via OpenStreetMap/OSRM."
+  },
+  {
+    "name": "meeting-action-items",
+    "category": "PRODUCTIVITY",
+    "trigger": "meeting",
+    "desc": "Turn meeting notes into cited decisions, owners, tickets.",
+    "usecase": "Turn meeting notes into cited decisions, owners, tickets.",
+    "prompt": "Activate /meeting for meeting-action-items: Turn meeting notes into cited decisions, owners, tickets."
+  },
+  {
+    "name": "nano-pdf",
+    "category": "PRODUCTIVITY",
+    "trigger": "nano",
+    "desc": "Edit text in existing PDFs via natural-language prompts.",
+    "usecase": "Edit text in existing PDFs via natural-language prompts.",
+    "prompt": "Activate /nano for nano-pdf: Edit text in existing PDFs via natural-language prompts."
+  },
+  {
+    "name": "notion",
+    "category": "PRODUCTIVITY",
+    "trigger": "notion",
+    "desc": "Notion API + ntn CLI: pages, databases, markdown, Workers",
+    "usecase": "Notion API + ntn CLI: pages, databases, markdown, Workers.",
+    "prompt": "Activate /notion for notion: Notion API + ntn CLI: pages, databases, markdown, Workers."
+  },
+  {
+    "name": "ocr-and-documents",
+    "category": "PRODUCTIVITY",
+    "trigger": "ocranddocuments",
+    "desc": "Extract text from PDFs/scans (pymupdf, marker-pdf).",
+    "usecase": "Extract text from PDFs/scans (pymupdf, marker-pdf).",
+    "prompt": "Activate /ocranddocuments for ocr-and-documents: Extract text from PDFs/scans (pymupdf, marker-pdf)."
+  },
+  {
+    "name": "pdf",
+    "category": "PRODUCTIVITY",
+    "trigger": "pdf",
+    "desc": "Create, read, merge, fill, and secure PDF files.",
+    "usecase": "Create, read, merge, fill, and secure PDF files.",
+    "prompt": "Activate /pdf for pdf: Create, read, merge, fill, and secure PDF files."
+  },
+  {
+    "name": "powerpoint",
+    "category": "PRODUCTIVITY",
+    "trigger": "powerpoint",
+    "desc": "Create, read, edit .pptx decks with python-pptx.",
+    "usecase": "Create, read, edit.",
+    "prompt": "Activate /powerpoint for powerpoint: Create, read, edit."
+  },
+  {
+    "name": "product-price-monitor",
+    "category": "PRODUCTIVITY",
+    "trigger": "product",
+    "desc": "Watch product, flight, or listing prices; alert on target",
+    "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+    "prompt": "Activate /product for product-price-monitor: Real-time health monitoring, metric tracking, and anomaly detection."
+  },
+  {
+    "name": "remote-job-application-pipeline",
+    "category": "PRODUCTIVITY",
+    "trigger": "remote",
+    "desc": "Remote job application pipeline tool for productivity operations.",
+    "usecase": "Remote job application pipeline tool for productivity operations.",
+    "prompt": "Activate /remote for remote-job-application-pipeline: Remote job application pipeline tool for productivity operations."
+  },
+  {
+    "name": "session-librarian",
+    "category": "PRODUCTIVITY",
+    "trigger": "session",
+    "desc": "Organize sessions by prompt: find, rename, archive, prune",
+    "usecase": "Organize sessions by prompt: find, rename, archive, prune.",
+    "prompt": "Activate /session for session-librarian: Organize sessions by prompt: find, rename, archive, prune."
+  },
+  {
+    "name": "shopify-whatsapp-bot",
+    "category": "PRODUCTIVITY",
+    "trigger": "shopify",
+    "desc": "Shopify webhook to WhatsApp alert and AI bot integration.",
+    "usecase": "Shopify webhook to WhatsApp alert and AI bot integration.",
+    "prompt": "Activate /shopify for shopify-whatsapp-bot: Shopify webhook to WhatsApp alert and AI bot integration."
+  },
+  {
+    "name": "sme-growth-advisory",
+    "category": "PRODUCTIVITY",
+    "trigger": "smegrowthadvisory",
+    "desc": "Use when growing an SME/family business's sales pipeline.",
+    "usecase": "Use when growing an SME/family business's sales pipeline.",
+    "prompt": "Activate /smegrowthadvisory for sme-growth-advisory: Use when growing an SME/family business's sales pipeline."
+  },
+  {
+    "name": "teams-meeting-pipeline",
+    "category": "PRODUCTIVITY",
+    "trigger": "teams",
+    "desc": "Teams meeting pipeline tool for productivity operations.",
+    "usecase": "Teams meeting pipeline tool for productivity operations.",
+    "prompt": "Activate /teams for teams-meeting-pipeline: Teams meeting pipeline tool for productivity operations."
+  },
+  {
+    "name": "thinking-out-loud",
+    "category": "PRODUCTIVITY",
+    "trigger": "thinking",
+    "desc": "Use when a voice ramble lands before any build.",
+    "usecase": "Use when a voice ramble lands before any build.",
+    "prompt": "Activate /thinking for thinking-out-loud: Use when a voice ramble lands before any build."
+  },
+  {
+    "name": "weekly-review-planning",
+    "category": "PRODUCTIVITY",
+    "trigger": "weekly",
+    "desc": "Weekly reset: commitments, stalled work, next-week plan.",
+    "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+    "prompt": "Activate /weekly for weekly-review-planning: Inspect codebase architecture, run deep peer reviews, and catch bugs."
+  },
+  {
+    "name": "wordpress-client-audit",
+    "category": "PRODUCTIVITY",
+    "trigger": "wordpress",
+    "desc": "Use when auditing/fixing client WordPress sites.",
+    "usecase": "Verify, audit, and benchmark compliance across wordpress client audit.",
+    "prompt": "Activate /wordpress for wordpress-client-audit: Verify, audit, and benchmark compliance across wordpress client audit."
+  },
+  {
+    "name": "xlsx",
+    "category": "PRODUCTIVITY",
+    "trigger": "xlsx",
+    "desc": "Create, read, edit Excel .xlsx workbooks and CSVs.",
+    "usecase": "Create, read, edit Excel.",
+    "prompt": "Activate /xlsx for xlsx: Create, read, edit Excel."
+  },
+  {
+    "name": "zoom-recording-transcript",
+    "category": "PRODUCTIVITY",
+    "trigger": "zoom",
+    "desc": "Zoom recording transcript tool for productivity operations.",
+    "usecase": "Zoom recording transcript tool for productivity operations.",
+    "prompt": "Activate /zoom for zoom-recording-transcript: Zoom recording transcript tool for productivity operations."
+  },
+  {
+    "name": "android-apk-no-gradle",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "android",
+    "desc": "Android apk no gradle tool for software development operations.",
+    "usecase": "Android apk no gradle tool for software development operations.",
+    "prompt": "Activate /android for android-apk-no-gradle: Android apk no gradle tool for software development operations."
+  },
+  {
+    "name": "capability-gap-audit",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "capability",
+    "desc": "Capability gap audit tool for software development operations.",
+    "usecase": "Verify, audit, and benchmark compliance across capability gap audit.",
+    "prompt": "Activate /capability for capability-gap-audit: Verify, audit, and benchmark compliance across capability gap audit."
+  },
+  {
+    "name": "codebase-inspection",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "codebase",
+    "desc": "Inspect codebases w/ pygount: LOC, languages, ratios.",
+    "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+    "prompt": "Activate /codebase for codebase-inspection: Inspect codebase architecture, run deep peer reviews, and catch bugs."
+  },
+  {
+    "name": "commit-archaeologist",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "commit",
+    "desc": "Use when tracing why a line, function or file exists befo",
+    "usecase": "Use when tracing why a line, function or file exists befo.",
+    "prompt": "Activate /commit for commit-archaeologist: Use when tracing why a line, function or file exists befo."
+  },
+  {
+    "name": "dependency-doctor",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "dependency",
+    "desc": "Use when auditing a dependency manifest (requirements.txt",
+    "usecase": "Use when auditing a dependency manifest (requirements.",
+    "prompt": "Activate /dependency for dependency-doctor: Use when auditing a dependency manifest (requirements."
+  },
+  {
+    "name": "dogfood",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "dogfood",
+    "desc": "Exploratory QA of web apps: find bugs, evidence, reports.",
+    "usecase": "Exploratory QA of web apps: find bugs, evidence, reports.",
+    "prompt": "Activate /dogfood for dogfood: Exploratory QA of web apps: find bugs, evidence, reports."
+  },
+  {
+    "name": "github",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "github",
+    "desc": "Github tool for software development operations.",
+    "usecase": "Github tool for software development operations.",
+    "prompt": "Activate /github for github: Github tool for software development operations."
+  },
+  {
+    "name": "hermes-agent-skill-authoring",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "hermes",
+    "desc": "Author in-repo SKILL.md files: frontmatter and structure.",
+    "usecase": "Author in-repo SKILL.",
+    "prompt": "Activate /hermes for hermes-agent-skill-authoring: Author in-repo SKILL."
+  },
+  {
+    "name": "inspecting-hermes-desktop-dom",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "inspecting",
+    "desc": "Read the live Hermes desktop DOM/CSS over CDP.",
+    "usecase": "Read the live Hermes desktop DOM/CSS over CDP.",
+    "prompt": "Activate /inspecting for inspecting-hermes-desktop-dom: Read the live Hermes desktop DOM/CSS over CDP."
+  },
+  {
+    "name": "javascript-typescript-lane",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "javascript",
+    "desc": "Javascript typescript lane tool for software development operations.",
+    "usecase": "Javascript typescript lane tool for software development operations.",
+    "prompt": "Activate /javascript for javascript-typescript-lane: Javascript typescript lane tool for software development operations."
+  },
+  {
+    "name": "mobile-app-lane",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "mobile",
+    "desc": "Mobile app lane tool for software development operations.",
+    "usecase": "Mobile app lane tool for software development operations.",
+    "prompt": "Activate /mobile for mobile-app-lane: Mobile app lane tool for software development operations."
+  },
+  {
+    "name": "model-eval-ops",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "model",
+    "desc": "Use when comparing LLM models or running task evals.",
+    "usecase": "Use when comparing LLM models or running task evals.",
+    "prompt": "Activate /model for model-eval-ops: Use when comparing LLM models or running task evals."
+  },
+  {
+    "name": "node-inspect-debugger",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "node",
+    "desc": "Debug Node.js via --inspect + Chrome DevTools Protocol CL",
+    "usecase": "Debug Node.",
+    "prompt": "Activate /node for node-inspect-debugger: Debug Node."
+  },
+  {
+    "name": "nodejs-service-lane",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "nodejs",
+    "desc": "Nodejs service lane tool for software development operations.",
+    "usecase": "Nodejs service lane tool for software development operations.",
+    "prompt": "Activate /nodejs for nodejs-service-lane: Nodejs service lane tool for software development operations."
+  },
+  {
+    "name": "plan",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "plan",
+    "desc": "Write a markdown plan to .hermes/plans/; no execution.",
+    "usecase": "Write a markdown plan to.",
+    "prompt": "Activate /plan for plan: Write a markdown plan to."
+  },
+  {
+    "name": "project-state-audit",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "project",
+    "desc": "Use when auditing a project's state and next steps.",
+    "usecase": "Verify, audit, and benchmark compliance across project state audit.",
+    "prompt": "Activate /project for project-state-audit: Verify, audit, and benchmark compliance across project state audit."
+  },
+  {
+    "name": "python-debugpy",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "python",
+    "desc": "Debug Python: pdb REPL + debugpy remote (DAP).",
+    "usecase": "Debug Python: pdb REPL + debugpy remote (DAP).",
+    "prompt": "Activate /python for python-debugpy: Debug Python: pdb REPL + debugpy remote (DAP)."
+  },
+  {
+    "name": "qa-harness-audit",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "qaharnessaudit",
+    "desc": "Qa harness audit tool for software development operations.",
+    "usecase": "Verify, audit, and benchmark compliance across qa harness audit.",
+    "prompt": "Activate /qaharnessaudit for qa-harness-audit: Verify, audit, and benchmark compliance across qa harness audit."
+  },
+  {
+    "name": "repo2prompt-local",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "repo2prompt",
+    "desc": "Reverse a repo/site into a build brief privately, offline",
+    "usecase": "Reverse a repo/site into a build brief privately, offline.",
+    "prompt": "Activate /repo2prompt for repo2prompt-local: Reverse a repo/site into a build brief privately, offline."
+  },
+  {
+    "name": "requesting-code-review",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "requesting",
+    "desc": "Use for verifying code before commit or push.",
+    "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+    "prompt": "Activate /requesting for requesting-code-review: Inspect codebase architecture, run deep peer reviews, and catch bugs."
+  },
+  {
+    "name": "sanad-web-auditor",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "sanad",
+    "desc": "Sanad web auditor tool for software development operations.",
+    "usecase": "Verify, audit, and benchmark compliance across sanad web auditor.",
+    "prompt": "Activate /sanad for sanad-web-auditor: Verify, audit, and benchmark compliance across sanad web auditor."
+  },
+  {
+    "name": "scope-creep-detector",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "scope",
+    "desc": "Use when a diff outgrew its stated intent.",
+    "usecase": "Use when a diff outgrew its stated intent.",
+    "prompt": "Activate /scope for scope-creep-detector: Use when a diff outgrew its stated intent."
+  },
+  {
+    "name": "simplify-code",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "simplify",
+    "desc": "Parallel 4-agent cleanup of recent code changes.",
+    "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+    "prompt": "Activate /simplify for simplify-code: Inspect codebase architecture, run deep peer reviews, and catch bugs."
+  },
+  {
+    "name": "software-architecture-review",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "software",
+    "desc": "Software architecture review tool for software development operations.",
+    "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+    "prompt": "Activate /software for software-architecture-review: Inspect codebase architecture, run deep peer reviews, and catch bugs."
+  },
+  {
+    "name": "spike",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "spike",
+    "desc": "Throwaway experiments to validate an idea before build.",
+    "usecase": "Throwaway experiments to validate an idea before build.",
+    "prompt": "Activate /spike for spike: Throwaway experiments to validate an idea before build."
+  },
+  {
+    "name": "system-one-decision-gate",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "system",
+    "desc": "Use for typed cheap decision gates (routing, triage).",
+    "usecase": "Use for typed cheap decision gates (routing, triage).",
+    "prompt": "Activate /system for system-one-decision-gate: Use for typed cheap decision gates (routing, triage)."
+  },
+  {
+    "name": "systematic-debugging",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "systematic",
+    "desc": "4-phase root cause debugging: understand bugs before fixi",
+    "usecase": "4-phase root cause debugging: understand bugs before fixi.",
+    "prompt": "Activate /systematic for systematic-debugging: 4-phase root cause debugging: understand bugs before fixi."
+  },
+  {
+    "name": "test-driven-development",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "test",
+    "desc": "TDD: enforce RED-GREEN-REFACTOR, tests before code.",
+    "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+    "prompt": "Activate /test for test-driven-development: Inspect codebase architecture, run deep peer reviews, and catch bugs."
+  },
+  {
+    "name": "typesafe-decisions",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "typesafe",
+    "desc": "Use when a task needs typed, calibrated decisions.",
+    "usecase": "Use when a task needs typed, calibrated decisions.",
+    "prompt": "Activate /typesafe for typesafe-decisions: Use when a task needs typed, calibrated decisions."
+  },
+  {
+    "name": "verification-before-completion",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "verification",
+    "desc": "Use before claiming work is done or fixed.",
+    "usecase": "Use before claiming work is done or fixed.",
+    "prompt": "Activate /verification for verification-before-completion: Use before claiming work is done or fixed."
+  },
+  {
+    "name": "verification-first",
+    "category": "SOFTWARE DEVELOPMENT",
+    "trigger": "verification",
+    "desc": "Verification first tool for software development operations.",
+    "usecase": "Verification first tool for software development operations.",
+    "prompt": "Activate /verification for verification-first: Verification first tool for software development operations."
+  },
+  {
+    "name": "architecture-diagram",
+    "category": "CREATIVE",
+    "trigger": "architecture",
+    "desc": "Dark-themed SVG architecture/cloud/infra diagrams as HTML",
+    "usecase": "Dark-themed SVG architecture/cloud/infra diagrams as HTML.",
+    "prompt": "Activate /architecture for architecture-diagram: Dark-themed SVG architecture/cloud/infra diagrams as HTML."
+  },
+  {
+    "name": "ascii-art",
+    "category": "CREATIVE",
+    "trigger": "ascii",
+    "desc": "ASCII art: pyfiglet, cowsay, boxes, image-to-ascii.",
+    "usecase": "ASCII art: pyfiglet, cowsay, boxes, image-to-ascii.",
+    "prompt": "Activate /ascii for ascii-art: ASCII art: pyfiglet, cowsay, boxes, image-to-ascii."
+  },
+  {
+    "name": "audi-video",
+    "category": "CREATIVE",
+    "trigger": "audi",
+    "desc": "Audi video tool for creative operations.",
+    "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+    "prompt": "Activate /audi for audi-video: Programmatic asset generation, editing, and rendering pipelines."
+  },
+  {
+    "name": "baoyu-infographic",
+    "category": "CREATIVE",
+    "trigger": "baoyu",
+    "desc": "Baoyu infographic tool for creative operations.",
+    "usecase": "Baoyu infographic tool for creative operations.",
+    "prompt": "Activate /baoyu for baoyu-infographic: Baoyu infographic tool for creative operations."
+  },
+  {
+    "name": "claude-design",
+    "category": "CREATIVE",
+    "trigger": "claude",
+    "desc": "Design one-off HTML artifacts (landing, deck, prototype).",
+    "usecase": "Design one-off HTML artifacts (landing, deck, prototype).",
+    "prompt": "Activate /claude for claude-design: Design one-off HTML artifacts (landing, deck, prototype)."
+  },
+  {
+    "name": "comfyui",
+    "category": "CREATIVE",
+    "trigger": "comfyui",
+    "desc": "Comfyui tool for creative operations.",
+    "usecase": "Comfyui tool for creative operations.",
+    "prompt": "Activate /comfyui for comfyui: Comfyui tool for creative operations."
+  },
+  {
+    "name": "design-intelligence",
+    "category": "CREATIVE",
+    "trigger": "design",
+    "desc": "Use when choosing UI style, palette, or UX rules.",
+    "usecase": "Use when choosing UI style, palette, or UX rules.",
+    "prompt": "Activate /design for design-intelligence: Use when choosing UI style, palette, or UX rules."
+  },
+  {
+    "name": "design-md",
+    "category": "CREATIVE",
+    "trigger": "design",
+    "desc": "Design md tool for creative operations.",
+    "usecase": "Design md tool for creative operations.",
+    "prompt": "Activate /design for design-md: Design md tool for creative operations."
+  },
+  {
+    "name": "excalidraw",
+    "category": "CREATIVE",
+    "trigger": "excalidraw",
+    "desc": "Hand-drawn Excalidraw JSON diagrams (arch, flow, seq).",
+    "usecase": "Hand-drawn Excalidraw JSON diagrams (arch, flow, seq).",
+    "prompt": "Activate /excalidraw for excalidraw: Hand-drawn Excalidraw JSON diagrams (arch, flow, seq)."
+  },
+  {
+    "name": "first-reader",
+    "category": "CREATIVE",
+    "trigger": "first",
+    "desc": "Use when checking whether a client-facing draft survives",
+    "usecase": "Use when checking whether a client-facing draft survives.",
+    "prompt": "Activate /first for first-reader: Use when checking whether a client-facing draft survives."
+  },
+  {
+    "name": "frontend-design",
+    "category": "CREATIVE",
+    "trigger": "frontend",
+    "desc": "Use when designing a client-facing page or UI.",
+    "usecase": "Use when designing a client-facing page or UI.",
+    "prompt": "Activate /frontend for frontend-design: Use when designing a client-facing page or UI."
+  },
+  {
+    "name": "humanizer",
+    "category": "CREATIVE",
+    "trigger": "humanizer",
+    "desc": "Humanize text: strip AI-isms and add real voice.",
+    "usecase": "Humanize text: strip AI-isms and add real voice.",
+    "prompt": "Activate /humanizer for humanizer: Humanize text: strip AI-isms and add real voice."
+  },
+  {
+    "name": "manim-video",
+    "category": "CREATIVE",
+    "trigger": "manim",
+    "desc": "Manim video tool for creative operations.",
+    "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+    "prompt": "Activate /manim for manim-video: Programmatic asset generation, editing, and rendering pipelines."
+  },
+  {
+    "name": "napkin-visual-api",
+    "category": "CREATIVE",
+    "trigger": "napkin",
+    "desc": "Napkin visual api tool for creative operations.",
+    "usecase": "Napkin visual api tool for creative operations.",
+    "prompt": "Activate /napkin for napkin-visual-api: Napkin visual api tool for creative operations."
+  },
+  {
+    "name": "p5js",
+    "category": "CREATIVE",
+    "trigger": "p5js",
+    "desc": "P5js tool for creative operations.",
+    "usecase": "P5js tool for creative operations.",
+    "prompt": "Activate /p5js for p5js: P5js tool for creative operations."
+  },
+  {
+    "name": "popular-web-designs",
+    "category": "CREATIVE",
+    "trigger": "popular",
+    "desc": "54 real design systems (Stripe, Linear, Vercel) as HTML/C",
+    "usecase": "54 real design systems (Stripe, Linear, Vercel) as HTML/C.",
+    "prompt": "Activate /popular for popular-web-designs: 54 real design systems (Stripe, Linear, Vercel) as HTML/C."
+  },
+  {
+    "name": "pretext",
+    "category": "CREATIVE",
+    "trigger": "pretext",
+    "desc": "Pretext tool for creative operations.",
+    "usecase": "Pretext tool for creative operations.",
+    "prompt": "Activate /pretext for pretext: Pretext tool for creative operations."
+  },
+  {
+    "name": "sketch",
+    "category": "CREATIVE",
+    "trigger": "sketch",
+    "desc": "Throwaway HTML mockups: 2-3 design variants to compare.",
+    "usecase": "Throwaway HTML mockups: 2-3 design variants to compare.",
+    "prompt": "Activate /sketch for sketch: Throwaway HTML mockups: 2-3 design variants to compare."
+  },
+  {
+    "name": "songwriting-and-ai-music",
+    "category": "CREATIVE",
+    "trigger": "songwriting",
+    "desc": "Songwriting and ai music tool for creative operations.",
+    "usecase": "Songwriting and ai music tool for creative operations.",
+    "prompt": "Activate /songwriting for songwriting-and-ai-music: Songwriting and ai music tool for creative operations."
+  },
+  {
+    "name": "static-site-publishing",
+    "category": "CREATIVE",
+    "trigger": "static",
+    "desc": "Static site publishing tool for creative operations.",
+    "usecase": "Static site publishing tool for creative operations.",
+    "prompt": "Activate /static for static-site-publishing: Static site publishing tool for creative operations."
+  },
+  {
+    "name": "touchdesigner-mcp",
+    "category": "CREATIVE",
+    "trigger": "touchdesignermcp",
+    "desc": "Touchdesigner mcp tool for creative operations.",
+    "usecase": "Touchdesigner mcp tool for creative operations.",
+    "prompt": "Activate /touchdesignermcp for touchdesigner-mcp: Touchdesigner mcp tool for creative operations."
+  },
+  {
+    "name": "ui-effect-libraries",
+    "category": "CREATIVE",
+    "trigger": "uieffectlibraries",
+    "desc": "Use when a UI needs beam/orb/gooey/metal/image FX.",
+    "usecase": "Use when a UI needs beam/orb/gooey/metal/image FX.",
+    "prompt": "Activate /uieffectlibraries for ui-effect-libraries: Use when a UI needs beam/orb/gooey/metal/image FX."
+  },
+  {
+    "name": "visual-design-critic",
+    "category": "CREATIVE",
+    "trigger": "visual",
+    "desc": "Visual design critic tool for creative operations.",
+    "usecase": "Visual design critic tool for creative operations.",
+    "prompt": "Activate /visual for visual-design-critic: Visual design critic tool for creative operations."
+  },
+  {
+    "name": "agentic-tooling-research",
+    "category": "RESEARCH",
+    "trigger": "agentic",
+    "desc": "Use when researching agentic AI tooling on GitHub/X.",
+    "usecase": "Use when researching agentic AI tooling on GitHub/X.",
+    "prompt": "Activate /agentic for agentic-tooling-research: Use when researching agentic AI tooling on GitHub/X."
+  },
+  {
+    "name": "app-safety-evaluation",
+    "category": "RESEARCH",
+    "trigger": "appsafetyevaluation",
+    "desc": "Use when judging if an app is safe or replicable.",
+    "usecase": "Use when judging if an app is safe or replicable.",
+    "prompt": "Activate /appsafetyevaluation for app-safety-evaluation: Use when judging if an app is safe or replicable."
+  },
+  {
+    "name": "article-analysis",
+    "category": "RESEARCH",
+    "trigger": "article",
+    "desc": "Article analysis tool for research operations.",
+    "usecase": "Article analysis tool for research operations.",
+    "prompt": "Activate /article for article-analysis: Article analysis tool for research operations."
+  },
+  {
+    "name": "arxiv",
+    "category": "RESEARCH",
+    "trigger": "arxiv",
+    "desc": "Search arXiv papers by keyword, author, category, or ID.",
+    "usecase": "Search arXiv papers by keyword, author, category, or ID.",
+    "prompt": "Activate /arxiv for arxiv: Search arXiv papers by keyword, author, category, or ID."
+  },
+  {
+    "name": "blogwatcher",
+    "category": "RESEARCH",
+    "trigger": "blogwatcher",
+    "desc": "Monitor blogs and RSS/Atom feeds via blogwatcher-cli tool",
+    "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+    "prompt": "Activate /blogwatcher for blogwatcher: Real-time health monitoring, metric tracking, and anomaly detection."
+  },
+  {
+    "name": "competitor-landscape-research",
+    "category": "RESEARCH",
+    "trigger": "competitor",
+    "desc": "Use when mapping a category's competitors and prices.",
+    "usecase": "Use when mapping a category's competitors and prices.",
+    "prompt": "Activate /competitor for competitor-landscape-research: Use when mapping a category's competitors and prices."
+  },
+  {
+    "name": "competitor-news-monitor",
+    "category": "RESEARCH",
+    "trigger": "competitor",
+    "desc": "Watch named companies for material news; cited digests.",
+    "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+    "prompt": "Activate /competitor for competitor-news-monitor: Real-time health monitoring, metric tracking, and anomaly detection."
+  },
+  {
+    "name": "free-knowledge-library",
+    "category": "RESEARCH",
+    "trigger": "free",
+    "desc": "Use when you need a free legal book or textbook.",
+    "usecase": "Use when you need a free legal book or textbook.",
+    "prompt": "Activate /free for free-knowledge-library: Use when you need a free legal book or textbook."
+  },
+  {
+    "name": "grounded-citations",
+    "category": "RESEARCH",
+    "trigger": "grounded",
+    "desc": "Ground answers and documents in cited, verifiable sources",
+    "usecase": "Ground answers and documents in cited, verifiable sources.",
+    "prompt": "Activate /grounded for grounded-citations: Ground answers and documents in cited, verifiable sources."
+  },
+  {
+    "name": "ksa-tender-radar",
+    "category": "RESEARCH",
+    "trigger": "ksatenderradar",
+    "desc": "Ksa tender radar tool for research operations.",
+    "usecase": "Ksa tender radar tool for research operations.",
+    "prompt": "Activate /ksatenderradar for ksa-tender-radar: Ksa tender radar tool for research operations."
+  },
+  {
+    "name": "lim-wiki",
+    "category": "RESEARCH",
+    "trigger": "limwiki",
+    "desc": "Lim wiki tool for research operations.",
+    "usecase": "Lim wiki tool for research operations.",
+    "prompt": "Activate /limwiki for lim-wiki: Lim wiki tool for research operations."
+  },
+  {
+    "name": "open-research-access",
+    "category": "RESEARCH",
+    "trigger": "open",
+    "desc": "Use when a paper is paywalled / you need a DOI's free cop",
+    "usecase": "Use when a paper is paywalled / you need a DOI's free cop.",
+    "prompt": "Activate /open for open-research-access: Use when a paper is paywalled / you need a DOI's free cop."
+  },
+  {
+    "name": "polymarket",
+    "category": "RESEARCH",
+    "trigger": "polymarket",
+    "desc": "Polymarket tool for research operations.",
+    "usecase": "Polymarket tool for research operations.",
+    "prompt": "Activate /polymarket for polymarket: Polymarket tool for research operations."
+  },
+  {
+    "name": "research-paper-writing",
+    "category": "RESEARCH",
+    "trigger": "research",
+    "desc": "Research paper writing tool for research operations.",
+    "usecase": "Research paper writing tool for research operations.",
+    "prompt": "Activate /research for research-paper-writing: Research paper writing tool for research operations."
+  },
+  {
+    "name": "searxng-search-lane",
+    "category": "RESEARCH",
+    "trigger": "searxng",
+    "desc": "Use when a task needs unmetered web search here.",
+    "usecase": "Use when a task needs unmetered web search here.",
+    "prompt": "Activate /searxng for searxng-search-lane: Use when a task needs unmetered web search here."
+  },
+  {
+    "name": "shared-tool-listicle-audit",
+    "category": "RESEARCH",
+    "trigger": "shared",
+    "desc": "Use when a shared tool/repo listicle needs auditing.",
+    "usecase": "Verify, audit, and benchmark compliance across shared tool listicle audit.",
+    "prompt": "Activate /shared for shared-tool-listicle-audit: Verify, audit, and benchmark compliance across shared tool listicle audit."
+  },
+  {
+    "name": "tech-adoption-analysis",
+    "category": "RESEARCH",
+    "trigger": "tech",
+    "desc": "Use when Aamir shares an AI/tech post: infra-fit verdict.",
+    "usecase": "Use when Aamir shares an AI/tech post: infra-fit verdict.",
+    "prompt": "Activate /tech for tech-adoption-analysis: Use when Aamir shares an AI/tech post: infra-fit verdict."
+  },
+  {
+    "name": "tiered-scraper-pipeline",
+    "category": "RESEARCH",
+    "trigger": "tiered",
+    "desc": "Use when Monitor X and tell me when it changes\\\".",
+    "usecase": "Use when Monitor X and tell me when it changes\\\".",
+    "prompt": "Activate /tiered for tiered-scraper-pipeline: Use when Monitor X and tell me when it changes\\\"."
+  },
+  {
+    "name": "agent-orchestration",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "agent",
+    "desc": "Dispatch to Hermes sub-agent profiles; fleet monitoring.",
+    "usecase": "Dispatch to Hermes sub-agent profiles; fleet monitoring.",
+    "prompt": "Activate /agent for agent-orchestration: Dispatch to Hermes sub-agent profiles; fleet monitoring."
+  },
+  {
+    "name": "agy-vertex-lane",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "agyvertexlane",
+    "desc": "Agy vertex lane tool for autonomous-ai-agents operations.",
+    "usecase": "Agy vertex lane tool for autonomous-ai-agents operations.",
+    "prompt": "Activate /agyvertexlane for agy-vertex-lane: Agy vertex lane tool for autonomous-ai-agents operations."
+  },
+  {
+    "name": "ai-tool-adoption",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "aitooladoption",
+    "desc": "Ai tool adoption tool for autonomous-ai-agents operations.",
+    "usecase": "Ai tool adoption tool for autonomous-ai-agents operations.",
+    "prompt": "Activate /aitooladoption for ai-tool-adoption: Ai tool adoption tool for autonomous-ai-agents operations."
+  },
+  {
+    "name": "bot-architect",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "botarchitect",
+    "desc": "Bot architect tool for autonomous-ai-agents operations.",
+    "usecase": "Bot architect tool for autonomous-ai-agents operations.",
+    "prompt": "Activate /botarchitect for bot-architect: Bot architect tool for autonomous-ai-agents operations."
+  },
+  {
+    "name": "caveman-learn",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "caveman",
+    "desc": "Use when reviewing a Caveman learn report.",
+    "usecase": "Use when reviewing a Caveman learn report.",
+    "prompt": "Activate /caveman for caveman-learn: Use when reviewing a Caveman learn report."
+  },
+  {
+    "name": "claude-code",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "claude",
+    "desc": "Delegate coding to Claude Code CLI (features, PRs).",
+    "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+    "prompt": "Activate /claude for claude-code: Inspect codebase architecture, run deep peer reviews, and catch bugs."
+  },
+  {
+    "name": "codex",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "codex",
+    "desc": "Delegate coding to OpenAI Codex CLI (features, PRs).",
+    "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+    "prompt": "Activate /codex for codex: Inspect codebase architecture, run deep peer reviews, and catch bugs."
+  },
+  {
+    "name": "computer-use",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "computer",
+    "desc": "Drive the desktop in the background without stealing focu",
+    "usecase": "Drive the desktop in the background without stealing focu.",
+    "prompt": "Activate /computer for computer-use: Drive the desktop in the background without stealing focu."
+  },
+  {
+    "name": "delegate-coding-cli",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "delegate",
+    "desc": "Delegate coding cli tool for autonomous-ai-agents operations.",
+    "usecase": "Delegate coding cli tool for autonomous-ai-agents operations.",
+    "prompt": "Activate /delegate for delegate-coding-cli: Delegate coding cli tool for autonomous-ai-agents operations."
+  },
+  {
+    "name": "free-claude-code",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "free",
+    "desc": "Use when installing or running FCC free provider proxy.",
+    "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+    "prompt": "Activate /free for free-claude-code: Inspect codebase architecture, run deep peer reviews, and catch bugs."
+  },
+  {
+    "name": "hermes-agent",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "hermes",
+    "desc": "Use, configure, theme, extend, and orchestrate Hermes Age",
+    "usecase": "Use, configure, theme, extend, and orchestrate Hermes Age.",
+    "prompt": "Activate /hermes for hermes-agent: Use, configure, theme, extend, and orchestrate Hermes Age."
+  },
+  {
+    "name": "hermes-gateway-ops",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "hermes",
+    "desc": "Hermes gateway ops tool for autonomous-ai-agents operations.",
+    "usecase": "Hermes gateway ops tool for autonomous-ai-agents operations.",
+    "prompt": "Activate /hermes for hermes-gateway-ops: Hermes gateway ops tool for autonomous-ai-agents operations."
+  },
+  {
+    "name": "mcp-server-builder",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "mcpserverbuilder",
+    "desc": "Mcp server builder tool for autonomous-ai-agents operations.",
+    "usecase": "Mcp server builder tool for autonomous-ai-agents operations.",
+    "prompt": "Activate /mcpserverbuilder for mcp-server-builder: Mcp server builder tool for autonomous-ai-agents operations."
+  },
+  {
+    "name": "merge-reconciler",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "merge",
+    "desc": "Neutral third-party resolution of agent merge conflicts.",
+    "usecase": "Neutral third-party resolution of agent merge conflicts.",
+    "prompt": "Activate /merge for merge-reconciler: Neutral third-party resolution of agent merge conflicts."
+  },
+  {
+    "name": "monitor-cron-lane",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "monitor",
+    "desc": "Monitor cron lane tool for autonomous-ai-agents operations.",
+    "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+    "prompt": "Activate /monitor for monitor-cron-lane: Real-time health monitoring, metric tracking, and anomaly detection."
+  },
+  {
+    "name": "opencode",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "opencode",
+    "desc": "Delegate coding to OpenCode CLI (features, PR review).",
+    "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+    "prompt": "Activate /opencode for opencode: Inspect codebase architecture, run deep peer reviews, and catch bugs."
+  },
+  {
+    "name": "subagent-driven-development",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "trigger": "subagent",
+    "desc": "Use when running plan tasks via subagents.",
+    "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+    "prompt": "Activate /subagent for subagent-driven-development: Inspect codebase architecture, run deep peer reviews, and catch bugs."
+  },
+  {
+    "name": "api-balance-monitoring",
+    "category": "MLOPS",
+    "trigger": "apibalancemonitoring",
+    "desc": "Api balance monitoring tool for mlops operations.",
+    "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+    "prompt": "Activate /apibalancemonitoring for api-balance-monitoring: Real-time health monitoring, metric tracking, and anomaly detection."
+  },
+  {
+    "name": "audiocraft",
+    "category": "MLOPS",
+    "trigger": "audiocraft",
+    "desc": "Audiocraft tool for mlops operations.",
+    "usecase": "Audiocraft tool for mlops operations.",
+    "prompt": "Activate /audiocraft for audiocraft: Audiocraft tool for mlops operations."
+  },
+  {
+    "name": "evaluating-llms-harness",
+    "category": "MLOPS",
+    "trigger": "evaluating",
+    "desc": "Evaluating llms harness tool for mlops operations.",
+    "usecase": "Evaluating llms harness tool for mlops operations.",
+    "prompt": "Activate /evaluating for evaluating-llms-harness: Evaluating llms harness tool for mlops operations."
+  },
+  {
+    "name": "huggingface-hub",
+    "category": "MLOPS",
+    "trigger": "huggingface",
+    "desc": "Huggingface hub tool for mlops operations.",
+    "usecase": "Huggingface hub tool for mlops operations.",
+    "prompt": "Activate /huggingface for huggingface-hub: Huggingface hub tool for mlops operations."
+  },
+  {
+    "name": "jev-cli-ops",
+    "category": "MLOPS",
+    "trigger": "jevcliops",
+    "desc": "Jev cli ops tool for mlops operations.",
+    "usecase": "Jev cli ops tool for mlops operations.",
+    "prompt": "Activate /jevcliops for jev-cli-ops: Jev cli ops tool for mlops operations."
+  },
+  {
+    "name": "llama-cpp",
+    "category": "MLOPS",
+    "trigger": "llama",
+    "desc": "Llama cpp tool for mlops operations.",
+    "usecase": "Llama cpp tool for mlops operations.",
+    "prompt": "Activate /llama for llama-cpp: Llama cpp tool for mlops operations."
+  },
+  {
+    "name": "llm-eval-harness",
+    "category": "MLOPS",
+    "trigger": "llmevalharness",
+    "desc": "Llm eval harness tool for mlops operations.",
+    "usecase": "Llm eval harness tool for mlops operations.",
+    "prompt": "Activate /llmevalharness for llm-eval-harness: Llm eval harness tool for mlops operations."
+  },
+  {
+    "name": "lm-evaluation-harness",
+    "category": "MLOPS",
+    "trigger": "lmevaluationharness",
+    "desc": "Lm evaluation harness tool for mlops operations.",
+    "usecase": "Lm evaluation harness tool for mlops operations.",
+    "prompt": "Activate /lmevaluationharness for lm-evaluation-harness: Lm evaluation harness tool for mlops operations."
+  },
+  {
+    "name": "multi-agent-pipelines",
+    "category": "MLOPS",
+    "trigger": "multi",
+    "desc": "Multi agent pipelines tool for mlops operations.",
+    "usecase": "Multi agent pipelines tool for mlops operations.",
+    "prompt": "Activate /multi for multi-agent-pipelines: Multi agent pipelines tool for mlops operations."
+  },
+  {
+    "name": "openviking-context-ops",
+    "category": "MLOPS",
+    "trigger": "openviking",
+    "desc": "Openviking context ops tool for mlops operations.",
+    "usecase": "Openviking context ops tool for mlops operations.",
+    "prompt": "Activate /openviking for openviking-context-ops: Openviking context ops tool for mlops operations."
+  },
+  {
+    "name": "rag-vector-search",
+    "category": "MLOPS",
+    "trigger": "ragvectorsearch",
+    "desc": "Rag vector search tool for mlops operations.",
+    "usecase": "Rag vector search tool for mlops operations.",
+    "prompt": "Activate /ragvectorsearch for rag-vector-search: Rag vector search tool for mlops operations."
+  },
+  {
+    "name": "segment-anything",
+    "category": "MLOPS",
+    "trigger": "segment",
+    "desc": "Segment anything tool for mlops operations.",
+    "usecase": "Segment anything tool for mlops operations.",
+    "prompt": "Activate /segment for segment-anything: Segment anything tool for mlops operations."
+  },
+  {
+    "name": "serving-llms-vllm",
+    "category": "MLOPS",
+    "trigger": "serving",
+    "desc": "Serving llms vllm tool for mlops operations.",
+    "usecase": "Serving llms vllm tool for mlops operations.",
+    "prompt": "Activate /serving for serving-llms-vllm: Serving llms vllm tool for mlops operations."
+  },
+  {
+    "name": "vllm",
+    "category": "MLOPS",
+    "trigger": "vllm",
+    "desc": "Vllm tool for mlops operations.",
+    "usecase": "Vllm tool for mlops operations.",
+    "prompt": "Activate /vllm for vllm: Vllm tool for mlops operations."
+  },
+  {
+    "name": "weights-and-biases",
+    "category": "MLOPS",
+    "trigger": "weights",
+    "desc": "Weights and biases tool for mlops operations.",
+    "usecase": "Weights and biases tool for mlops operations.",
+    "prompt": "Activate /weights for weights-and-biases: Weights and biases tool for mlops operations."
+  },
+  {
+    "name": "awesome-list-generation",
+    "category": "GITHUB",
+    "trigger": "awesome",
+    "desc": "Use when building a curated awesome-list repo.",
+    "usecase": "Use when building a curated awesome-list repo.",
+    "prompt": "Activate /awesome for awesome-list-generation: Use when building a curated awesome-list repo."
+  },
+  {
+    "name": "github-auth",
+    "category": "GITHUB",
+    "trigger": "github",
+    "desc": "GitHub auth setup: HTTPS tokens, SSH keys, gh CLI login.",
+    "usecase": "GitHub auth setup: HTTPS tokens, SSH keys, gh CLI login.",
+    "prompt": "Activate /github for github-auth: GitHub auth setup: HTTPS tokens, SSH keys, gh CLI login."
+  },
+  {
+    "name": "github-code-review",
+    "category": "GITHUB",
+    "trigger": "github",
+    "desc": "Review PRs: diffs, inline comments via gh or REST.",
+    "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+    "prompt": "Activate /github for github-code-review: Inspect codebase architecture, run deep peer reviews, and catch bugs."
+  },
+  {
+    "name": "github-growth-engine",
+    "category": "GITHUB",
+    "trigger": "github",
+    "desc": "Use when boosting a GitHub account or its repos.",
+    "usecase": "Use when boosting a GitHub account or its repos.",
+    "prompt": "Activate /github for github-growth-engine: Use when boosting a GitHub account or its repos."
+  },
+  {
+    "name": "github-issue-to-pr",
+    "category": "GITHUB",
+    "trigger": "github",
+    "desc": "Carry a GitHub issue to a verified PR with honest CI stat",
+    "usecase": "Carry a GitHub issue to a verified PR with honest CI stat.",
+    "prompt": "Activate /github for github-issue-to-pr: Carry a GitHub issue to a verified PR with honest CI stat."
+  },
+  {
+    "name": "github-issues",
+    "category": "GITHUB",
+    "trigger": "github",
+    "desc": "Create, triage, label, assign GitHub issues via gh or RES",
+    "usecase": "Create, triage, label, assign GitHub issues via gh or RES.",
+    "prompt": "Activate /github for github-issues: Create, triage, label, assign GitHub issues via gh or RES."
+  },
+  {
+    "name": "github-pr-workflow",
+    "category": "GITHUB",
+    "trigger": "github",
+    "desc": "GitHub PR lifecycle: branch, commit, open, CI, merge.",
+    "usecase": "GitHub PR lifecycle: branch, commit, open, CI, merge.",
+    "prompt": "Activate /github for github-pr-workflow: GitHub PR lifecycle: branch, commit, open, CI, merge."
+  },
+  {
+    "name": "github-profile-growth",
+    "category": "GITHUB",
+    "trigger": "github",
+    "desc": "Github profile growth tool for github operations.",
+    "usecase": "Github profile growth tool for github operations.",
+    "prompt": "Activate /github for github-profile-growth: Github profile growth tool for github operations."
+  },
+  {
+    "name": "github-repo-management",
+    "category": "GITHUB",
+    "trigger": "github",
+    "desc": "Clone/create/fork repos; manage remotes, releases.",
+    "usecase": "Clone/create/fork repos; manage remotes, releases.",
+    "prompt": "Activate /github for github-repo-management: Clone/create/fork repos; manage remotes, releases."
+  },
+  {
+    "name": "open-source-publishing",
+    "category": "GITHUB",
+    "trigger": "open",
+    "desc": "Use when publishing a project to GitHub as a public repo.",
+    "usecase": "Use when publishing a project to GitHub as a public repo.",
+    "prompt": "Activate /open for open-source-publishing: Use when publishing a project to GitHub as a public repo."
+  },
+  {
+    "name": "cold-email-tone-matrix",
+    "category": "GTM",
+    "trigger": "cold",
+    "desc": "Use when choosing a cold email tone (6 tones, bilingual).",
+    "usecase": "Use when choosing a cold email tone (6 tones, bilingual).",
+    "prompt": "Activate /cold for cold-email-tone-matrix: Use when choosing a cold email tone (6 tones, bilingual)."
+  },
+  {
+    "name": "content-integrity-guardrail",
+    "category": "GTM",
+    "trigger": "content",
+    "desc": "Use when shipping content claims \u2014 enforce proof tags.",
+    "usecase": "Use when shipping content claims \u2014 enforce proof tags.",
+    "prompt": "Activate /content for content-integrity-guardrail: Use when shipping content claims \u2014 enforce proof tags."
+  },
+  {
+    "name": "discovery-call-prep",
+    "category": "GTM",
+    "trigger": "discovery",
+    "desc": "Use when preparing discovery calls and questions.",
+    "usecase": "Use when preparing discovery calls and questions.",
+    "prompt": "Activate /discovery for discovery-call-prep: Use when preparing discovery calls and questions."
+  },
+  {
+    "name": "domain-flip-ops",
+    "category": "GTM",
+    "trigger": "domain",
+    "desc": "Use when buying or reselling domain names (flips).",
+    "usecase": "Use when buying or reselling domain names (flips).",
+    "prompt": "Activate /domain for domain-flip-ops: Use when buying or reselling domain names (flips)."
+  },
+  {
+    "name": "etimad-tender-board-refresh",
+    "category": "GTM",
+    "trigger": "etimad",
+    "desc": "Etimad tender board refresh tool for gtm operations.",
+    "usecase": "Etimad tender board refresh tool for gtm operations.",
+    "prompt": "Activate /etimad for etimad-tender-board-refresh: Etimad tender board refresh tool for gtm operations."
+  },
+  {
+    "name": "exec-search-company-ops",
+    "category": "GTM",
+    "trigger": "exec",
+    "desc": "Use when continuing Aamir's exec-search company build.",
+    "usecase": "Use when continuing Aamir's exec-search company build.",
+    "prompt": "Activate /exec for exec-search-company-ops: Use when continuing Aamir's exec-search company build."
+  },
+  {
+    "name": "gtm-signal-outreach",
+    "category": "GTM",
+    "trigger": "gtmsignaloutreach",
+    "desc": "Use when running an end-to-end GTM outreach loop.",
+    "usecase": "Automate prospect identification, qualification, and high-conversion outreach.",
+    "prompt": "Activate /gtmsignaloutreach for gtm-signal-outreach: Automate prospect identification, qualification, and high-conversion outreach."
+  },
+  {
+    "name": "lead-signal-scoring",
+    "category": "GTM",
+    "trigger": "lead",
+    "desc": "Use when ranking leads or finding warm intro paths.",
+    "usecase": "Automate prospect identification, qualification, and high-conversion outreach.",
+    "prompt": "Activate /lead for lead-signal-scoring: Automate prospect identification, qualification, and high-conversion outreach."
+  },
+  {
+    "name": "linkedin-api-posting",
+    "category": "GTM",
+    "trigger": "linkedin",
+    "desc": "Use when posting media to LinkedIn via REST API.",
+    "usecase": "Use when posting media to LinkedIn via REST API.",
+    "prompt": "Activate /linkedin for linkedin-api-posting: Use when posting media to LinkedIn via REST API."
+  },
+  {
+    "name": "linkedin-content-engine",
+    "category": "GTM",
+    "trigger": "linkedin",
+    "desc": "Use when creating LinkedIn posts, comments, DMs, carousel",
+    "usecase": "Use when creating LinkedIn posts, comments, DMs, carousel.",
+    "prompt": "Activate /linkedin for linkedin-content-engine: Use when creating LinkedIn posts, comments, DMs, carousel."
+  },
+  {
+    "name": "monetization-offer-gating",
+    "category": "GTM",
+    "trigger": "monetization",
+    "desc": "Use when pricing/selling a capability \u2014 gate each offer.",
+    "usecase": "Use when pricing/selling a capability \u2014 gate each offer.",
+    "prompt": "Activate /monetization for monetization-offer-gating: Use when pricing/selling a capability \u2014 gate each offer."
+  },
+  {
+    "name": "voice-profile-extraction",
+    "category": "GTM",
+    "trigger": "voice",
+    "desc": "Use when copy must match a proven voice.",
+    "usecase": "Use when copy must match a proven voice.",
+    "prompt": "Activate /voice for voice-profile-extraction: Use when copy must match a proven voice."
+  },
+  {
+    "name": "client-video-ad-production",
+    "category": "MEDIA",
+    "trigger": "client",
+    "desc": "Use when producing or replicating a promo/ad video.",
+    "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+    "prompt": "Activate /client for client-video-ad-production: Programmatic asset generation, editing, and rendering pipelines."
+  },
+  {
+    "name": "fal-video-generation",
+    "category": "MEDIA",
+    "trigger": "falvideogeneration",
+    "desc": "Use when generating fal.ai video or judging a fal promo.",
+    "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+    "prompt": "Activate /falvideogeneration for fal-video-generation: Programmatic asset generation, editing, and rendering pipelines."
+  },
+  {
+    "name": "gif-search",
+    "category": "MEDIA",
+    "trigger": "gifsearch",
+    "desc": "Search/download GIFs from Tenor via curl + jq.",
+    "usecase": "Search/download GIFs from Tenor via curl + jq.",
+    "prompt": "Activate /gifsearch for gif-search: Search/download GIFs from Tenor via curl + jq."
+  },
+  {
+    "name": "google-flow-generation-ops",
+    "category": "MEDIA",
+    "trigger": "google",
+    "desc": "Use when generating via Google Flow (gflow CLI/MCP).",
+    "usecase": "Use when generating via Google Flow (gflow CLI/MCP).",
+    "prompt": "Activate /google for google-flow-generation-ops: Use when generating via Google Flow (gflow CLI/MCP)."
+  },
+  {
+    "name": "ksa-hospitality-video-lane",
+    "category": "MEDIA",
+    "trigger": "ksahospitalityvideolane",
+    "desc": "Use when building the weekly KSA Luxe Wave video.",
+    "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+    "prompt": "Activate /ksahospitalityvideolane for ksa-hospitality-video-lane: Programmatic asset generation, editing, and rendering pipelines."
+  },
+  {
+    "name": "luxewave-video-ad-pipeline",
+    "category": "MEDIA",
+    "trigger": "luxewave",
+    "desc": "Build 30s LuxeWave/Hospitality ads from Flow-credit image",
+    "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+    "prompt": "Activate /luxewave for luxewave-video-ad-pipeline: Programmatic asset generation, editing, and rendering pipelines."
+  },
+  {
+    "name": "songsee",
+    "category": "MEDIA",
+    "trigger": "songsee",
+    "desc": "Songsee tool for media operations.",
+    "usecase": "Songsee tool for media operations.",
+    "prompt": "Activate /songsee for songsee: Songsee tool for media operations."
+  },
+  {
+    "name": "ui-demo-video-production",
+    "category": "MEDIA",
+    "trigger": "uidemovideoproduction",
+    "desc": "Use when making product demo videos from real app UI + VO",
+    "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+    "prompt": "Activate /uidemovideoproduction for ui-demo-video-production: Programmatic asset generation, editing, and rendering pipelines."
+  },
+  {
+    "name": "voice-cloning-tts",
+    "category": "MEDIA",
+    "trigger": "voice",
+    "desc": "Use when building AI voice assistants with cloned voices.",
+    "usecase": "Use when building AI voice assistants with cloned voices.",
+    "prompt": "Activate /voice for voice-cloning-tts: Use when building AI voice assistants with cloned voices."
+  },
+  {
+    "name": "youtube-content",
+    "category": "MEDIA",
+    "trigger": "youtube",
+    "desc": "YouTube transcripts to summaries, threads, blogs.",
+    "usecase": "YouTube transcripts to summaries, threads, blogs.",
+    "prompt": "Activate /youtube for youtube-content: YouTube transcripts to summaries, threads, blogs."
+  },
+  {
+    "name": "dreamworkhq-mcp-ops",
+    "category": "OUTREACH",
+    "trigger": "dreamworkhq",
+    "desc": "Dreamworkhq mcp ops tool for outreach operations.",
+    "usecase": "Dreamworkhq mcp ops tool for outreach operations.",
+    "prompt": "Activate /dreamworkhq for dreamworkhq-mcp-ops: Dreamworkhq mcp ops tool for outreach operations."
+  },
+  {
+    "name": "invertio-content-production",
+    "category": "OUTREACH",
+    "trigger": "invertio",
+    "desc": "Invertio content production tool for outreach operations.",
+    "usecase": "Invertio content production tool for outreach operations.",
+    "prompt": "Activate /invertio for invertio-content-production: Invertio content production tool for outreach operations."
+  },
+  {
+    "name": "invertio-demo-sites",
+    "category": "OUTREACH",
+    "trigger": "invertio",
+    "desc": "Invertio demo sites tool for outreach operations.",
+    "usecase": "Invertio demo sites tool for outreach operations.",
+    "prompt": "Activate /invertio for invertio-demo-sites: Invertio demo sites tool for outreach operations."
+  },
+  {
+    "name": "invertio-video-production",
+    "category": "OUTREACH",
+    "trigger": "invertio",
+    "desc": "Invertio video production tool for outreach operations.",
+    "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+    "prompt": "Activate /invertio for invertio-video-production: Programmatic asset generation, editing, and rendering pipelines."
+  },
+  {
+    "name": "linkedin-campaigns",
+    "category": "OUTREACH",
+    "trigger": "linkedin",
+    "desc": "Linkedin campaigns tool for outreach operations.",
+    "usecase": "Linkedin campaigns tool for outreach operations.",
+    "prompt": "Activate /linkedin for linkedin-campaigns: Linkedin campaigns tool for outreach operations."
+  },
+  {
+    "name": "outreach-service",
+    "category": "OUTREACH",
+    "trigger": "outreach",
+    "desc": "Outreach service tool for outreach operations.",
+    "usecase": "Automate prospect identification, qualification, and high-conversion outreach.",
+    "prompt": "Activate /outreach for outreach-service: Automate prospect identification, qualification, and high-conversion outreach."
+  },
+  {
+    "name": "prospect-outreach-packs",
+    "category": "OUTREACH",
+    "trigger": "prospect",
+    "desc": "Prospect outreach packs tool for outreach operations.",
+    "usecase": "Automate prospect identification, qualification, and high-conversion outreach.",
+    "prompt": "Activate /prospect for prospect-outreach-packs: Automate prospect identification, qualification, and high-conversion outreach."
+  },
+  {
+    "name": "whatsapp-campaigns",
+    "category": "OUTREACH",
+    "trigger": "whatsapp",
+    "desc": "Whatsapp campaigns tool for outreach operations.",
+    "usecase": "Whatsapp campaigns tool for outreach operations.",
+    "prompt": "Activate /whatsapp for whatsapp-campaigns: Whatsapp campaigns tool for outreach operations."
+  },
+  {
+    "name": "whatsapp-voice-digest-agent",
+    "category": "OUTREACH",
+    "trigger": "whatsapp",
+    "desc": "Whatsapp voice digest agent tool for outreach operations.",
+    "usecase": "Whatsapp voice digest agent tool for outreach operations.",
+    "prompt": "Activate /whatsapp for whatsapp-voice-digest-agent: Whatsapp voice digest agent tool for outreach operations."
+  },
+  {
+    "name": "x-twitter-campaigns",
+    "category": "OUTREACH",
+    "trigger": "xtwittercampaigns",
+    "desc": "X twitter campaigns tool for outreach operations.",
+    "usecase": "X twitter campaigns tool for outreach operations.",
+    "prompt": "Activate /xtwittercampaigns for x-twitter-campaigns: X twitter campaigns tool for outreach operations."
+  },
+  {
+    "name": "cold-email-campaign-ops",
+    "category": "EMAIL",
+    "trigger": "cold",
+    "desc": "Use when running cold-email waves or triaging replies.",
+    "usecase": "Use when running cold-email waves or triaging replies.",
+    "prompt": "Activate /cold for cold-email-campaign-ops: Use when running cold-email waves or triaging replies."
+  },
+  {
+    "name": "email-inbox-triage",
+    "category": "EMAIL",
+    "trigger": "email",
+    "desc": "Triage an inbox: prioritize threads, draft replies safely",
+    "usecase": "Triage an inbox: prioritize threads, draft replies safely.",
+    "prompt": "Activate /email for email-inbox-triage: Triage an inbox: prioritize threads, draft replies safely."
+  },
+  {
+    "name": "email-lookup",
+    "category": "EMAIL",
+    "trigger": "email",
+    "desc": "Email lookup tool for email operations.",
+    "usecase": "Email lookup tool for email operations.",
+    "prompt": "Activate /email for email-lookup: Email lookup tool for email operations."
+  },
+  {
+    "name": "gmail-quota-recovery",
+    "category": "EMAIL",
+    "trigger": "gmail",
+    "desc": "Use when Gmail/Google account is near full. Audit+purge.",
+    "usecase": "Use when Gmail/Google account is near full.",
+    "prompt": "Activate /gmail for gmail-quota-recovery: Use when Gmail/Google account is near full."
+  },
+  {
+    "name": "hermes-email-access",
+    "category": "EMAIL",
+    "trigger": "hermes",
+    "desc": "Use when reading Aamir's Gmail via himalaya CLI on this V",
+    "usecase": "Use when reading Aamir's Gmail via himalaya CLI on this V.",
+    "prompt": "Activate /hermes for hermes-email-access: Use when reading Aamir's Gmail via himalaya CLI on this V."
+  },
+  {
+    "name": "himalaya",
+    "category": "EMAIL",
+    "trigger": "himalaya",
+    "desc": "Himalaya CLI: IMAP/SMTP email from terminal.",
+    "usecase": "Himalaya CLI: IMAP/SMTP email from terminal.",
+    "prompt": "Activate /himalaya for himalaya: Himalaya CLI: IMAP/SMTP email from terminal."
+  },
+  {
+    "name": "mailbox-storage-audit",
+    "category": "EMAIL",
+    "trigger": "mailbox",
+    "desc": "Mailbox storage audit tool for email operations.",
+    "usecase": "Verify, audit, and benchmark compliance across mailbox storage audit.",
+    "prompt": "Activate /mailbox for mailbox-storage-audit: Verify, audit, and benchmark compliance across mailbox storage audit."
+  },
+  {
+    "name": "craft-anything",
+    "category": "TOP-LEVEL",
+    "trigger": "craft",
+    "desc": "Craft anything tool for top-level operations.",
+    "usecase": "Craft anything tool for top-level operations.",
+    "prompt": "Activate /craft for craft-anything: Craft anything tool for top-level operations."
+  },
+  {
+    "name": "graphify",
+    "category": "TOP-LEVEL",
+    "trigger": "graphify",
+    "desc": "Graphify tool for top-level operations.",
+    "usecase": "Graphify tool for top-level operations.",
+    "prompt": "Activate /graphify for graphify: Graphify tool for top-level operations."
+  },
+  {
+    "name": "remotework-operator",
+    "category": "TOP-LEVEL",
+    "trigger": "remotework",
+    "desc": "Remotework operator tool for top-level operations.",
+    "usecase": "Remotework operator tool for top-level operations.",
+    "prompt": "Activate /remotework for remotework-operator: Remotework operator tool for top-level operations."
+  },
+  {
+    "name": "reverse-engineer-anything",
+    "category": "TOP-LEVEL",
+    "trigger": "reverse",
+    "desc": "Reverse engineer anything tool for top-level operations.",
+    "usecase": "Reverse engineer anything tool for top-level operations.",
+    "prompt": "Activate /reverse for reverse-engineer-anything: Reverse engineer anything tool for top-level operations."
+  },
+  {
+    "name": "yuanbao",
+    "category": "TOP-LEVEL",
+    "trigger": "yuanbao",
+    "desc": "Yuanbao tool for top-level operations.",
+    "usecase": "Yuanbao tool for top-level operations.",
+    "prompt": "Activate /yuanbao for yuanbao: Yuanbao tool for top-level operations."
+  },
+  {
+    "name": "agent-readable-site",
+    "category": "MARKETING",
+    "trigger": "agent",
+    "desc": "Agent readable site tool for marketing operations.",
+    "usecase": "Agent readable site tool for marketing operations.",
+    "prompt": "Activate /agent for agent-readable-site: Agent readable site tool for marketing operations."
+  },
+  {
+    "name": "amadora-ai-visibility",
+    "category": "MARKETING",
+    "trigger": "amadora",
+    "desc": "Amadora ai visibility tool for marketing operations.",
+    "usecase": "Amadora ai visibility tool for marketing operations.",
+    "prompt": "Activate /amadora for amadora-ai-visibility: Amadora ai visibility tool for marketing operations."
+  },
+  {
+    "name": "brand-system",
+    "category": "MARKETING",
+    "trigger": "brand",
+    "desc": "Brand system tool for marketing operations.",
+    "usecase": "Brand system tool for marketing operations.",
+    "prompt": "Activate /brand for brand-system: Brand system tool for marketing operations."
+  },
+  {
+    "name": "seo-content-strategy",
+    "category": "MARKETING",
+    "trigger": "seocontentstrategy",
+    "desc": "Seo content strategy tool for marketing operations.",
+    "usecase": "Seo content strategy tool for marketing operations.",
+    "prompt": "Activate /seocontentstrategy for seo-content-strategy: Seo content strategy tool for marketing operations."
+  },
+  {
+    "name": "shopify-ad-creatives",
+    "category": "MARKETING",
+    "trigger": "shopify",
+    "desc": "Shopify ad creatives tool for marketing operations.",
+    "usecase": "Shopify ad creatives tool for marketing operations.",
+    "prompt": "Activate /shopify for shopify-ad-creatives: Shopify ad creatives tool for marketing operations."
+  },
+  {
+    "name": "apple-notes",
+    "category": "APPLE",
+    "trigger": "apple",
+    "desc": "Apple notes tool for apple operations.",
+    "usecase": "Apple notes tool for apple operations.",
+    "prompt": "Activate /apple for apple-notes: Apple notes tool for apple operations."
+  },
+  {
+    "name": "apple-reminders",
+    "category": "APPLE",
+    "trigger": "apple",
+    "desc": "Apple reminders tool for apple operations.",
+    "usecase": "Apple reminders tool for apple operations.",
+    "prompt": "Activate /apple for apple-reminders: Apple reminders tool for apple operations."
+  },
+  {
+    "name": "findmy",
+    "category": "APPLE",
+    "trigger": "findmy",
+    "desc": "Findmy tool for apple operations.",
+    "usecase": "Findmy tool for apple operations.",
+    "prompt": "Activate /findmy for findmy: Findmy tool for apple operations."
+  },
+  {
+    "name": "imessage",
+    "category": "APPLE",
+    "trigger": "imessage",
+    "desc": "Imessage tool for apple operations.",
+    "usecase": "Imessage tool for apple operations.",
+    "prompt": "Activate /imessage for imessage: Imessage tool for apple operations."
+  },
+  {
+    "name": "agency-brain",
+    "category": "NOTE-TAKING",
+    "trigger": "agency",
+    "desc": "Agency brain tool for note-taking operations.",
+    "usecase": "Agency brain tool for note-taking operations.",
+    "prompt": "Activate /agency for agency-brain: Agency brain tool for note-taking operations."
+  },
+  {
+    "name": "hermes-memory-ops",
+    "category": "NOTE-TAKING",
+    "trigger": "hermes",
+    "desc": "Use when backing up, sizing, or offloading Hermes memory.",
+    "usecase": "Use when backing up, sizing, or offloading Hermes memory.",
+    "prompt": "Activate /hermes for hermes-memory-ops: Use when backing up, sizing, or offloading Hermes memory."
+  },
+  {
+    "name": "markdown-brain-ops",
+    "category": "NOTE-TAKING",
+    "trigger": "markdown",
+    "desc": "Build or sweep a markdown brain / kb repo.",
+    "usecase": "Build or sweep a markdown brain / kb repo.",
+    "prompt": "Activate /markdown for markdown-brain-ops: Build or sweep a markdown brain / kb repo."
+  },
+  {
+    "name": "obsidian",
+    "category": "NOTE-TAKING",
+    "trigger": "obsidian",
+    "desc": "Read, search, create, and edit notes in the Obsidian vaul",
+    "usecase": "Read, search, create, and edit notes in the Obsidian vaul.",
+    "prompt": "Activate /obsidian for obsidian: Read, search, create, and edit notes in the Obsidian vaul."
+  },
+  {
+    "name": "finance-quotation-invoicing",
+    "category": "FINANCE",
+    "trigger": "finance",
+    "desc": "Finance quotation invoicing tool for finance operations.",
+    "usecase": "Finance quotation invoicing tool for finance operations.",
+    "prompt": "Activate /finance for finance-quotation-invoicing: Finance quotation invoicing tool for finance operations."
+  },
+  {
+    "name": "payment-gateway-ledger-integration",
+    "category": "FINANCE",
+    "trigger": "payment",
+    "desc": "Payment gateway ledger integration tool for finance operations.",
+    "usecase": "Payment gateway ledger integration tool for finance operations.",
+    "prompt": "Activate /payment for payment-gateway-ledger-integration: Payment gateway ledger integration tool for finance operations."
+  },
+  {
+    "name": "payment-gateway-readiness",
+    "category": "FINANCE",
+    "trigger": "payment",
+    "desc": "Payment gateway readiness tool for finance operations.",
+    "usecase": "Payment gateway readiness tool for finance operations.",
+    "prompt": "Activate /payment for payment-gateway-readiness: Payment gateway readiness tool for finance operations."
+  },
+  {
+    "name": "microsoft-365-tenant-support",
+    "category": "INTEGRATION",
+    "trigger": "microsoft",
+    "desc": "Microsoft 365 tenant support tool for integration operations.",
+    "usecase": "Microsoft 365 tenant support tool for integration operations.",
+    "prompt": "Activate /microsoft for microsoft-365-tenant-support: Microsoft 365 tenant support tool for integration operations."
+  },
+  {
+    "name": "saw-cli-oauth-connect",
+    "category": "INTEGRATION",
+    "trigger": "sawclioauthconnect",
+    "desc": "Saw cli oauth connect tool for integration operations.",
+    "usecase": "Saw cli oauth connect tool for integration operations.",
+    "prompt": "Activate /sawclioauthconnect for saw-cli-oauth-connect: Saw cli oauth connect tool for integration operations."
+  },
+  {
+    "name": "uptimerobot-api",
+    "category": "INTEGRATION",
+    "trigger": "uptimerobotapi",
+    "desc": "Uptimerobot api tool for integration operations.",
+    "usecase": "Uptimerobot api tool for integration operations.",
+    "prompt": "Activate /uptimerobotapi for uptimerobot-api: Uptimerobot api tool for integration operations."
+  },
+  {
+    "name": "bluesky-posting",
+    "category": "SOCIAL-MEDIA",
+    "trigger": "bluesky",
+    "desc": "Post to Bluesky (bsky.social); 'bfly' is Bluesky shorthan",
+    "usecase": "Post to Bluesky (bsky.",
+    "prompt": "Activate /bluesky for bluesky-posting: Post to Bluesky (bsky."
+  },
+  {
+    "name": "telegram-content-bot",
+    "category": "SOCIAL-MEDIA",
+    "trigger": "telegram",
+    "desc": "Telegram content bot tool for social-media operations.",
+    "usecase": "Telegram content bot tool for social-media operations.",
+    "prompt": "Activate /telegram for telegram-content-bot: Telegram content bot tool for social-media operations."
+  },
+  {
+    "name": "xurl",
+    "category": "SOCIAL-MEDIA",
+    "trigger": "xurl",
+    "desc": "X/Twitter via xurl CLI: raw post search, posting, DM, med",
+    "usecase": "X/Twitter via xurl CLI: raw post search, posting, DM, med.",
+    "prompt": "Activate /xurl for xurl: X/Twitter via xurl CLI: raw post search, posting, DM, med."
+  },
+  {
+    "name": "kpi-business-dashboard",
+    "category": "ANALYTICS",
+    "trigger": "kpibusinessdashboard",
+    "desc": "Kpi business dashboard tool for analytics operations.",
+    "usecase": "Kpi business dashboard tool for analytics operations.",
+    "prompt": "Activate /kpibusinessdashboard for kpi-business-dashboard: Kpi business dashboard tool for analytics operations."
+  },
+  {
+    "name": "client-success-ops",
+    "category": "CLIENT-SUCCESS",
+    "trigger": "client",
+    "desc": "Client success ops tool for client-success operations.",
+    "usecase": "Client success ops tool for client-success operations.",
+    "prompt": "Activate /client for client-success-ops: Client success ops tool for client-success operations."
+  },
+  {
+    "name": "jupyter-live-kernel",
+    "category": "DATA-SCIENCE",
+    "trigger": "jupyter",
+    "desc": "Jupyter live kernel tool for data-science operations.",
+    "usecase": "Jupyter live kernel tool for data-science operations.",
+    "prompt": "Activate /jupyter for jupyter-live-kernel: Jupyter live kernel tool for data-science operations."
+  },
+  {
+    "name": "contract-legal-review",
+    "category": "LEGAL",
+    "trigger": "contract",
+    "desc": "Contract legal review tool for legal operations.",
+    "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+    "prompt": "Activate /contract for contract-legal-review: Inspect codebase architecture, run deep peer reviews, and catch bugs."
+  },
+  {
+    "name": "openhab",
+    "category": "SMART-HOME",
+    "trigger": "openhab",
+    "desc": "Openhab tool for smart-home operations.",
+    "usecase": "Openhab tool for smart-home operations.",
+    "prompt": "Activate /openhab for openhab: Openhab tool for smart-home operations."
+  },
+  {
+    "name": "halal-trade-bot",
+    "category": "TRADING",
+    "trigger": "halal",
+    "desc": "Halal trade bot tool for trading operations.",
+    "usecase": "Halal trade bot tool for trading operations.",
+    "prompt": "Activate /halal for halal-trade-bot: Halal trade bot tool for trading operations."
+  },
+  {
+    "name": "blocked-page-recovery",
+    "category": "WEB",
+    "trigger": "blocked",
+    "desc": "Recover blocked/paywalled/WAF'd pages via fallbacks.",
+    "usecase": "Recover blocked/paywalled/WAF'd pages via fallbacks.",
+    "prompt": "Activate /blocked for blocked-page-recovery: Recover blocked/paywalled/WAF'd pages via fallbacks."
+  }
+]

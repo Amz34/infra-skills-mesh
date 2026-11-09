@@ -1,0 +1,27 @@
+# Persistent MCP tool server as a systemd USER unit (no root, survives logout via linger).
+# Install:  mkdir -p ~/.config/systemd/user ~/logs
+#           cp mcp-http-service.service ~/.config/systemd/user/<project>-mcp.service
+#           chmod 600 ~/.config/<project>/env      # EnvironmentFile with secrets
+#           systemctl --user daemon-reload && systemctl --user enable --now <project>-mcp.service
+# Verify:   systemctl --user is-active <project>-mcp.service
+#           ss -tlnp | grep <PORT>
+#           hermes mcp test <name>
+# NOTE: replace every <PLACEHOLDER>. Keep the port distinct from any verify-script port.
+
+[Unit]
+Description=<PROJECT> MCP server - agent tool layer
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/<PROJECT>
+EnvironmentFile=/home/ubuntu/.config/<PROJECT>/env
+ExecStart=/home/ubuntu/<PROJECT>/.venv/bin/python mcp_server.py --http --host 127.0.0.1 --port <PORT>
+Restart=always
+RestartSec=3
+# Logs go to files so `read_file` works and the journal stays clean.
+StandardOutput=append:/home/ubuntu/logs/<PROJECT>-mcp.log
+StandardError=append:/home/ubuntu/logs/<PROJECT>-mcp.log
+
+[Install]
+WantedBy=default.target

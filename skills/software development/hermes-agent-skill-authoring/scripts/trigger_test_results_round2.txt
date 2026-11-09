@@ -1,0 +1,39 @@
+model=deepseek-v4-flash skills_in_index=94 index_chars=7599 probes=35
+PASS       [jev  ] got=jev-cli-ops                                want=jev-cli-ops                        | jev ka triage lane chalao aur gate counts do
+PASS       [jev  ] got=jev-cli-ops                                want=jev-cli-ops                        | python3 -m jev.cli selftest chalao
+PASS       [jev  ] got=jev-cli-ops                                want=jev-cli-ops                        | jev live run Cloudflare pe karna hai, 402 aa raha hai
+PASS       [jev  ] got=jev-cli-ops                                want=jev-cli-ops                        | queue-gate ne escalate kyun diya, debug karo
+PASS       [jev  ] got=jev-cli-ops                                want=jev-cli-ops                        | jev ka calibrate sweep chalao aur results batao
+PASS       [jev  ] got=paper-trading-desk-ops                     want=NOT jev-cli-ops                    | freqtrade ka paper trade open karo
+PASS       [jev  ] got=email-imap-extraction                      want=NOT jev-cli-ops                    | Gmail se last invoice nikaalo
+PASS       [jev  ] got=invertio-content-production                want=NOT jev-cli-ops                    | invertio ka carousel banao
+PASS       [desk ] got=paper-trading-desk-ops                     want=paper-trading-desk-ops             | freqtrade dry-run desk ka API 401 de raha hai, verify karo
+PASS       [desk ] got=paper-trading-desk-ops                     want=paper-trading-desk-ops             | 60 din ka backtest chalao aur numbers do
+PASS       [desk ] got=paper-trading-desk-ops                     want=paper-trading-desk-ops             | forceenter se paper trade open karo
+PASS       [desk ] got=paper-trading-desk-ops                     want=paper-trading-desk-ops             | finelo funnel CTA desk se connect hai check karo
+PASS       [desk ] got=paper-trading-desk-ops                     want=paper-trading-desk-ops             | trading config me exchange.token missing hai
+PASS       [desk ] got=jev-cli-ops                                want=NOT paper-trading-desk-ops         | jev ka support lane chalao
+PASS       [desk ] got=client-success-ops                         want=NOT paper-trading-desk-ops         | naya client onboard karna hai
+PASS       [desk ] got=domain-flip-valuation                      want=NOT paper-trading-desk-ops         | domain flip ki valuation karo
+PASS       [rw   ] got=remotework-operator                        want=remotework-operator                | Aamir ne RW-0007 approve kiya, send kar do
+PASS       [rw   ] got=remotework-operator                        want=remotework-operator                | job ke liye paypal link mint karo
+PASS       [rw   ] got=remotework-operator                        want=remotework-operator                | az.work pipeline ka aaj ka shortlist banao
+SOFT       [rw   ] got=finance-quotation-invoicing                want=remotework-operator                | client X ke liye 500 ka invoice banao
+FAIL       [rw   ] got=github-repo-management                     want=remotework-operator                | remotework repo push fail ho raha hai credential helper
+PASS       [rw   ] got=cold-email-campaign-ops                    want=NOT remotework-operator            | cold email wave bhejo
+PASS       [rw   ] got=agency-brain                               want=NOT remotework-operator            | brain me note add karo
+PASS       [rw   ] got=tender-eligibility-screening               want=NOT remotework-operator            | KSA tender eligibility check karo
+PASS       [m365 ] got=microsoft-365-tenant-support               want=microsoft-365-tenant-support       | Teams bot AZ Engineering restart karo, gateway 3978
+PASS       [m365 ] got=microsoft-365-tenant-support               want=microsoft-365-tenant-support       | M365 tenant azengineeringapp pe sign-in issue hai
+PASS       [m365 ] got=microsoft-365-tenant-support               want=microsoft-365-tenant-support       | teams-bot package ka manifest update karo
+PASS       [m365 ] got=microsoft-365-tenant-support               want=microsoft-365-tenant-support       | bot ke liye devtunnels URL change karna hai
+PASS       [m365 ] got=microsoft-365-tenant-support               want=microsoft-365-tenant-support       | AZ Engineering Teams channel me bot reply nahi karta
+PASS       [m365 ] got=email-imap-extraction                      want=NOT microsoft-365-tenant-support   | Gmail IMAP se mail padho
+PASS       [m365 ] got=notion                                     want=NOT microsoft-365-tenant-support   | Notion DB sync karo
+PASS       [m365 ] got=invertio-demo-sites                        want=NOT microsoft-365-tenant-support   | wrangler se demo site deploy karo
+PASS       [ctrl ] got=domain-flip-valuation                      want=domain-flip-valuation              | domain flip ki sale odds nikalo
+PASS       [ctrl ] got=invertio-content-production                want=invertio-content-production        | Invertio carousel ke liye slides design karo
+PASS       [ctrl ] got=primavera-p6-integration                   want=primavera-p6-integration           | P6 schedule ka critical path analysis karo
+
+SUMMARY {"jev": {"PASS": 8, "SOFT": 0, "FAIL": 0, "FALSE-FIRE": 0, "ERROR": 0}, "desk": {"PASS": 8, "SOFT": 0, "FAIL": 0, "FALSE-FIRE": 0, "ERROR": 0}, "rw": {"PASS": 6, "SOFT": 1, "FAIL": 1, "FALSE-FIRE": 0, "ERROR": 0}, "m365": {"PASS": 8, "SOFT": 0, "FAIL": 0, "FALSE-FIRE": 0, "ERROR": 0}, "ctrl": {"PASS": 3, "SOFT": 0, "FAIL": 0, "FALSE-FIRE": 0, "ERROR": 0}}
+TOKENS {"in": 70007, "out": 3598}

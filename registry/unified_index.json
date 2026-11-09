@@ -1,0 +1,4903 @@
+[
+  {
+    "unified_trigger": "agent",
+    "title": "AGENT SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS",
+      "MARKETING",
+      "RESEARCH",
+      "AUTONOMOUS-AI-AGENTS"
+    ],
+    "aliases": [
+      "agent",
+      "agm",
+      "agentic",
+      "autonomous",
+      "swarm"
+    ],
+    "subskill_count": 9,
+    "subskills": [
+      {
+        "name": "agent-cost-per-task",
+        "category": "DEVOPS",
+        "usecase": "Agent cost per task tool for devops operations.",
+        "desc": "Agent cost per task tool for devops operations."
+      },
+      {
+        "name": "agent-memory-hygiene",
+        "category": "DEVOPS",
+        "usecase": "Automated garbage collection, disk recovery, and operational hygiene.",
+        "desc": "Agent memory hygiene tool for devops operations."
+      },
+      {
+        "name": "agent-run-logging",
+        "category": "DEVOPS",
+        "usecase": "Agent run logging tool for devops operations.",
+        "desc": "Agent run logging tool for devops operations."
+      },
+      {
+        "name": "agent-self-healing-loop",
+        "category": "DEVOPS",
+        "usecase": "Use when making an agent fleet self-healing or crashproof.",
+        "desc": "Use when making an agent fleet self-healing or crashproof"
+      },
+      {
+        "name": "agent-skill-adoption-gate",
+        "category": "DEVOPS",
+        "usecase": "Use when vetting or adopting a third-party agent skill.",
+        "desc": "Use when vetting or adopting a third-party agent skill."
+      },
+      {
+        "name": "agent-usage-audit",
+        "category": "DEVOPS",
+        "usecase": "Verify, audit, and benchmark compliance across agent usage audit.",
+        "desc": "Agent usage audit tool for devops operations."
+      },
+      {
+        "name": "agentic-tooling-research",
+        "category": "RESEARCH",
+        "usecase": "Use when researching agentic AI tooling on GitHub/X.",
+        "desc": "Use when researching agentic AI tooling on GitHub/X."
+      },
+      {
+        "name": "agent-orchestration",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Dispatch to Hermes sub-agent profiles; fleet monitoring.",
+        "desc": "Dispatch to Hermes sub-agent profiles; fleet monitoring."
+      },
+      {
+        "name": "agent-readable-site",
+        "category": "MARKETING",
+        "usecase": "Agent readable site tool for marketing operations.",
+        "desc": "Agent readable site tool for marketing operations."
+      }
+    ],
+    "prompt": "Activate /agent for agent-cost-per-task (covers 9 subskills)"
+  },
+  {
+    "unified_trigger": "android",
+    "title": "ANDROID SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS",
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "android"
+    ],
+    "subskill_count": 3,
+    "subskills": [
+      {
+        "name": "android-mobile-qa-artemis",
+        "category": "DEVOPS",
+        "usecase": "Use when QAing Android apps or phone UI automation.",
+        "desc": "Use when QAing Android apps or phone UI automation."
+      },
+      {
+        "name": "android-remote-support",
+        "category": "DEVOPS",
+        "usecase": "Android remote support tool for devops operations.",
+        "desc": "Android remote support tool for devops operations."
+      },
+      {
+        "name": "android-apk-no-gradle",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Android apk no gradle tool for software development operations.",
+        "desc": "Android apk no gradle tool for software development operations."
+      }
+    ],
+    "prompt": "Activate /android for android-mobile-qa-artemis (covers 3 subskills)"
+  },
+  {
+    "unified_trigger": "audit",
+    "title": "AUDIT SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS",
+      "RESEARCH",
+      "SOFTWARE DEVELOPMENT",
+      "EMAIL"
+    ],
+    "aliases": [
+      "audit",
+      "qa",
+      "rea",
+      "egm",
+      "audit",
+      "review"
+    ],
+    "subskill_count": 6,
+    "subskills": [
+      {
+        "name": "attack-surface-self-audit",
+        "category": "DEVOPS",
+        "usecase": "Verify, audit, and benchmark compliance across attack surface self audit.",
+        "desc": "Use when auditing or hardening a VM's real attack surface"
+      },
+      {
+        "name": "capability-gap-audit",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Verify, audit, and benchmark compliance across capability gap audit.",
+        "desc": "Capability gap audit tool for software development operations."
+      },
+      {
+        "name": "project-state-audit",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Verify, audit, and benchmark compliance across project state audit.",
+        "desc": "Use when auditing a project's state and next steps."
+      },
+      {
+        "name": "sanad-web-auditor",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Verify, audit, and benchmark compliance across sanad web auditor.",
+        "desc": "Sanad web auditor tool for software development operations."
+      },
+      {
+        "name": "shared-tool-listicle-audit",
+        "category": "RESEARCH",
+        "usecase": "Verify, audit, and benchmark compliance across shared tool listicle audit.",
+        "desc": "Use when a shared tool/repo listicle needs auditing."
+      },
+      {
+        "name": "mailbox-storage-audit",
+        "category": "EMAIL",
+        "usecase": "Verify, audit, and benchmark compliance across mailbox storage audit.",
+        "desc": "Mailbox storage audit tool for email operations."
+      }
+    ],
+    "prompt": "Activate /audit for attack-surface-self-audit (covers 6 subskills)"
+  },
+  {
+    "unified_trigger": "ci",
+    "title": "CI",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "ci"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "ci-lane",
+        "category": "DEVOPS",
+        "usecase": "Ci lane tool for devops operations.",
+        "desc": "Ci lane tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /ci for ci-lane (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "cloud",
+    "title": "CLOUD",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "cloud"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "cloud-vm-backup-dr",
+        "category": "DEVOPS",
+        "usecase": "Use when setting up cloud VM backup/DR or Drive OAuth.",
+        "desc": "Use when setting up cloud VM backup/DR or Drive OAuth."
+      }
+    ],
+    "prompt": "Activate /cloud for cloud-vm-backup-dr (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "cloudflare",
+    "title": "CLOUDFLARE SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "cloudflare"
+    ],
+    "subskill_count": 4,
+    "subskills": [
+      {
+        "name": "cloudflare-deploy",
+        "category": "DEVOPS",
+        "usecase": "Spin up, configure, and automate zero-downtime deployment pipelines.",
+        "desc": "Cloudflare deploy tool for devops operations."
+      },
+      {
+        "name": "cloudflare-pages-ops",
+        "category": "DEVOPS",
+        "usecase": "Deploy/manage Cloudflare Pages + Workers via wrangler CLI.",
+        "desc": "Deploy/manage Cloudflare Pages + Workers via wrangler CLI"
+      },
+      {
+        "name": "cloudflare-pages-workers-ops",
+        "category": "DEVOPS",
+        "usecase": "Cloudflare Pages/Workers & wrangler login on headless VMs.",
+        "desc": "Cloudflare Pages/Workers & wrangler login on headless VMs"
+      },
+      {
+        "name": "cloudflare-quick-tunnel",
+        "category": "DEVOPS",
+        "usecase": "Use when a local service needs a public HTTPS URL.",
+        "desc": "Use when a local service needs a public HTTPS URL."
+      }
+    ],
+    "prompt": "Activate /cloudflare for cloudflare-deploy (covers 4 subskills)"
+  },
+  {
+    "unified_trigger": "cron",
+    "title": "CRON",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "cron"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "cron-watchdog",
+        "category": "DEVOPS",
+        "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+        "desc": "Use when a cron must wait for an external condition."
+      }
+    ],
+    "prompt": "Activate /cron for cron-watchdog (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "cleanup",
+    "title": "CLEANUP SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "cleanup"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "dependency-hygiene",
+        "category": "DEVOPS",
+        "usecase": "Automated garbage collection, disk recovery, and operational hygiene.",
+        "desc": "Dependency hygiene tool for devops operations."
+      },
+      {
+        "name": "host-disk-hygiene",
+        "category": "DEVOPS",
+        "usecase": "Automated garbage collection, disk recovery, and operational hygiene.",
+        "desc": "Host disk hygiene tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /cleanup for dependency-hygiene (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "deploy",
+    "title": "DEPLOY",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "deploy"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "docker-deploy-ops",
+        "category": "DEVOPS",
+        "usecase": "Spin up, configure, and automate zero-downtime deployment pipelines.",
+        "desc": "Docker deploy ops tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /deploy for docker-deploy-ops (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "external",
+    "title": "EXTERNAL",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "external"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "external-uptime-monitoring",
+        "category": "DEVOPS",
+        "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+        "desc": "Use when a server needs alerting that outlives it."
+      }
+    ],
+    "prompt": "Activate /external for external-uptime-monitoring (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "fail",
+    "title": "FAIL",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "fail"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "fail-triage",
+        "category": "DEVOPS",
+        "usecase": "Fail triage tool for devops operations.",
+        "desc": "Fail triage tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /fail for fail-triage (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "firewatch",
+    "title": "FIREWATCH",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "firewatch"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "firewatch-ops",
+        "category": "DEVOPS",
+        "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+        "desc": "Firewatch ops tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /firewatch for firewatch-ops (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "flow",
+    "title": "FLOW",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "flow"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "flow-credits-image-gen",
+        "category": "DEVOPS",
+        "usecase": "Use when image/video gen should burn free Flow credits.",
+        "desc": "Use when image/video gen should burn free Flow credits."
+      }
+    ],
+    "prompt": "Activate /flow for flow-credits-image-gen (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "free",
+    "title": "FREE SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS",
+      "RESEARCH",
+      "AUTONOMOUS-AI-AGENTS"
+    ],
+    "aliases": [
+      "free"
+    ],
+    "subskill_count": 3,
+    "subskills": [
+      {
+        "name": "free-flux-image-api",
+        "category": "DEVOPS",
+        "usecase": "Use when any task needs images/photos \u2014 fire fluxgen firs.",
+        "desc": "Use when any task needs images/photos \u2014 fire fluxgen firs"
+      },
+      {
+        "name": "free-knowledge-library",
+        "category": "RESEARCH",
+        "usecase": "Use when you need a free legal book or textbook.",
+        "desc": "Use when you need a free legal book or textbook."
+      },
+      {
+        "name": "free-claude-code",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+        "desc": "Use when installing or running FCC free provider proxy."
+      }
+    ],
+    "prompt": "Activate /free for free-flux-image-api (covers 3 subskills)"
+  },
+  {
+    "unified_trigger": "gcp",
+    "title": "GCP",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "gcp"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "gcp-agent-registry-mcp-bridge",
+        "category": "DEVOPS",
+        "usecase": "Gcp agent registry mcp bridge tool for devops operations.",
+        "desc": "Gcp agent registry mcp bridge tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /gcp for gcp-agent-registry-mcp-bridge (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "headless",
+    "title": "HEADLESS SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "headless"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "headless-browser-automation",
+        "category": "DEVOPS",
+        "usecase": "Use when browser-exec fails on headless VMs.",
+        "desc": "Use when browser-exec fails on headless VMs."
+      },
+      {
+        "name": "headless-vm-virtual-audio",
+        "category": "DEVOPS",
+        "usecase": "Use when a headless VM needs a mic or audio devices.",
+        "desc": "Use when a headless VM needs a mic or audio devices."
+      }
+    ],
+    "prompt": "Activate /headless for headless-browser-automation (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "hermes",
+    "title": "HERMES SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS",
+      "EMAIL",
+      "AUTONOMOUS-AI-AGENTS",
+      "SOFTWARE DEVELOPMENT",
+      "NOTE-TAKING"
+    ],
+    "aliases": [
+      "hermes"
+    ],
+    "subskill_count": 8,
+    "subskills": [
+      {
+        "name": "hermes-cron-delivery-routing",
+        "category": "DEVOPS",
+        "usecase": "Hermes cron delivery routing tool for devops operations.",
+        "desc": "Hermes cron delivery routing tool for devops operations."
+      },
+      {
+        "name": "hermes-token-cost-ops",
+        "category": "DEVOPS",
+        "usecase": "Use when API balance drains fast or tokens overconsume.",
+        "desc": "Use when API balance drains fast or tokens overconsume."
+      },
+      {
+        "name": "hermes-token-observability",
+        "category": "DEVOPS",
+        "usecase": "Hermes token observability tool for devops operations.",
+        "desc": "Hermes token observability tool for devops operations."
+      },
+      {
+        "name": "hermes-agent-skill-authoring",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Author in-repo SKILL.",
+        "desc": "Author in-repo SKILL.md files: frontmatter and structure."
+      },
+      {
+        "name": "hermes-agent",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Use, configure, theme, extend, and orchestrate Hermes Age.",
+        "desc": "Use, configure, theme, extend, and orchestrate Hermes Age"
+      },
+      {
+        "name": "hermes-gateway-ops",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Hermes gateway ops tool for autonomous-ai-agents operations.",
+        "desc": "Hermes gateway ops tool for autonomous-ai-agents operations."
+      },
+      {
+        "name": "hermes-email-access",
+        "category": "EMAIL",
+        "usecase": "Use when reading Aamir's Gmail via himalaya CLI on this V.",
+        "desc": "Use when reading Aamir's Gmail via himalaya CLI on this V"
+      },
+      {
+        "name": "hermes-memory-ops",
+        "category": "NOTE-TAKING",
+        "usecase": "Use when backing up, sizing, or offloading Hermes memory.",
+        "desc": "Use when backing up, sizing, or offloading Hermes memory."
+      }
+    ],
+    "prompt": "Activate /hermes for hermes-cron-delivery-routing (covers 8 subskills)"
+  },
+  {
+    "unified_trigger": "hybrid",
+    "title": "HYBRID",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "hybrid"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "hybrid-compute-infra",
+        "category": "DEVOPS",
+        "usecase": "Use when setting up hybrid compute (Ollama, PII routing).",
+        "desc": "Use when setting up hybrid compute (Ollama, PII routing)."
+      }
+    ],
+    "prompt": "Activate /hybrid for hybrid-compute-infra (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "inbound",
+    "title": "INBOUND",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "inbound"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "inbound-content-guardrails",
+        "category": "DEVOPS",
+        "usecase": "Use when handling untrusted inbound content.",
+        "desc": "Use when handling untrusted inbound content."
+      }
+    ],
+    "prompt": "Activate /inbound for inbound-content-guardrails (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "infra",
+    "title": "INFRA SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "infra"
+    ],
+    "subskill_count": 4,
+    "subskills": [
+      {
+        "name": "infra-capability-audit",
+        "category": "DEVOPS",
+        "usecase": "Verify, audit, and benchmark compliance across infra capability audit.",
+        "desc": "Infra capability audit tool for devops operations."
+      },
+      {
+        "name": "infra-dashboard-ops",
+        "category": "DEVOPS",
+        "usecase": "Use when working on private infra dashboard (hermes-vnic).",
+        "desc": "Use when working on private infra dashboard (hermes-vnic)"
+      },
+      {
+        "name": "infra-hardening-crashproof",
+        "category": "DEVOPS",
+        "usecase": "Use when hardening a cloud VM end-to-end.",
+        "desc": "Use when hardening a cloud VM end-to-end."
+      },
+      {
+        "name": "infra-status-dashboard",
+        "category": "DEVOPS",
+        "usecase": "Infra status dashboard tool for devops operations.",
+        "desc": "Infra status dashboard tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /infra for infra-capability-audit (covers 4 subskills)"
+  },
+  {
+    "unified_trigger": "kanban",
+    "title": "KANBAN SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "kanban"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "kanban-orchestrator",
+        "category": "DEVOPS",
+        "usecase": "Kanban orchestrator tool for devops operations.",
+        "desc": "Kanban orchestrator tool for devops operations."
+      },
+      {
+        "name": "kanban-worker",
+        "category": "DEVOPS",
+        "usecase": "Kanban worker tool for devops operations.",
+        "desc": "Kanban worker tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /kanban for kanban-orchestrator (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "link",
+    "title": "LINK",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "link"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "link-safety-triage",
+        "category": "DEVOPS",
+        "usecase": "Use when judging a suspicious link or domain.",
+        "desc": "Use when judging a suspicious link or domain."
+      }
+    ],
+    "prompt": "Activate /link for link-safety-triage (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "linux",
+    "title": "LINUX",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "linux"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "linux-overload-recovery",
+        "category": "DEVOPS",
+        "usecase": "Linux overload recovery tool for devops operations.",
+        "desc": "Linux overload recovery tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /linux for linux-overload-recovery (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "live",
+    "title": "LIVE SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS",
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "live"
+    ],
+    "subskill_count": 4,
+    "subskills": [
+      {
+        "name": "live-session-capture",
+        "category": "DEVOPS",
+        "usecase": "Use when joining/recording a live session (lc toolkit).",
+        "desc": "Use when joining/recording a live session (lc toolkit)."
+      },
+      {
+        "name": "live-webinar-attendance",
+        "category": "DEVOPS",
+        "usecase": "Use when attending a live webinar for the user.",
+        "desc": "Use when attending a live webinar for the user."
+      },
+      {
+        "name": "live-meeting-attendance",
+        "category": "PRODUCTIVITY",
+        "usecase": "Attend a live meeting for the user; capture + notes.",
+        "desc": "Attend a live meeting for the user; capture + notes."
+      },
+      {
+        "name": "live-session-capture-notes",
+        "category": "PRODUCTIVITY",
+        "usecase": "Live session capture notes tool for productivity operations.",
+        "desc": "Live session capture notes tool for productivity operations."
+      }
+    ],
+    "prompt": "Activate /live for live-session-capture (covers 4 subskills)"
+  },
+  {
+    "unified_trigger": "local",
+    "title": "LOCAL",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "local"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "local-capability-lanes",
+        "category": "DEVOPS",
+        "usecase": "Use when running local doc/search/ML/decision lanes.",
+        "desc": "Use when running local doc/search/ML/decision lanes."
+      }
+    ],
+    "prompt": "Activate /local for local-capability-lanes (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "mcp",
+    "title": "MCP SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS",
+      "AUTONOMOUS-AI-AGENTS"
+    ],
+    "aliases": [
+      "mcp"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "mcp-tool-servers",
+        "category": "DEVOPS",
+        "usecase": "Use when wrapping integrations as MCP servers for agents.",
+        "desc": "Use when wrapping integrations as MCP servers for agents."
+      },
+      {
+        "name": "mcp-server-builder",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Mcp server builder tool for autonomous-ai-agents operations.",
+        "desc": "Mcp server builder tool for autonomous-ai-agents operations."
+      }
+    ],
+    "prompt": "Activate /mcp for mcp-tool-servers (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "model",
+    "title": "MODEL SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS",
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "model"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "model-tier-selection",
+        "category": "DEVOPS",
+        "usecase": "Use when selecting model/tier for a task \u2014 cost gate firs.",
+        "desc": "Use when selecting model/tier for a task \u2014 cost gate firs"
+      },
+      {
+        "name": "model-eval-ops",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Use when comparing LLM models or running task evals.",
+        "desc": "Use when comparing LLM models or running task evals."
+      }
+    ],
+    "prompt": "Activate /model for model-tier-selection (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "n8n",
+    "title": "N8N SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "n8n"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "n8n-headless-ops",
+        "category": "DEVOPS",
+        "usecase": "Use when running n8n headless \u2014 CLI imports, webhooks, au.",
+        "desc": "Use when running n8n headless \u2014 CLI imports, webhooks, au"
+      },
+      {
+        "name": "n8n-workflow-ops",
+        "category": "DEVOPS",
+        "usecase": "N8n workflow ops tool for devops operations.",
+        "desc": "N8n workflow ops tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /n8n for n8n-headless-ops (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "oci",
+    "title": "OCI",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "oci"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "oci-cloud-vm-ops",
+        "category": "DEVOPS",
+        "usecase": "Use when managing OCI Always Free VMs/volumes.",
+        "desc": "Use when managing OCI Always Free VMs/volumes."
+      }
+    ],
+    "prompt": "Activate /oci for oci-cloud-vm-ops (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "ops",
+    "title": "OPS",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "ops"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "ops-approval-gate",
+        "category": "DEVOPS",
+        "usecase": "Ops approval gate tool for devops operations.",
+        "desc": "Ops approval gate tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /ops for ops-approval-gate (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "paper",
+    "title": "PAPER",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "paper"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "paper-trading-desk-ops",
+        "category": "DEVOPS",
+        "usecase": "Paper trading desk ops tool for devops operations.",
+        "desc": "Paper trading desk ops tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /paper for paper-trading-desk-ops (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "persistent",
+    "title": "PERSISTENT",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "persistent"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "persistent-browser-workflow",
+        "category": "DEVOPS",
+        "usecase": "Persistent browser workflow tool for devops operations.",
+        "desc": "Persistent browser workflow tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /persistent for persistent-browser-workflow (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "postgres",
+    "title": "POSTGRES",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "postgres"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "postgres-lane",
+        "category": "DEVOPS",
+        "usecase": "Postgres lane tool for devops operations.",
+        "desc": "Postgres lane tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /postgres for postgres-lane (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "private",
+    "title": "PRIVATE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "private"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "private-web-gating",
+        "category": "DEVOPS",
+        "usecase": "Private web gating tool for devops operations.",
+        "desc": "Private web gating tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /private for private-web-gating (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "reverse",
+    "title": "REVERSE SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS",
+      "TOP-LEVEL"
+    ],
+    "aliases": [
+      "reverse"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "reverse-engineering-lane",
+        "category": "DEVOPS",
+        "usecase": "Use when triaging or decompiling a binary/APK/firmware.",
+        "desc": "Use when triaging or decompiling a binary/APK/firmware."
+      },
+      {
+        "name": "reverse-engineer-anything",
+        "category": "TOP-LEVEL",
+        "usecase": "Reverse engineer anything tool for top-level operations.",
+        "desc": "Reverse engineer anything tool for top-level operations."
+      }
+    ],
+    "prompt": "Activate /reverse for reverse-engineering-lane (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "rustdesk",
+    "title": "RUSTDESK",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "rustdesk"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "rustdesk-headless-vm-access",
+        "category": "DEVOPS",
+        "usecase": "Use when giving a user RustDesk access to a headless VM.",
+        "desc": "Use when giving a user RustDesk access to a headless VM."
+      }
+    ],
+    "prompt": "Activate /rustdesk for rustdesk-headless-vm-access (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "saas",
+    "title": "SAAS",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "saas"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "saas-observability",
+        "category": "DEVOPS",
+        "usecase": "Saas observability tool for devops operations.",
+        "desc": "Saas observability tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /saas for saas-observability (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "sap",
+    "title": "SAP",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "sap"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "sap-integration-connectors",
+        "category": "DEVOPS",
+        "usecase": "Use when doing SAP integration or SAP-facing client work.",
+        "desc": "Use when doing SAP integration or SAP-facing client work."
+      }
+    ],
+    "prompt": "Activate /sap for sap-integration-connectors (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "review",
+    "title": "REVIEW SUITE",
+    "category": "LEGAL",
+    "categories": [
+      "LEGAL",
+      "DEVOPS",
+      "SOFTWARE DEVELOPMENT",
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "review",
+      "qa",
+      "rea",
+      "egm",
+      "audit",
+      "review"
+    ],
+    "subskill_count": 5,
+    "subskills": [
+      {
+        "name": "sdlc-review",
+        "category": "DEVOPS",
+        "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+        "desc": "Review Kanban handoffs and route verified outcomes."
+      },
+      {
+        "name": "weekly-review-planning",
+        "category": "PRODUCTIVITY",
+        "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+        "desc": "Weekly reset: commitments, stalled work, next-week plan."
+      },
+      {
+        "name": "requesting-code-review",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+        "desc": "Use for verifying code before commit or push."
+      },
+      {
+        "name": "software-architecture-review",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+        "desc": "Software architecture review tool for software development operations."
+      },
+      {
+        "name": "contract-legal-review",
+        "category": "LEGAL",
+        "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+        "desc": "Contract legal review tool for legal operations."
+      }
+    ],
+    "prompt": "Activate /review for sdlc-review (covers 5 subskills)"
+  },
+  {
+    "unified_trigger": "secrets",
+    "title": "SECRETS",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "secrets"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "secrets-vault-ops",
+        "category": "DEVOPS",
+        "usecase": "Use when handling VM secrets - store, rotate, audit leaks.",
+        "desc": "Use when handling VM secrets - store, rotate, audit leaks"
+      }
+    ],
+    "prompt": "Activate /secrets for secrets-vault-ops (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "selfqa",
+    "title": "SELFQA",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "selfqa"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "selfqa-instrument-calibration",
+        "category": "DEVOPS",
+        "usecase": "Use when auditing your own QA gates or graders.",
+        "desc": "Use when auditing your own QA gates or graders."
+      }
+    ],
+    "prompt": "Activate /selfqa for selfqa-instrument-calibration (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "shopify",
+    "title": "SHOPIFY SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS",
+      "MARKETING",
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "shopify"
+    ],
+    "subskill_count": 3,
+    "subskills": [
+      {
+        "name": "shopify-headless-ops",
+        "category": "DEVOPS",
+        "usecase": "Use when Shopify app/admin access chahiye headless VM pe.",
+        "desc": "Use when Shopify app/admin access chahiye headless VM pe."
+      },
+      {
+        "name": "shopify-whatsapp-bot",
+        "category": "PRODUCTIVITY",
+        "usecase": "Shopify webhook to WhatsApp alert and AI bot integration.",
+        "desc": "Shopify webhook to WhatsApp alert and AI bot integration."
+      },
+      {
+        "name": "shopify-ad-creatives",
+        "category": "MARKETING",
+        "usecase": "Shopify ad creatives tool for marketing operations.",
+        "desc": "Shopify ad creatives tool for marketing operations."
+      }
+    ],
+    "prompt": "Activate /shopify for shopify-headless-ops (covers 3 subskills)"
+  },
+  {
+    "unified_trigger": "sqlite",
+    "title": "SQLITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "sqlite"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "sqlite-db-ops",
+        "category": "DEVOPS",
+        "usecase": "Sqlite db ops tool for devops operations.",
+        "desc": "Sqlite db ops tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /sqlite for sqlite-db-ops (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "telegram",
+    "title": "TELEGRAM SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS",
+      "SOCIAL-MEDIA"
+    ],
+    "aliases": [
+      "telegram"
+    ],
+    "subskill_count": 4,
+    "subskills": [
+      {
+        "name": "telegram-bot-ops",
+        "category": "DEVOPS",
+        "usecase": "Use when running Telegram long-poll bots on servers.",
+        "desc": "Use when running Telegram long-poll bots on servers."
+      },
+      {
+        "name": "telegram-gateway-ops",
+        "category": "DEVOPS",
+        "usecase": "Telegram gateway ops tool for devops operations.",
+        "desc": "Telegram gateway ops tool for devops operations."
+      },
+      {
+        "name": "telegram-job-channel-ops",
+        "category": "DEVOPS",
+        "usecase": "Telegram job channel ops tool for devops operations.",
+        "desc": "Telegram job channel ops tool for devops operations."
+      },
+      {
+        "name": "telegram-content-bot",
+        "category": "SOCIAL-MEDIA",
+        "usecase": "Telegram content bot tool for social-media operations.",
+        "desc": "Telegram content bot tool for social-media operations."
+      }
+    ],
+    "prompt": "Activate /telegram for telegram-bot-ops (covers 4 subskills)"
+  },
+  {
+    "unified_trigger": "untrusted",
+    "title": "UNTRUSTED",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "untrusted"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "untrusted-code-sandbox-lane",
+        "category": "DEVOPS",
+        "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+        "desc": "Use when sandboxing untrusted code or walling lane egress"
+      }
+    ],
+    "prompt": "Activate /untrusted for untrusted-code-sandbox-lane (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "uptime",
+    "title": "UPTIME",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "uptime"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "uptime-monitoring",
+        "category": "DEVOPS",
+        "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+        "desc": "Uptime monitoring tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /uptime for uptime-monitoring (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "vm",
+    "title": "VM SUITE",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "vm"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "vm-disk-cleanup",
+        "category": "DEVOPS",
+        "usecase": "Automated garbage collection, disk recovery, and operational hygiene.",
+        "desc": "Use when a cloud VM disk is full or cleanup is requested."
+      },
+      {
+        "name": "vm-infra-map",
+        "category": "DEVOPS",
+        "usecase": "Vm infra map tool for devops operations.",
+        "desc": "Vm infra map tool for devops operations."
+      }
+    ],
+    "prompt": "Activate /vm for vm-disk-cleanup (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "web",
+    "title": "WEB",
+    "category": "DEVOPS",
+    "categories": [
+      "DEVOPS"
+    ],
+    "aliases": [
+      "web"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "web-site-qa-lane",
+        "category": "DEVOPS",
+        "usecase": "Use when auditing a live site: a11y, layout, SEO.",
+        "desc": "Use when auditing a live site: a11y, layout, SEO."
+      }
+    ],
+    "prompt": "Activate /web for web-site-qa-lane (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "airtable",
+    "title": "AIRTABLE",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "airtable"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "airtable",
+        "category": "PRODUCTIVITY",
+        "usecase": "Airtable REST API via curl.",
+        "desc": "Airtable REST API via curl. Records CRUD, filters, upsert"
+      }
+    ],
+    "prompt": "Activate /airtable for airtable (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "asd",
+    "title": "ASD",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "asd"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "asd-ste100-writing",
+        "category": "PRODUCTIVITY",
+        "usecase": "Asd ste100 writing tool for productivity operations.",
+        "desc": "Asd ste100 writing tool for productivity operations."
+      }
+    ],
+    "prompt": "Activate /asd for asd-ste100-writing (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "bilingual",
+    "title": "BILINGUAL",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "bilingual"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "bilingual-rtl-client-site",
+        "category": "PRODUCTIVITY",
+        "usecase": "Add a genuine RTL Arabic edition/tab to a client site.",
+        "desc": "Add a genuine RTL Arabic edition/tab to a client site."
+      }
+    ],
+    "prompt": "Activate /bilingual for bilingual-rtl-client-site (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "bim",
+    "title": "BIM",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "bim"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "bim-revit-coach",
+        "category": "PRODUCTIVITY",
+        "usecase": "Use when coaching Aamir BIM/Revit lessons & quizzes.",
+        "desc": "Use when coaching Aamir BIM/Revit lessons & quizzes."
+      }
+    ],
+    "prompt": "Activate /bim for bim-revit-coach (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "box",
+    "title": "BOX",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "box"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "box",
+        "category": "PRODUCTIVITY",
+        "usecase": "Box tool for productivity operations.",
+        "desc": "Box tool for productivity operations."
+      }
+    ],
+    "prompt": "Activate /box for box (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "chrome",
+    "title": "CHROME",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "chrome"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "chrome-print-pdf-production",
+        "category": "PRODUCTIVITY",
+        "usecase": "Use when producing branded PDFs from HTML via Chrome.",
+        "desc": "Use when producing branded PDFs from HTML via Chrome."
+      }
+    ],
+    "prompt": "Activate /chrome for chrome-print-pdf-production (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "client",
+    "title": "CLIENT SUITE",
+    "category": "MEDIA",
+    "categories": [
+      "MEDIA",
+      "PRODUCTIVITY",
+      "CLIENT-SUCCESS"
+    ],
+    "aliases": [
+      "client"
+    ],
+    "subskill_count": 3,
+    "subskills": [
+      {
+        "name": "client-website-delivery",
+        "category": "PRODUCTIVITY",
+        "usecase": "Use when building or deploying a client website.",
+        "desc": "Use when building or deploying a client website."
+      },
+      {
+        "name": "client-video-ad-production",
+        "category": "MEDIA",
+        "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+        "desc": "Use when producing or replicating a promo/ad video."
+      },
+      {
+        "name": "client-success-ops",
+        "category": "CLIENT-SUCCESS",
+        "usecase": "Client success ops tool for client-success operations.",
+        "desc": "Client success ops tool for client-success operations."
+      }
+    ],
+    "prompt": "Activate /client for client-website-delivery (covers 3 subskills)"
+  },
+  {
+    "unified_trigger": "competitor",
+    "title": "COMPETITOR SUITE",
+    "category": "RESEARCH",
+    "categories": [
+      "RESEARCH",
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "competitor"
+    ],
+    "subskill_count": 3,
+    "subskills": [
+      {
+        "name": "competitor-seo-analysis",
+        "category": "PRODUCTIVITY",
+        "usecase": "Use when client needs SEO gap analysis vs competitors.",
+        "desc": "Use when client needs SEO gap analysis vs competitors."
+      },
+      {
+        "name": "competitor-landscape-research",
+        "category": "RESEARCH",
+        "usecase": "Use when mapping a category's competitors and prices.",
+        "desc": "Use when mapping a category's competitors and prices."
+      },
+      {
+        "name": "competitor-news-monitor",
+        "category": "RESEARCH",
+        "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+        "desc": "Watch named companies for material news; cited digests."
+      }
+    ],
+    "prompt": "Activate /competitor for competitor-seo-analysis (covers 3 subskills)"
+  },
+  {
+    "unified_trigger": "document",
+    "title": "DOCUMENT",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "document"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "document-to-action-items",
+        "category": "PRODUCTIVITY",
+        "usecase": "Extract cited obligations, deadlines, tasks from document.",
+        "desc": "Extract cited obligations, deadlines, tasks from document"
+      }
+    ],
+    "prompt": "Activate /document for document-to-action-items (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "docx",
+    "title": "DOCX",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "docx"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "docx",
+        "category": "PRODUCTIVITY",
+        "usecase": "Create, read, edit, template, and review Word.",
+        "desc": "Create, read, edit, template, and review Word .docx files"
+      }
+    ],
+    "prompt": "Activate /docx for docx (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "google",
+    "title": "GOOGLE SUITE",
+    "category": "MEDIA",
+    "categories": [
+      "MEDIA",
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "google"
+    ],
+    "subskill_count": 4,
+    "subskills": [
+      {
+        "name": "google-forms-builder",
+        "category": "PRODUCTIVITY",
+        "usecase": "Google forms builder tool for productivity operations.",
+        "desc": "Google forms builder tool for productivity operations."
+      },
+      {
+        "name": "google-forms-responses-extraction",
+        "category": "PRODUCTIVITY",
+        "usecase": "Use when pulling Google Form responses and uploads.",
+        "desc": "Use when pulling Google Form responses and uploads."
+      },
+      {
+        "name": "google-workspace",
+        "category": "PRODUCTIVITY",
+        "usecase": "Gmail, Calendar, Drive, Docs, Sheets via gws CLI or Pytho.",
+        "desc": "Gmail, Calendar, Drive, Docs, Sheets via gws CLI or Pytho"
+      },
+      {
+        "name": "google-flow-generation-ops",
+        "category": "MEDIA",
+        "usecase": "Use when generating via Google Flow (gflow CLI/MCP).",
+        "desc": "Use when generating via Google Flow (gflow CLI/MCP)."
+      }
+    ],
+    "prompt": "Activate /google for google-forms-builder (covers 4 subskills)"
+  },
+  {
+    "unified_trigger": "halal",
+    "title": "HALAL SUITE",
+    "category": "TRADING",
+    "categories": [
+      "TRADING",
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "halal"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "halal-investing-india",
+        "category": "PRODUCTIVITY",
+        "usecase": "Halal investing india tool for productivity operations.",
+        "desc": "Halal investing india tool for productivity operations."
+      },
+      {
+        "name": "halal-trade-bot",
+        "category": "TRADING",
+        "usecase": "Halal trade bot tool for trading operations.",
+        "desc": "Halal trade bot tool for trading operations."
+      }
+    ],
+    "prompt": "Activate /halal for halal-investing-india (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "job",
+    "title": "JOB",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "job"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "job-application-packs",
+        "category": "PRODUCTIVITY",
+        "usecase": "Use when generating Aamir job-application packs.",
+        "desc": "Use when generating Aamir job-application packs."
+      }
+    ],
+    "prompt": "Activate /job for job-application-packs (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "latex",
+    "title": "LATEX",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "latex"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "latex-overleaf-mcp",
+        "category": "PRODUCTIVITY",
+        "usecase": "Use when authoring/compiling LaTeX PDFs or syncing Overle.",
+        "desc": "Use when authoring/compiling LaTeX PDFs or syncing Overle"
+      }
+    ],
+    "prompt": "Activate /latex for latex-overleaf-mcp (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "maps",
+    "title": "MAPS",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "maps"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "maps",
+        "category": "PRODUCTIVITY",
+        "usecase": "Geocode, POIs, routes, timezones via OpenStreetMap/OSRM.",
+        "desc": "Geocode, POIs, routes, timezones via OpenStreetMap/OSRM."
+      }
+    ],
+    "prompt": "Activate /maps for maps (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "meeting",
+    "title": "MEETING",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "meeting"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "meeting-action-items",
+        "category": "PRODUCTIVITY",
+        "usecase": "Turn meeting notes into cited decisions, owners, tickets.",
+        "desc": "Turn meeting notes into cited decisions, owners, tickets."
+      }
+    ],
+    "prompt": "Activate /meeting for meeting-action-items (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "nano",
+    "title": "NANO",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "nano"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "nano-pdf",
+        "category": "PRODUCTIVITY",
+        "usecase": "Edit text in existing PDFs via natural-language prompts.",
+        "desc": "Edit text in existing PDFs via natural-language prompts."
+      }
+    ],
+    "prompt": "Activate /nano for nano-pdf (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "notion",
+    "title": "NOTION",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "notion"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "notion",
+        "category": "PRODUCTIVITY",
+        "usecase": "Notion API + ntn CLI: pages, databases, markdown, Workers.",
+        "desc": "Notion API + ntn CLI: pages, databases, markdown, Workers"
+      }
+    ],
+    "prompt": "Activate /notion for notion (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "ocr",
+    "title": "OCR",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "ocr"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "ocr-and-documents",
+        "category": "PRODUCTIVITY",
+        "usecase": "Extract text from PDFs/scans (pymupdf, marker-pdf).",
+        "desc": "Extract text from PDFs/scans (pymupdf, marker-pdf)."
+      }
+    ],
+    "prompt": "Activate /ocr for ocr-and-documents (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "pdf",
+    "title": "PDF",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "pdf"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "pdf",
+        "category": "PRODUCTIVITY",
+        "usecase": "Create, read, merge, fill, and secure PDF files.",
+        "desc": "Create, read, merge, fill, and secure PDF files."
+      }
+    ],
+    "prompt": "Activate /pdf for pdf (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "powerpoint",
+    "title": "POWERPOINT",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "powerpoint"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "powerpoint",
+        "category": "PRODUCTIVITY",
+        "usecase": "Create, read, edit.",
+        "desc": "Create, read, edit .pptx decks with python-pptx."
+      }
+    ],
+    "prompt": "Activate /powerpoint for powerpoint (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "product",
+    "title": "PRODUCT",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "product"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "product-price-monitor",
+        "category": "PRODUCTIVITY",
+        "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+        "desc": "Watch product, flight, or listing prices; alert on target"
+      }
+    ],
+    "prompt": "Activate /product for product-price-monitor (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "remote",
+    "title": "REMOTE",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "remote"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "remote-job-application-pipeline",
+        "category": "PRODUCTIVITY",
+        "usecase": "Remote job application pipeline tool for productivity operations.",
+        "desc": "Remote job application pipeline tool for productivity operations."
+      }
+    ],
+    "prompt": "Activate /remote for remote-job-application-pipeline (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "session",
+    "title": "SESSION",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "session"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "session-librarian",
+        "category": "PRODUCTIVITY",
+        "usecase": "Organize sessions by prompt: find, rename, archive, prune.",
+        "desc": "Organize sessions by prompt: find, rename, archive, prune"
+      }
+    ],
+    "prompt": "Activate /session for session-librarian (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "sme",
+    "title": "SME",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "sme"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "sme-growth-advisory",
+        "category": "PRODUCTIVITY",
+        "usecase": "Use when growing an SME/family business's sales pipeline.",
+        "desc": "Use when growing an SME/family business's sales pipeline."
+      }
+    ],
+    "prompt": "Activate /sme for sme-growth-advisory (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "teams",
+    "title": "TEAMS",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "teams"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "teams-meeting-pipeline",
+        "category": "PRODUCTIVITY",
+        "usecase": "Teams meeting pipeline tool for productivity operations.",
+        "desc": "Teams meeting pipeline tool for productivity operations."
+      }
+    ],
+    "prompt": "Activate /teams for teams-meeting-pipeline (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "thinking",
+    "title": "THINKING",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "thinking"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "thinking-out-loud",
+        "category": "PRODUCTIVITY",
+        "usecase": "Use when a voice ramble lands before any build.",
+        "desc": "Use when a voice ramble lands before any build."
+      }
+    ],
+    "prompt": "Activate /thinking for thinking-out-loud (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "wordpress",
+    "title": "WORDPRESS",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "wordpress"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "wordpress-client-audit",
+        "category": "PRODUCTIVITY",
+        "usecase": "Verify, audit, and benchmark compliance across wordpress client audit.",
+        "desc": "Use when auditing/fixing client WordPress sites."
+      }
+    ],
+    "prompt": "Activate /wordpress for wordpress-client-audit (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "xlsx",
+    "title": "XLSX",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "xlsx"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "xlsx",
+        "category": "PRODUCTIVITY",
+        "usecase": "Create, read, edit Excel.",
+        "desc": "Create, read, edit Excel .xlsx workbooks and CSVs."
+      }
+    ],
+    "prompt": "Activate /xlsx for xlsx (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "zoom",
+    "title": "ZOOM",
+    "category": "PRODUCTIVITY",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "aliases": [
+      "zoom"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "zoom-recording-transcript",
+        "category": "PRODUCTIVITY",
+        "usecase": "Zoom recording transcript tool for productivity operations.",
+        "desc": "Zoom recording transcript tool for productivity operations."
+      }
+    ],
+    "prompt": "Activate /zoom for zoom-recording-transcript (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "code",
+    "title": "CODE SUITE",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT",
+      "AUTONOMOUS-AI-AGENTS"
+    ],
+    "aliases": [
+      "code"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "codebase-inspection",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+        "desc": "Inspect codebases w/ pygount: LOC, languages, ratios."
+      },
+      {
+        "name": "codex",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+        "desc": "Delegate coding to OpenAI Codex CLI (features, PRs)."
+      }
+    ],
+    "prompt": "Activate /code for codebase-inspection (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "commit",
+    "title": "COMMIT",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "commit"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "commit-archaeologist",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Use when tracing why a line, function or file exists befo.",
+        "desc": "Use when tracing why a line, function or file exists befo"
+      }
+    ],
+    "prompt": "Activate /commit for commit-archaeologist (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "dependency",
+    "title": "DEPENDENCY",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "dependency"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "dependency-doctor",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Use when auditing a dependency manifest (requirements.",
+        "desc": "Use when auditing a dependency manifest (requirements.txt"
+      }
+    ],
+    "prompt": "Activate /dependency for dependency-doctor (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "dogfood",
+    "title": "DOGFOOD",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "dogfood"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "dogfood",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Exploratory QA of web apps: find bugs, evidence, reports.",
+        "desc": "Exploratory QA of web apps: find bugs, evidence, reports."
+      }
+    ],
+    "prompt": "Activate /dogfood for dogfood (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "github",
+    "title": "GITHUB SUITE",
+    "category": "GITHUB",
+    "categories": [
+      "GITHUB",
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "github"
+    ],
+    "subskill_count": 9,
+    "subskills": [
+      {
+        "name": "github",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Github tool for software development operations.",
+        "desc": "Github tool for software development operations."
+      },
+      {
+        "name": "github-auth",
+        "category": "GITHUB",
+        "usecase": "GitHub auth setup: HTTPS tokens, SSH keys, gh CLI login.",
+        "desc": "GitHub auth setup: HTTPS tokens, SSH keys, gh CLI login."
+      },
+      {
+        "name": "github-code-review",
+        "category": "GITHUB",
+        "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+        "desc": "Review PRs: diffs, inline comments via gh or REST."
+      },
+      {
+        "name": "github-growth-engine",
+        "category": "GITHUB",
+        "usecase": "Use when boosting a GitHub account or its repos.",
+        "desc": "Use when boosting a GitHub account or its repos."
+      },
+      {
+        "name": "github-issue-to-pr",
+        "category": "GITHUB",
+        "usecase": "Carry a GitHub issue to a verified PR with honest CI stat.",
+        "desc": "Carry a GitHub issue to a verified PR with honest CI stat"
+      },
+      {
+        "name": "github-issues",
+        "category": "GITHUB",
+        "usecase": "Create, triage, label, assign GitHub issues via gh or RES.",
+        "desc": "Create, triage, label, assign GitHub issues via gh or RES"
+      },
+      {
+        "name": "github-pr-workflow",
+        "category": "GITHUB",
+        "usecase": "GitHub PR lifecycle: branch, commit, open, CI, merge.",
+        "desc": "GitHub PR lifecycle: branch, commit, open, CI, merge."
+      },
+      {
+        "name": "github-profile-growth",
+        "category": "GITHUB",
+        "usecase": "Github profile growth tool for github operations.",
+        "desc": "Github profile growth tool for github operations."
+      },
+      {
+        "name": "github-repo-management",
+        "category": "GITHUB",
+        "usecase": "Clone/create/fork repos; manage remotes, releases.",
+        "desc": "Clone/create/fork repos; manage remotes, releases."
+      }
+    ],
+    "prompt": "Activate /github for github (covers 9 subskills)"
+  },
+  {
+    "unified_trigger": "inspecting",
+    "title": "INSPECTING",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "inspecting"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "inspecting-hermes-desktop-dom",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Read the live Hermes desktop DOM/CSS over CDP.",
+        "desc": "Read the live Hermes desktop DOM/CSS over CDP."
+      }
+    ],
+    "prompt": "Activate /inspecting for inspecting-hermes-desktop-dom (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "javascript",
+    "title": "JAVASCRIPT",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "javascript"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "javascript-typescript-lane",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Javascript typescript lane tool for software development operations.",
+        "desc": "Javascript typescript lane tool for software development operations."
+      }
+    ],
+    "prompt": "Activate /javascript for javascript-typescript-lane (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "mobile",
+    "title": "MOBILE",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "mobile"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "mobile-app-lane",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Mobile app lane tool for software development operations.",
+        "desc": "Mobile app lane tool for software development operations."
+      }
+    ],
+    "prompt": "Activate /mobile for mobile-app-lane (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "debug",
+    "title": "DEBUG SUITE",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "debug"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "node-inspect-debugger",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Debug Node.",
+        "desc": "Debug Node.js via --inspect + Chrome DevTools Protocol CL"
+      },
+      {
+        "name": "python-debugpy",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Debug Python: pdb REPL + debugpy remote (DAP).",
+        "desc": "Debug Python: pdb REPL + debugpy remote (DAP)."
+      }
+    ],
+    "prompt": "Activate /debug for node-inspect-debugger (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "nodejs",
+    "title": "NODEJS",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "nodejs"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "nodejs-service-lane",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Nodejs service lane tool for software development operations.",
+        "desc": "Nodejs service lane tool for software development operations."
+      }
+    ],
+    "prompt": "Activate /nodejs for nodejs-service-lane (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "plan",
+    "title": "PLAN",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "plan"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "plan",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Write a markdown plan to.",
+        "desc": "Write a markdown plan to .hermes/plans/; no execution."
+      }
+    ],
+    "prompt": "Activate /plan for plan (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "qa",
+    "title": "QA",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "qa",
+      "qa",
+      "rea",
+      "egm",
+      "audit",
+      "review"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "qa-harness-audit",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Verify, audit, and benchmark compliance across qa harness audit.",
+        "desc": "Qa harness audit tool for software development operations."
+      }
+    ],
+    "prompt": "Activate /qa for qa-harness-audit (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "repo2prompt",
+    "title": "REPO2PROMPT",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "repo2prompt"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "repo2prompt-local",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Reverse a repo/site into a build brief privately, offline.",
+        "desc": "Reverse a repo/site into a build brief privately, offline"
+      }
+    ],
+    "prompt": "Activate /repo2prompt for repo2prompt-local (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "scope",
+    "title": "SCOPE",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "scope"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "scope-creep-detector",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Use when a diff outgrew its stated intent.",
+        "desc": "Use when a diff outgrew its stated intent."
+      }
+    ],
+    "prompt": "Activate /scope for scope-creep-detector (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "simplify",
+    "title": "SIMPLIFY",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "simplify"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "simplify-code",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+        "desc": "Parallel 4-agent cleanup of recent code changes."
+      }
+    ],
+    "prompt": "Activate /simplify for simplify-code (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "spike",
+    "title": "SPIKE",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "spike"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "spike",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Throwaway experiments to validate an idea before build.",
+        "desc": "Throwaway experiments to validate an idea before build."
+      }
+    ],
+    "prompt": "Activate /spike for spike (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "system",
+    "title": "SYSTEM SUITE",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "system"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "system-one-decision-gate",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Use for typed cheap decision gates (routing, triage).",
+        "desc": "Use for typed cheap decision gates (routing, triage)."
+      },
+      {
+        "name": "systematic-debugging",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "4-phase root cause debugging: understand bugs before fixi.",
+        "desc": "4-phase root cause debugging: understand bugs before fixi"
+      }
+    ],
+    "prompt": "Activate /system for system-one-decision-gate (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "test",
+    "title": "TEST",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "test"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "test-driven-development",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+        "desc": "TDD: enforce RED-GREEN-REFACTOR, tests before code."
+      }
+    ],
+    "prompt": "Activate /test for test-driven-development (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "typesafe",
+    "title": "TYPESAFE",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "typesafe"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "typesafe-decisions",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Use when a task needs typed, calibrated decisions.",
+        "desc": "Use when a task needs typed, calibrated decisions."
+      }
+    ],
+    "prompt": "Activate /typesafe for typesafe-decisions (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "verify",
+    "title": "VERIFY SUITE",
+    "category": "SOFTWARE DEVELOPMENT",
+    "categories": [
+      "SOFTWARE DEVELOPMENT"
+    ],
+    "aliases": [
+      "verify",
+      "qa",
+      "rea",
+      "egm",
+      "audit",
+      "review"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "verification-before-completion",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Use before claiming work is done or fixed.",
+        "desc": "Use before claiming work is done or fixed."
+      },
+      {
+        "name": "verification-first",
+        "category": "SOFTWARE DEVELOPMENT",
+        "usecase": "Verification first tool for software development operations.",
+        "desc": "Verification first tool for software development operations."
+      }
+    ],
+    "prompt": "Activate /verify for verification-before-completion (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "architecture",
+    "title": "ARCHITECTURE",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "architecture"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "architecture-diagram",
+        "category": "CREATIVE",
+        "usecase": "Dark-themed SVG architecture/cloud/infra diagrams as HTML.",
+        "desc": "Dark-themed SVG architecture/cloud/infra diagrams as HTML"
+      }
+    ],
+    "prompt": "Activate /architecture for architecture-diagram (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "ascii",
+    "title": "ASCII",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "ascii"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "ascii-art",
+        "category": "CREATIVE",
+        "usecase": "ASCII art: pyfiglet, cowsay, boxes, image-to-ascii.",
+        "desc": "ASCII art: pyfiglet, cowsay, boxes, image-to-ascii."
+      }
+    ],
+    "prompt": "Activate /ascii for ascii-art (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "video",
+    "title": "VIDEO SUITE",
+    "category": "MEDIA",
+    "categories": [
+      "MEDIA",
+      "CREATIVE"
+    ],
+    "aliases": [
+      "video"
+    ],
+    "subskill_count": 6,
+    "subskills": [
+      {
+        "name": "audi-video",
+        "category": "CREATIVE",
+        "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+        "desc": "Audi video tool for creative operations."
+      },
+      {
+        "name": "manim-video",
+        "category": "CREATIVE",
+        "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+        "desc": "Manim video tool for creative operations."
+      },
+      {
+        "name": "fal-video-generation",
+        "category": "MEDIA",
+        "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+        "desc": "Use when generating fal.ai video or judging a fal promo."
+      },
+      {
+        "name": "ksa-hospitality-video-lane",
+        "category": "MEDIA",
+        "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+        "desc": "Use when building the weekly KSA Luxe Wave video."
+      },
+      {
+        "name": "luxewave-video-ad-pipeline",
+        "category": "MEDIA",
+        "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+        "desc": "Build 30s LuxeWave/Hospitality ads from Flow-credit image"
+      },
+      {
+        "name": "ui-demo-video-production",
+        "category": "MEDIA",
+        "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+        "desc": "Use when making product demo videos from real app UI + VO"
+      }
+    ],
+    "prompt": "Activate /video for audi-video (covers 6 subskills)"
+  },
+  {
+    "unified_trigger": "baoyu",
+    "title": "BAOYU",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "baoyu"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "baoyu-infographic",
+        "category": "CREATIVE",
+        "usecase": "Baoyu infographic tool for creative operations.",
+        "desc": "Baoyu infographic tool for creative operations."
+      }
+    ],
+    "prompt": "Activate /baoyu for baoyu-infographic (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "claude",
+    "title": "CLAUDE SUITE",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "categories": [
+      "AUTONOMOUS-AI-AGENTS",
+      "CREATIVE"
+    ],
+    "aliases": [
+      "claude"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "claude-design",
+        "category": "CREATIVE",
+        "usecase": "Design one-off HTML artifacts (landing, deck, prototype).",
+        "desc": "Design one-off HTML artifacts (landing, deck, prototype)."
+      },
+      {
+        "name": "claude-code",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+        "desc": "Delegate coding to Claude Code CLI (features, PRs)."
+      }
+    ],
+    "prompt": "Activate /claude for claude-design (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "comfyui",
+    "title": "COMFYUI",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "comfyui"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "comfyui",
+        "category": "CREATIVE",
+        "usecase": "Comfyui tool for creative operations.",
+        "desc": "Comfyui tool for creative operations."
+      }
+    ],
+    "prompt": "Activate /comfyui for comfyui (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "design",
+    "title": "DESIGN SUITE",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "design"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "design-intelligence",
+        "category": "CREATIVE",
+        "usecase": "Use when choosing UI style, palette, or UX rules.",
+        "desc": "Use when choosing UI style, palette, or UX rules."
+      },
+      {
+        "name": "design-md",
+        "category": "CREATIVE",
+        "usecase": "Design md tool for creative operations.",
+        "desc": "Design md tool for creative operations."
+      }
+    ],
+    "prompt": "Activate /design for design-intelligence (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "excalidraw",
+    "title": "EXCALIDRAW",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "excalidraw"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "excalidraw",
+        "category": "CREATIVE",
+        "usecase": "Hand-drawn Excalidraw JSON diagrams (arch, flow, seq).",
+        "desc": "Hand-drawn Excalidraw JSON diagrams (arch, flow, seq)."
+      }
+    ],
+    "prompt": "Activate /excalidraw for excalidraw (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "first",
+    "title": "FIRST",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "first"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "first-reader",
+        "category": "CREATIVE",
+        "usecase": "Use when checking whether a client-facing draft survives.",
+        "desc": "Use when checking whether a client-facing draft survives"
+      }
+    ],
+    "prompt": "Activate /first for first-reader (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "frontend",
+    "title": "FRONTEND",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "frontend"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "frontend-design",
+        "category": "CREATIVE",
+        "usecase": "Use when designing a client-facing page or UI.",
+        "desc": "Use when designing a client-facing page or UI."
+      }
+    ],
+    "prompt": "Activate /frontend for frontend-design (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "humanizer",
+    "title": "HUMANIZER",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "humanizer"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "humanizer",
+        "category": "CREATIVE",
+        "usecase": "Humanize text: strip AI-isms and add real voice.",
+        "desc": "Humanize text: strip AI-isms and add real voice."
+      }
+    ],
+    "prompt": "Activate /humanizer for humanizer (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "napkin",
+    "title": "NAPKIN",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "napkin"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "napkin-visual-api",
+        "category": "CREATIVE",
+        "usecase": "Napkin visual api tool for creative operations.",
+        "desc": "Napkin visual api tool for creative operations."
+      }
+    ],
+    "prompt": "Activate /napkin for napkin-visual-api (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "p5js",
+    "title": "P5JS",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "p5js"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "p5js",
+        "category": "CREATIVE",
+        "usecase": "P5js tool for creative operations.",
+        "desc": "P5js tool for creative operations."
+      }
+    ],
+    "prompt": "Activate /p5js for p5js (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "popular",
+    "title": "POPULAR",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "popular"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "popular-web-designs",
+        "category": "CREATIVE",
+        "usecase": "54 real design systems (Stripe, Linear, Vercel) as HTML/C.",
+        "desc": "54 real design systems (Stripe, Linear, Vercel) as HTML/C"
+      }
+    ],
+    "prompt": "Activate /popular for popular-web-designs (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "pretext",
+    "title": "PRETEXT",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "pretext"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "pretext",
+        "category": "CREATIVE",
+        "usecase": "Pretext tool for creative operations.",
+        "desc": "Pretext tool for creative operations."
+      }
+    ],
+    "prompt": "Activate /pretext for pretext (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "sketch",
+    "title": "SKETCH",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "sketch"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "sketch",
+        "category": "CREATIVE",
+        "usecase": "Throwaway HTML mockups: 2-3 design variants to compare.",
+        "desc": "Throwaway HTML mockups: 2-3 design variants to compare."
+      }
+    ],
+    "prompt": "Activate /sketch for sketch (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "songwriting",
+    "title": "SONGWRITING",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "songwriting"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "songwriting-and-ai-music",
+        "category": "CREATIVE",
+        "usecase": "Songwriting and ai music tool for creative operations.",
+        "desc": "Songwriting and ai music tool for creative operations."
+      }
+    ],
+    "prompt": "Activate /songwriting for songwriting-and-ai-music (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "static",
+    "title": "STATIC",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "static"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "static-site-publishing",
+        "category": "CREATIVE",
+        "usecase": "Static site publishing tool for creative operations.",
+        "desc": "Static site publishing tool for creative operations."
+      }
+    ],
+    "prompt": "Activate /static for static-site-publishing (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "touchdesigner",
+    "title": "TOUCHDESIGNER",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "touchdesigner"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "touchdesigner-mcp",
+        "category": "CREATIVE",
+        "usecase": "Touchdesigner mcp tool for creative operations.",
+        "desc": "Touchdesigner mcp tool for creative operations."
+      }
+    ],
+    "prompt": "Activate /touchdesigner for touchdesigner-mcp (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "ui",
+    "title": "UI",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "ui"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "ui-effect-libraries",
+        "category": "CREATIVE",
+        "usecase": "Use when a UI needs beam/orb/gooey/metal/image FX.",
+        "desc": "Use when a UI needs beam/orb/gooey/metal/image FX."
+      }
+    ],
+    "prompt": "Activate /ui for ui-effect-libraries (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "visual",
+    "title": "VISUAL",
+    "category": "CREATIVE",
+    "categories": [
+      "CREATIVE"
+    ],
+    "aliases": [
+      "visual"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "visual-design-critic",
+        "category": "CREATIVE",
+        "usecase": "Visual design critic tool for creative operations.",
+        "desc": "Visual design critic tool for creative operations."
+      }
+    ],
+    "prompt": "Activate /visual for visual-design-critic (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "app",
+    "title": "APP",
+    "category": "RESEARCH",
+    "categories": [
+      "RESEARCH"
+    ],
+    "aliases": [
+      "app"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "app-safety-evaluation",
+        "category": "RESEARCH",
+        "usecase": "Use when judging if an app is safe or replicable.",
+        "desc": "Use when judging if an app is safe or replicable."
+      }
+    ],
+    "prompt": "Activate /app for app-safety-evaluation (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "article",
+    "title": "ARTICLE",
+    "category": "RESEARCH",
+    "categories": [
+      "RESEARCH"
+    ],
+    "aliases": [
+      "article"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "article-analysis",
+        "category": "RESEARCH",
+        "usecase": "Article analysis tool for research operations.",
+        "desc": "Article analysis tool for research operations."
+      }
+    ],
+    "prompt": "Activate /article for article-analysis (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "arxiv",
+    "title": "ARXIV",
+    "category": "RESEARCH",
+    "categories": [
+      "RESEARCH"
+    ],
+    "aliases": [
+      "arxiv"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "arxiv",
+        "category": "RESEARCH",
+        "usecase": "Search arXiv papers by keyword, author, category, or ID.",
+        "desc": "Search arXiv papers by keyword, author, category, or ID."
+      }
+    ],
+    "prompt": "Activate /arxiv for arxiv (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "blogwatcher",
+    "title": "BLOGWATCHER",
+    "category": "RESEARCH",
+    "categories": [
+      "RESEARCH"
+    ],
+    "aliases": [
+      "blogwatcher"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "blogwatcher",
+        "category": "RESEARCH",
+        "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+        "desc": "Monitor blogs and RSS/Atom feeds via blogwatcher-cli tool"
+      }
+    ],
+    "prompt": "Activate /blogwatcher for blogwatcher (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "grounded",
+    "title": "GROUNDED",
+    "category": "RESEARCH",
+    "categories": [
+      "RESEARCH"
+    ],
+    "aliases": [
+      "grounded"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "grounded-citations",
+        "category": "RESEARCH",
+        "usecase": "Ground answers and documents in cited, verifiable sources.",
+        "desc": "Ground answers and documents in cited, verifiable sources"
+      }
+    ],
+    "prompt": "Activate /grounded for grounded-citations (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "ksa",
+    "title": "KSA",
+    "category": "RESEARCH",
+    "categories": [
+      "RESEARCH"
+    ],
+    "aliases": [
+      "ksa"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "ksa-tender-radar",
+        "category": "RESEARCH",
+        "usecase": "Ksa tender radar tool for research operations.",
+        "desc": "Ksa tender radar tool for research operations."
+      }
+    ],
+    "prompt": "Activate /ksa for ksa-tender-radar (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "lim",
+    "title": "LIM",
+    "category": "RESEARCH",
+    "categories": [
+      "RESEARCH"
+    ],
+    "aliases": [
+      "lim"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "lim-wiki",
+        "category": "RESEARCH",
+        "usecase": "Lim wiki tool for research operations.",
+        "desc": "Lim wiki tool for research operations."
+      }
+    ],
+    "prompt": "Activate /lim for lim-wiki (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "open",
+    "title": "OPEN SUITE",
+    "category": "GITHUB",
+    "categories": [
+      "GITHUB",
+      "RESEARCH"
+    ],
+    "aliases": [
+      "open"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "open-research-access",
+        "category": "RESEARCH",
+        "usecase": "Use when a paper is paywalled / you need a DOI's free cop.",
+        "desc": "Use when a paper is paywalled / you need a DOI's free cop"
+      },
+      {
+        "name": "open-source-publishing",
+        "category": "GITHUB",
+        "usecase": "Use when publishing a project to GitHub as a public repo.",
+        "desc": "Use when publishing a project to GitHub as a public repo."
+      }
+    ],
+    "prompt": "Activate /open for open-research-access (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "polymarket",
+    "title": "POLYMARKET",
+    "category": "RESEARCH",
+    "categories": [
+      "RESEARCH"
+    ],
+    "aliases": [
+      "polymarket"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "polymarket",
+        "category": "RESEARCH",
+        "usecase": "Polymarket tool for research operations.",
+        "desc": "Polymarket tool for research operations."
+      }
+    ],
+    "prompt": "Activate /polymarket for polymarket (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "research",
+    "title": "RESEARCH",
+    "category": "RESEARCH",
+    "categories": [
+      "RESEARCH"
+    ],
+    "aliases": [
+      "research"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "research-paper-writing",
+        "category": "RESEARCH",
+        "usecase": "Research paper writing tool for research operations.",
+        "desc": "Research paper writing tool for research operations."
+      }
+    ],
+    "prompt": "Activate /research for research-paper-writing (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "searxng",
+    "title": "SEARXNG",
+    "category": "RESEARCH",
+    "categories": [
+      "RESEARCH"
+    ],
+    "aliases": [
+      "searxng"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "searxng-search-lane",
+        "category": "RESEARCH",
+        "usecase": "Use when a task needs unmetered web search here.",
+        "desc": "Use when a task needs unmetered web search here."
+      }
+    ],
+    "prompt": "Activate /searxng for searxng-search-lane (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "tech",
+    "title": "TECH",
+    "category": "RESEARCH",
+    "categories": [
+      "RESEARCH"
+    ],
+    "aliases": [
+      "tech"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "tech-adoption-analysis",
+        "category": "RESEARCH",
+        "usecase": "Use when Aamir shares an AI/tech post: infra-fit verdict.",
+        "desc": "Use when Aamir shares an AI/tech post: infra-fit verdict."
+      }
+    ],
+    "prompt": "Activate /tech for tech-adoption-analysis (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "scraper",
+    "title": "SCRAPER",
+    "category": "RESEARCH",
+    "categories": [
+      "RESEARCH"
+    ],
+    "aliases": [
+      "scraper",
+      "scraping",
+      "scrape",
+      "crawler",
+      "extract"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "tiered-scraper-pipeline",
+        "category": "RESEARCH",
+        "usecase": "Use when Monitor X and tell me when it changes\\\".",
+        "desc": "Use when Monitor X and tell me when it changes\\\"."
+      }
+    ],
+    "prompt": "Activate /scraper for tiered-scraper-pipeline (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "agy",
+    "title": "AGY",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "categories": [
+      "AUTONOMOUS-AI-AGENTS"
+    ],
+    "aliases": [
+      "agy"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "agy-vertex-lane",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Agy vertex lane tool for autonomous-ai-agents operations.",
+        "desc": "Agy vertex lane tool for autonomous-ai-agents operations."
+      }
+    ],
+    "prompt": "Activate /agy for agy-vertex-lane (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "ai",
+    "title": "AI",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "categories": [
+      "AUTONOMOUS-AI-AGENTS"
+    ],
+    "aliases": [
+      "ai"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "ai-tool-adoption",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Ai tool adoption tool for autonomous-ai-agents operations.",
+        "desc": "Ai tool adoption tool for autonomous-ai-agents operations."
+      }
+    ],
+    "prompt": "Activate /ai for ai-tool-adoption (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "bot",
+    "title": "BOT",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "categories": [
+      "AUTONOMOUS-AI-AGENTS"
+    ],
+    "aliases": [
+      "bot"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "bot-architect",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Bot architect tool for autonomous-ai-agents operations.",
+        "desc": "Bot architect tool for autonomous-ai-agents operations."
+      }
+    ],
+    "prompt": "Activate /bot for bot-architect (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "caveman",
+    "title": "CAVEMAN",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "categories": [
+      "AUTONOMOUS-AI-AGENTS"
+    ],
+    "aliases": [
+      "caveman"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "caveman-learn",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Use when reviewing a Caveman learn report.",
+        "desc": "Use when reviewing a Caveman learn report."
+      }
+    ],
+    "prompt": "Activate /caveman for caveman-learn (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "computer",
+    "title": "COMPUTER",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "categories": [
+      "AUTONOMOUS-AI-AGENTS"
+    ],
+    "aliases": [
+      "computer"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "computer-use",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Drive the desktop in the background without stealing focu.",
+        "desc": "Drive the desktop in the background without stealing focu"
+      }
+    ],
+    "prompt": "Activate /computer for computer-use (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "delegate",
+    "title": "DELEGATE",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "categories": [
+      "AUTONOMOUS-AI-AGENTS"
+    ],
+    "aliases": [
+      "delegate"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "delegate-coding-cli",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Delegate coding cli tool for autonomous-ai-agents operations.",
+        "desc": "Delegate coding cli tool for autonomous-ai-agents operations."
+      }
+    ],
+    "prompt": "Activate /delegate for delegate-coding-cli (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "merge",
+    "title": "MERGE",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "categories": [
+      "AUTONOMOUS-AI-AGENTS"
+    ],
+    "aliases": [
+      "merge"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "merge-reconciler",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Neutral third-party resolution of agent merge conflicts.",
+        "desc": "Neutral third-party resolution of agent merge conflicts."
+      }
+    ],
+    "prompt": "Activate /merge for merge-reconciler (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "monitor",
+    "title": "MONITOR",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "categories": [
+      "AUTONOMOUS-AI-AGENTS"
+    ],
+    "aliases": [
+      "monitor"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "monitor-cron-lane",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+        "desc": "Monitor cron lane tool for autonomous-ai-agents operations."
+      }
+    ],
+    "prompt": "Activate /monitor for monitor-cron-lane (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "opencode",
+    "title": "OPENCODE",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "categories": [
+      "AUTONOMOUS-AI-AGENTS"
+    ],
+    "aliases": [
+      "opencode"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "opencode",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+        "desc": "Delegate coding to OpenCode CLI (features, PR review)."
+      }
+    ],
+    "prompt": "Activate /opencode for opencode (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "subagent",
+    "title": "SUBAGENT",
+    "category": "AUTONOMOUS-AI-AGENTS",
+    "categories": [
+      "AUTONOMOUS-AI-AGENTS"
+    ],
+    "aliases": [
+      "subagent",
+      "agm",
+      "agentic",
+      "autonomous",
+      "swarm"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "subagent-driven-development",
+        "category": "AUTONOMOUS-AI-AGENTS",
+        "usecase": "Inspect codebase architecture, run deep peer reviews, and catch bugs.",
+        "desc": "Use when running plan tasks via subagents."
+      }
+    ],
+    "prompt": "Activate /subagent for subagent-driven-development (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "api",
+    "title": "API",
+    "category": "MLOPS",
+    "categories": [
+      "MLOPS"
+    ],
+    "aliases": [
+      "api"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "api-balance-monitoring",
+        "category": "MLOPS",
+        "usecase": "Real-time health monitoring, metric tracking, and anomaly detection.",
+        "desc": "Api balance monitoring tool for mlops operations."
+      }
+    ],
+    "prompt": "Activate /api for api-balance-monitoring (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "audiocraft",
+    "title": "AUDIOCRAFT",
+    "category": "MLOPS",
+    "categories": [
+      "MLOPS"
+    ],
+    "aliases": [
+      "audiocraft"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "audiocraft",
+        "category": "MLOPS",
+        "usecase": "Audiocraft tool for mlops operations.",
+        "desc": "Audiocraft tool for mlops operations."
+      }
+    ],
+    "prompt": "Activate /audiocraft for audiocraft (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "eval",
+    "title": "EVAL",
+    "category": "MLOPS",
+    "categories": [
+      "MLOPS"
+    ],
+    "aliases": [
+      "eval"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "evaluating-llms-harness",
+        "category": "MLOPS",
+        "usecase": "Evaluating llms harness tool for mlops operations.",
+        "desc": "Evaluating llms harness tool for mlops operations."
+      }
+    ],
+    "prompt": "Activate /eval for evaluating-llms-harness (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "huggingface",
+    "title": "HUGGINGFACE",
+    "category": "MLOPS",
+    "categories": [
+      "MLOPS"
+    ],
+    "aliases": [
+      "huggingface"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "huggingface-hub",
+        "category": "MLOPS",
+        "usecase": "Huggingface hub tool for mlops operations.",
+        "desc": "Huggingface hub tool for mlops operations."
+      }
+    ],
+    "prompt": "Activate /huggingface for huggingface-hub (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "jev",
+    "title": "JEV",
+    "category": "MLOPS",
+    "categories": [
+      "MLOPS"
+    ],
+    "aliases": [
+      "jev"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "jev-cli-ops",
+        "category": "MLOPS",
+        "usecase": "Jev cli ops tool for mlops operations.",
+        "desc": "Jev cli ops tool for mlops operations."
+      }
+    ],
+    "prompt": "Activate /jev for jev-cli-ops (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "llama",
+    "title": "LLAMA",
+    "category": "MLOPS",
+    "categories": [
+      "MLOPS"
+    ],
+    "aliases": [
+      "llama"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "llama-cpp",
+        "category": "MLOPS",
+        "usecase": "Llama cpp tool for mlops operations.",
+        "desc": "Llama cpp tool for mlops operations."
+      }
+    ],
+    "prompt": "Activate /llama for llama-cpp (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "llm",
+    "title": "LLM",
+    "category": "MLOPS",
+    "categories": [
+      "MLOPS"
+    ],
+    "aliases": [
+      "llm"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "llm-eval-harness",
+        "category": "MLOPS",
+        "usecase": "Llm eval harness tool for mlops operations.",
+        "desc": "Llm eval harness tool for mlops operations."
+      }
+    ],
+    "prompt": "Activate /llm for llm-eval-harness (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "lm",
+    "title": "LM",
+    "category": "MLOPS",
+    "categories": [
+      "MLOPS"
+    ],
+    "aliases": [
+      "lm"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "lm-evaluation-harness",
+        "category": "MLOPS",
+        "usecase": "Lm evaluation harness tool for mlops operations.",
+        "desc": "Lm evaluation harness tool for mlops operations."
+      }
+    ],
+    "prompt": "Activate /lm for lm-evaluation-harness (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "multi",
+    "title": "MULTI",
+    "category": "MLOPS",
+    "categories": [
+      "MLOPS"
+    ],
+    "aliases": [
+      "multi"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "multi-agent-pipelines",
+        "category": "MLOPS",
+        "usecase": "Multi agent pipelines tool for mlops operations.",
+        "desc": "Multi agent pipelines tool for mlops operations."
+      }
+    ],
+    "prompt": "Activate /multi for multi-agent-pipelines (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "openviking",
+    "title": "OPENVIKING",
+    "category": "MLOPS",
+    "categories": [
+      "MLOPS"
+    ],
+    "aliases": [
+      "openviking"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "openviking-context-ops",
+        "category": "MLOPS",
+        "usecase": "Openviking context ops tool for mlops operations.",
+        "desc": "Openviking context ops tool for mlops operations."
+      }
+    ],
+    "prompt": "Activate /openviking for openviking-context-ops (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "rag",
+    "title": "RAG",
+    "category": "MLOPS",
+    "categories": [
+      "MLOPS"
+    ],
+    "aliases": [
+      "rag"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "rag-vector-search",
+        "category": "MLOPS",
+        "usecase": "Rag vector search tool for mlops operations.",
+        "desc": "Rag vector search tool for mlops operations."
+      }
+    ],
+    "prompt": "Activate /rag for rag-vector-search (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "segment",
+    "title": "SEGMENT",
+    "category": "MLOPS",
+    "categories": [
+      "MLOPS"
+    ],
+    "aliases": [
+      "segment"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "segment-anything",
+        "category": "MLOPS",
+        "usecase": "Segment anything tool for mlops operations.",
+        "desc": "Segment anything tool for mlops operations."
+      }
+    ],
+    "prompt": "Activate /segment for segment-anything (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "serving",
+    "title": "SERVING",
+    "category": "MLOPS",
+    "categories": [
+      "MLOPS"
+    ],
+    "aliases": [
+      "serving"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "serving-llms-vllm",
+        "category": "MLOPS",
+        "usecase": "Serving llms vllm tool for mlops operations.",
+        "desc": "Serving llms vllm tool for mlops operations."
+      }
+    ],
+    "prompt": "Activate /serving for serving-llms-vllm (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "vllm",
+    "title": "VLLM",
+    "category": "MLOPS",
+    "categories": [
+      "MLOPS"
+    ],
+    "aliases": [
+      "vllm"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "vllm",
+        "category": "MLOPS",
+        "usecase": "Vllm tool for mlops operations.",
+        "desc": "Vllm tool for mlops operations."
+      }
+    ],
+    "prompt": "Activate /vllm for vllm (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "weights",
+    "title": "WEIGHTS",
+    "category": "MLOPS",
+    "categories": [
+      "MLOPS"
+    ],
+    "aliases": [
+      "weights"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "weights-and-biases",
+        "category": "MLOPS",
+        "usecase": "Weights and biases tool for mlops operations.",
+        "desc": "Weights and biases tool for mlops operations."
+      }
+    ],
+    "prompt": "Activate /weights for weights-and-biases (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "awesome",
+    "title": "AWESOME",
+    "category": "GITHUB",
+    "categories": [
+      "GITHUB"
+    ],
+    "aliases": [
+      "awesome"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "awesome-list-generation",
+        "category": "GITHUB",
+        "usecase": "Use when building a curated awesome-list repo.",
+        "desc": "Use when building a curated awesome-list repo."
+      }
+    ],
+    "prompt": "Activate /awesome for awesome-list-generation (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "cold",
+    "title": "COLD SUITE",
+    "category": "EMAIL",
+    "categories": [
+      "EMAIL",
+      "GTM"
+    ],
+    "aliases": [
+      "cold"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "cold-email-tone-matrix",
+        "category": "GTM",
+        "usecase": "Use when choosing a cold email tone (6 tones, bilingual).",
+        "desc": "Use when choosing a cold email tone (6 tones, bilingual)."
+      },
+      {
+        "name": "cold-email-campaign-ops",
+        "category": "EMAIL",
+        "usecase": "Use when running cold-email waves or triaging replies.",
+        "desc": "Use when running cold-email waves or triaging replies."
+      }
+    ],
+    "prompt": "Activate /cold for cold-email-tone-matrix (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "content",
+    "title": "CONTENT",
+    "category": "GTM",
+    "categories": [
+      "GTM"
+    ],
+    "aliases": [
+      "content"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "content-integrity-guardrail",
+        "category": "GTM",
+        "usecase": "Use when shipping content claims \u2014 enforce proof tags.",
+        "desc": "Use when shipping content claims \u2014 enforce proof tags."
+      }
+    ],
+    "prompt": "Activate /content for content-integrity-guardrail (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "discovery",
+    "title": "DISCOVERY",
+    "category": "GTM",
+    "categories": [
+      "GTM"
+    ],
+    "aliases": [
+      "discovery"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "discovery-call-prep",
+        "category": "GTM",
+        "usecase": "Use when preparing discovery calls and questions.",
+        "desc": "Use when preparing discovery calls and questions."
+      }
+    ],
+    "prompt": "Activate /discovery for discovery-call-prep (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "domain",
+    "title": "DOMAIN",
+    "category": "GTM",
+    "categories": [
+      "GTM"
+    ],
+    "aliases": [
+      "domain"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "domain-flip-ops",
+        "category": "GTM",
+        "usecase": "Use when buying or reselling domain names (flips).",
+        "desc": "Use when buying or reselling domain names (flips)."
+      }
+    ],
+    "prompt": "Activate /domain for domain-flip-ops (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "etimad",
+    "title": "ETIMAD",
+    "category": "GTM",
+    "categories": [
+      "GTM"
+    ],
+    "aliases": [
+      "etimad"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "etimad-tender-board-refresh",
+        "category": "GTM",
+        "usecase": "Etimad tender board refresh tool for gtm operations.",
+        "desc": "Etimad tender board refresh tool for gtm operations."
+      }
+    ],
+    "prompt": "Activate /etimad for etimad-tender-board-refresh (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "exec",
+    "title": "EXEC",
+    "category": "GTM",
+    "categories": [
+      "GTM"
+    ],
+    "aliases": [
+      "exec"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "exec-search-company-ops",
+        "category": "GTM",
+        "usecase": "Use when continuing Aamir's exec-search company build.",
+        "desc": "Use when continuing Aamir's exec-search company build."
+      }
+    ],
+    "prompt": "Activate /exec for exec-search-company-ops (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "gtm",
+    "title": "GTM",
+    "category": "GTM",
+    "categories": [
+      "GTM"
+    ],
+    "aliases": [
+      "gtm"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "gtm-signal-outreach",
+        "category": "GTM",
+        "usecase": "Automate prospect identification, qualification, and high-conversion outreach.",
+        "desc": "Use when running an end-to-end GTM outreach loop."
+      }
+    ],
+    "prompt": "Activate /gtm for gtm-signal-outreach (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "leads",
+    "title": "LEADS",
+    "category": "GTM",
+    "categories": [
+      "GTM"
+    ],
+    "aliases": [
+      "leads"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "lead-signal-scoring",
+        "category": "GTM",
+        "usecase": "Automate prospect identification, qualification, and high-conversion outreach.",
+        "desc": "Use when ranking leads or finding warm intro paths."
+      }
+    ],
+    "prompt": "Activate /leads for lead-signal-scoring (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "linkedin",
+    "title": "LINKEDIN SUITE",
+    "category": "OUTREACH",
+    "categories": [
+      "OUTREACH",
+      "GTM"
+    ],
+    "aliases": [
+      "linkedin"
+    ],
+    "subskill_count": 3,
+    "subskills": [
+      {
+        "name": "linkedin-api-posting",
+        "category": "GTM",
+        "usecase": "Use when posting media to LinkedIn via REST API.",
+        "desc": "Use when posting media to LinkedIn via REST API."
+      },
+      {
+        "name": "linkedin-content-engine",
+        "category": "GTM",
+        "usecase": "Use when creating LinkedIn posts, comments, DMs, carousel.",
+        "desc": "Use when creating LinkedIn posts, comments, DMs, carousel"
+      },
+      {
+        "name": "linkedin-campaigns",
+        "category": "OUTREACH",
+        "usecase": "Linkedin campaigns tool for outreach operations.",
+        "desc": "Linkedin campaigns tool for outreach operations."
+      }
+    ],
+    "prompt": "Activate /linkedin for linkedin-api-posting (covers 3 subskills)"
+  },
+  {
+    "unified_trigger": "monetization",
+    "title": "MONETIZATION",
+    "category": "GTM",
+    "categories": [
+      "GTM"
+    ],
+    "aliases": [
+      "monetization"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "monetization-offer-gating",
+        "category": "GTM",
+        "usecase": "Use when pricing/selling a capability \u2014 gate each offer.",
+        "desc": "Use when pricing/selling a capability \u2014 gate each offer."
+      }
+    ],
+    "prompt": "Activate /monetization for monetization-offer-gating (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "voice",
+    "title": "VOICE SUITE",
+    "category": "MEDIA",
+    "categories": [
+      "MEDIA",
+      "GTM"
+    ],
+    "aliases": [
+      "voice"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "voice-profile-extraction",
+        "category": "GTM",
+        "usecase": "Use when copy must match a proven voice.",
+        "desc": "Use when copy must match a proven voice."
+      },
+      {
+        "name": "voice-cloning-tts",
+        "category": "MEDIA",
+        "usecase": "Use when building AI voice assistants with cloned voices.",
+        "desc": "Use when building AI voice assistants with cloned voices."
+      }
+    ],
+    "prompt": "Activate /voice for voice-profile-extraction (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "gif",
+    "title": "GIF",
+    "category": "MEDIA",
+    "categories": [
+      "MEDIA"
+    ],
+    "aliases": [
+      "gif"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "gif-search",
+        "category": "MEDIA",
+        "usecase": "Search/download GIFs from Tenor via curl + jq.",
+        "desc": "Search/download GIFs from Tenor via curl + jq."
+      }
+    ],
+    "prompt": "Activate /gif for gif-search (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "songsee",
+    "title": "SONGSEE",
+    "category": "MEDIA",
+    "categories": [
+      "MEDIA"
+    ],
+    "aliases": [
+      "songsee"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "songsee",
+        "category": "MEDIA",
+        "usecase": "Songsee tool for media operations.",
+        "desc": "Songsee tool for media operations."
+      }
+    ],
+    "prompt": "Activate /songsee for songsee (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "youtube",
+    "title": "YOUTUBE",
+    "category": "MEDIA",
+    "categories": [
+      "MEDIA"
+    ],
+    "aliases": [
+      "youtube"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "youtube-content",
+        "category": "MEDIA",
+        "usecase": "YouTube transcripts to summaries, threads, blogs.",
+        "desc": "YouTube transcripts to summaries, threads, blogs."
+      }
+    ],
+    "prompt": "Activate /youtube for youtube-content (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "dreamworkhq",
+    "title": "DREAMWORKHQ",
+    "category": "OUTREACH",
+    "categories": [
+      "OUTREACH"
+    ],
+    "aliases": [
+      "dreamworkhq"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "dreamworkhq-mcp-ops",
+        "category": "OUTREACH",
+        "usecase": "Dreamworkhq mcp ops tool for outreach operations.",
+        "desc": "Dreamworkhq mcp ops tool for outreach operations."
+      }
+    ],
+    "prompt": "Activate /dreamworkhq for dreamworkhq-mcp-ops (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "invertio",
+    "title": "INVERTIO SUITE",
+    "category": "OUTREACH",
+    "categories": [
+      "OUTREACH"
+    ],
+    "aliases": [
+      "invertio"
+    ],
+    "subskill_count": 3,
+    "subskills": [
+      {
+        "name": "invertio-content-production",
+        "category": "OUTREACH",
+        "usecase": "Invertio content production tool for outreach operations.",
+        "desc": "Invertio content production tool for outreach operations."
+      },
+      {
+        "name": "invertio-demo-sites",
+        "category": "OUTREACH",
+        "usecase": "Invertio demo sites tool for outreach operations.",
+        "desc": "Invertio demo sites tool for outreach operations."
+      },
+      {
+        "name": "invertio-video-production",
+        "category": "OUTREACH",
+        "usecase": "Programmatic asset generation, editing, and rendering pipelines.",
+        "desc": "Invertio video production tool for outreach operations."
+      }
+    ],
+    "prompt": "Activate /invertio for invertio-content-production (covers 3 subskills)"
+  },
+  {
+    "unified_trigger": "outreach",
+    "title": "OUTREACH",
+    "category": "OUTREACH",
+    "categories": [
+      "OUTREACH"
+    ],
+    "aliases": [
+      "outreach"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "outreach-service",
+        "category": "OUTREACH",
+        "usecase": "Automate prospect identification, qualification, and high-conversion outreach.",
+        "desc": "Outreach service tool for outreach operations."
+      }
+    ],
+    "prompt": "Activate /outreach for outreach-service (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "prospect",
+    "title": "PROSPECT",
+    "category": "OUTREACH",
+    "categories": [
+      "OUTREACH"
+    ],
+    "aliases": [
+      "prospect"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "prospect-outreach-packs",
+        "category": "OUTREACH",
+        "usecase": "Automate prospect identification, qualification, and high-conversion outreach.",
+        "desc": "Prospect outreach packs tool for outreach operations."
+      }
+    ],
+    "prompt": "Activate /prospect for prospect-outreach-packs (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "whatsapp",
+    "title": "WHATSAPP SUITE",
+    "category": "OUTREACH",
+    "categories": [
+      "OUTREACH"
+    ],
+    "aliases": [
+      "whatsapp"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "whatsapp-campaigns",
+        "category": "OUTREACH",
+        "usecase": "Whatsapp campaigns tool for outreach operations.",
+        "desc": "Whatsapp campaigns tool for outreach operations."
+      },
+      {
+        "name": "whatsapp-voice-digest-agent",
+        "category": "OUTREACH",
+        "usecase": "Whatsapp voice digest agent tool for outreach operations.",
+        "desc": "Whatsapp voice digest agent tool for outreach operations."
+      }
+    ],
+    "prompt": "Activate /whatsapp for whatsapp-campaigns (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "x",
+    "title": "X",
+    "category": "OUTREACH",
+    "categories": [
+      "OUTREACH"
+    ],
+    "aliases": [
+      "x"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "x-twitter-campaigns",
+        "category": "OUTREACH",
+        "usecase": "X twitter campaigns tool for outreach operations.",
+        "desc": "X twitter campaigns tool for outreach operations."
+      }
+    ],
+    "prompt": "Activate /x for x-twitter-campaigns (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "email",
+    "title": "EMAIL SUITE",
+    "category": "EMAIL",
+    "categories": [
+      "EMAIL"
+    ],
+    "aliases": [
+      "email"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "email-inbox-triage",
+        "category": "EMAIL",
+        "usecase": "Triage an inbox: prioritize threads, draft replies safely.",
+        "desc": "Triage an inbox: prioritize threads, draft replies safely"
+      },
+      {
+        "name": "email-lookup",
+        "category": "EMAIL",
+        "usecase": "Email lookup tool for email operations.",
+        "desc": "Email lookup tool for email operations."
+      }
+    ],
+    "prompt": "Activate /email for email-inbox-triage (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "gmail",
+    "title": "GMAIL",
+    "category": "EMAIL",
+    "categories": [
+      "EMAIL"
+    ],
+    "aliases": [
+      "gmail"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "gmail-quota-recovery",
+        "category": "EMAIL",
+        "usecase": "Use when Gmail/Google account is near full.",
+        "desc": "Use when Gmail/Google account is near full. Audit+purge."
+      }
+    ],
+    "prompt": "Activate /gmail for gmail-quota-recovery (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "himalaya",
+    "title": "HIMALAYA",
+    "category": "EMAIL",
+    "categories": [
+      "EMAIL"
+    ],
+    "aliases": [
+      "himalaya"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "himalaya",
+        "category": "EMAIL",
+        "usecase": "Himalaya CLI: IMAP/SMTP email from terminal.",
+        "desc": "Himalaya CLI: IMAP/SMTP email from terminal."
+      }
+    ],
+    "prompt": "Activate /himalaya for himalaya (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "craft",
+    "title": "CRAFT",
+    "category": "TOP-LEVEL",
+    "categories": [
+      "TOP-LEVEL"
+    ],
+    "aliases": [
+      "craft"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "craft-anything",
+        "category": "TOP-LEVEL",
+        "usecase": "Craft anything tool for top-level operations.",
+        "desc": "Craft anything tool for top-level operations."
+      }
+    ],
+    "prompt": "Activate /craft for craft-anything (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "graphify",
+    "title": "GRAPHIFY",
+    "category": "TOP-LEVEL",
+    "categories": [
+      "TOP-LEVEL"
+    ],
+    "aliases": [
+      "graphify"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "graphify",
+        "category": "TOP-LEVEL",
+        "usecase": "Graphify tool for top-level operations.",
+        "desc": "Graphify tool for top-level operations."
+      }
+    ],
+    "prompt": "Activate /graphify for graphify (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "remotework",
+    "title": "REMOTEWORK",
+    "category": "TOP-LEVEL",
+    "categories": [
+      "TOP-LEVEL"
+    ],
+    "aliases": [
+      "remotework"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "remotework-operator",
+        "category": "TOP-LEVEL",
+        "usecase": "Remotework operator tool for top-level operations.",
+        "desc": "Remotework operator tool for top-level operations."
+      }
+    ],
+    "prompt": "Activate /remotework for remotework-operator (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "yuanbao",
+    "title": "YUANBAO",
+    "category": "TOP-LEVEL",
+    "categories": [
+      "TOP-LEVEL"
+    ],
+    "aliases": [
+      "yuanbao"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "yuanbao",
+        "category": "TOP-LEVEL",
+        "usecase": "Yuanbao tool for top-level operations.",
+        "desc": "Yuanbao tool for top-level operations."
+      }
+    ],
+    "prompt": "Activate /yuanbao for yuanbao (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "amadora",
+    "title": "AMADORA",
+    "category": "MARKETING",
+    "categories": [
+      "MARKETING"
+    ],
+    "aliases": [
+      "amadora"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "amadora-ai-visibility",
+        "category": "MARKETING",
+        "usecase": "Amadora ai visibility tool for marketing operations.",
+        "desc": "Amadora ai visibility tool for marketing operations."
+      }
+    ],
+    "prompt": "Activate /amadora for amadora-ai-visibility (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "brand",
+    "title": "BRAND",
+    "category": "MARKETING",
+    "categories": [
+      "MARKETING"
+    ],
+    "aliases": [
+      "brand"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "brand-system",
+        "category": "MARKETING",
+        "usecase": "Brand system tool for marketing operations.",
+        "desc": "Brand system tool for marketing operations."
+      }
+    ],
+    "prompt": "Activate /brand for brand-system (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "seo",
+    "title": "SEO",
+    "category": "MARKETING",
+    "categories": [
+      "MARKETING"
+    ],
+    "aliases": [
+      "seo"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "seo-content-strategy",
+        "category": "MARKETING",
+        "usecase": "Seo content strategy tool for marketing operations.",
+        "desc": "Seo content strategy tool for marketing operations."
+      }
+    ],
+    "prompt": "Activate /seo for seo-content-strategy (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "apple",
+    "title": "APPLE SUITE",
+    "category": "APPLE",
+    "categories": [
+      "APPLE"
+    ],
+    "aliases": [
+      "apple"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "apple-notes",
+        "category": "APPLE",
+        "usecase": "Apple notes tool for apple operations.",
+        "desc": "Apple notes tool for apple operations."
+      },
+      {
+        "name": "apple-reminders",
+        "category": "APPLE",
+        "usecase": "Apple reminders tool for apple operations.",
+        "desc": "Apple reminders tool for apple operations."
+      }
+    ],
+    "prompt": "Activate /apple for apple-notes (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "findmy",
+    "title": "FINDMY",
+    "category": "APPLE",
+    "categories": [
+      "APPLE"
+    ],
+    "aliases": [
+      "findmy"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "findmy",
+        "category": "APPLE",
+        "usecase": "Findmy tool for apple operations.",
+        "desc": "Findmy tool for apple operations."
+      }
+    ],
+    "prompt": "Activate /findmy for findmy (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "imessage",
+    "title": "IMESSAGE",
+    "category": "APPLE",
+    "categories": [
+      "APPLE"
+    ],
+    "aliases": [
+      "imessage"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "imessage",
+        "category": "APPLE",
+        "usecase": "Imessage tool for apple operations.",
+        "desc": "Imessage tool for apple operations."
+      }
+    ],
+    "prompt": "Activate /imessage for imessage (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "agency",
+    "title": "AGENCY",
+    "category": "NOTE-TAKING",
+    "categories": [
+      "NOTE-TAKING"
+    ],
+    "aliases": [
+      "agency"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "agency-brain",
+        "category": "NOTE-TAKING",
+        "usecase": "Agency brain tool for note-taking operations.",
+        "desc": "Agency brain tool for note-taking operations."
+      }
+    ],
+    "prompt": "Activate /agency for agency-brain (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "markdown",
+    "title": "MARKDOWN",
+    "category": "NOTE-TAKING",
+    "categories": [
+      "NOTE-TAKING"
+    ],
+    "aliases": [
+      "markdown"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "markdown-brain-ops",
+        "category": "NOTE-TAKING",
+        "usecase": "Build or sweep a markdown brain / kb repo.",
+        "desc": "Build or sweep a markdown brain / kb repo."
+      }
+    ],
+    "prompt": "Activate /markdown for markdown-brain-ops (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "obsidian",
+    "title": "OBSIDIAN",
+    "category": "NOTE-TAKING",
+    "categories": [
+      "NOTE-TAKING"
+    ],
+    "aliases": [
+      "obsidian"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "obsidian",
+        "category": "NOTE-TAKING",
+        "usecase": "Read, search, create, and edit notes in the Obsidian vaul.",
+        "desc": "Read, search, create, and edit notes in the Obsidian vaul"
+      }
+    ],
+    "prompt": "Activate /obsidian for obsidian (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "finance",
+    "title": "FINANCE",
+    "category": "FINANCE",
+    "categories": [
+      "FINANCE"
+    ],
+    "aliases": [
+      "finance"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "finance-quotation-invoicing",
+        "category": "FINANCE",
+        "usecase": "Finance quotation invoicing tool for finance operations.",
+        "desc": "Finance quotation invoicing tool for finance operations."
+      }
+    ],
+    "prompt": "Activate /finance for finance-quotation-invoicing (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "payment",
+    "title": "PAYMENT SUITE",
+    "category": "FINANCE",
+    "categories": [
+      "FINANCE"
+    ],
+    "aliases": [
+      "payment"
+    ],
+    "subskill_count": 2,
+    "subskills": [
+      {
+        "name": "payment-gateway-ledger-integration",
+        "category": "FINANCE",
+        "usecase": "Payment gateway ledger integration tool for finance operations.",
+        "desc": "Payment gateway ledger integration tool for finance operations."
+      },
+      {
+        "name": "payment-gateway-readiness",
+        "category": "FINANCE",
+        "usecase": "Payment gateway readiness tool for finance operations.",
+        "desc": "Payment gateway readiness tool for finance operations."
+      }
+    ],
+    "prompt": "Activate /payment for payment-gateway-ledger-integration (covers 2 subskills)"
+  },
+  {
+    "unified_trigger": "microsoft",
+    "title": "MICROSOFT",
+    "category": "INTEGRATION",
+    "categories": [
+      "INTEGRATION"
+    ],
+    "aliases": [
+      "microsoft"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "microsoft-365-tenant-support",
+        "category": "INTEGRATION",
+        "usecase": "Microsoft 365 tenant support tool for integration operations.",
+        "desc": "Microsoft 365 tenant support tool for integration operations."
+      }
+    ],
+    "prompt": "Activate /microsoft for microsoft-365-tenant-support (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "saw",
+    "title": "SAW",
+    "category": "INTEGRATION",
+    "categories": [
+      "INTEGRATION"
+    ],
+    "aliases": [
+      "saw"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "saw-cli-oauth-connect",
+        "category": "INTEGRATION",
+        "usecase": "Saw cli oauth connect tool for integration operations.",
+        "desc": "Saw cli oauth connect tool for integration operations."
+      }
+    ],
+    "prompt": "Activate /saw for saw-cli-oauth-connect (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "uptimerobot",
+    "title": "UPTIMEROBOT",
+    "category": "INTEGRATION",
+    "categories": [
+      "INTEGRATION"
+    ],
+    "aliases": [
+      "uptimerobot"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "uptimerobot-api",
+        "category": "INTEGRATION",
+        "usecase": "Uptimerobot api tool for integration operations.",
+        "desc": "Uptimerobot api tool for integration operations."
+      }
+    ],
+    "prompt": "Activate /uptimerobot for uptimerobot-api (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "bluesky",
+    "title": "BLUESKY",
+    "category": "SOCIAL-MEDIA",
+    "categories": [
+      "SOCIAL-MEDIA"
+    ],
+    "aliases": [
+      "bluesky"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "bluesky-posting",
+        "category": "SOCIAL-MEDIA",
+        "usecase": "Post to Bluesky (bsky.",
+        "desc": "Post to Bluesky (bsky.social); 'bfly' is Bluesky shorthan"
+      }
+    ],
+    "prompt": "Activate /bluesky for bluesky-posting (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "xurl",
+    "title": "XURL",
+    "category": "SOCIAL-MEDIA",
+    "categories": [
+      "SOCIAL-MEDIA"
+    ],
+    "aliases": [
+      "xurl"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "xurl",
+        "category": "SOCIAL-MEDIA",
+        "usecase": "X/Twitter via xurl CLI: raw post search, posting, DM, med.",
+        "desc": "X/Twitter via xurl CLI: raw post search, posting, DM, med"
+      }
+    ],
+    "prompt": "Activate /xurl for xurl (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "kpi",
+    "title": "KPI",
+    "category": "ANALYTICS",
+    "categories": [
+      "ANALYTICS"
+    ],
+    "aliases": [
+      "kpi"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "kpi-business-dashboard",
+        "category": "ANALYTICS",
+        "usecase": "Kpi business dashboard tool for analytics operations.",
+        "desc": "Kpi business dashboard tool for analytics operations."
+      }
+    ],
+    "prompt": "Activate /kpi for kpi-business-dashboard (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "jupyter",
+    "title": "JUPYTER",
+    "category": "DATA-SCIENCE",
+    "categories": [
+      "DATA-SCIENCE"
+    ],
+    "aliases": [
+      "jupyter"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "jupyter-live-kernel",
+        "category": "DATA-SCIENCE",
+        "usecase": "Jupyter live kernel tool for data-science operations.",
+        "desc": "Jupyter live kernel tool for data-science operations."
+      }
+    ],
+    "prompt": "Activate /jupyter for jupyter-live-kernel (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "openhab",
+    "title": "OPENHAB",
+    "category": "SMART-HOME",
+    "categories": [
+      "SMART-HOME"
+    ],
+    "aliases": [
+      "openhab"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "openhab",
+        "category": "SMART-HOME",
+        "usecase": "Openhab tool for smart-home operations.",
+        "desc": "Openhab tool for smart-home operations."
+      }
+    ],
+    "prompt": "Activate /openhab for openhab (covers 1 subskills)"
+  },
+  {
+    "unified_trigger": "blocked",
+    "title": "BLOCKED",
+    "category": "WEB",
+    "categories": [
+      "WEB"
+    ],
+    "aliases": [
+      "blocked"
+    ],
+    "subskill_count": 1,
+    "subskills": [
+      {
+        "name": "blocked-page-recovery",
+        "category": "WEB",
+        "usecase": "Recover blocked/paywalled/WAF'd pages via fallbacks.",
+        "desc": "Recover blocked/paywalled/WAF'd pages via fallbacks."
+      }
+    ],
+    "prompt": "Activate /blocked for blocked-page-recovery (covers 1 subskills)"
+  }
+]

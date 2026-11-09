@@ -1,0 +1,44 @@
+name: Enterprise Skills Hub CI & Validation Gate
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate Registry Integrity & JSON Schema
+        run: |
+          python3 -c "
+          import json, sys
+          from pathlib import Path
+          
+          with open('registry/unified_index.json') as f:
+              unified = json.load(f)
+          with open('registry/canonical_index.json') as f:
+              canonical = json.load(f)
+
+          assert len(unified) > 0, 'Unified registry cannot be empty'
+          assert len(canonical) >= 290, f'Expected >= 290 skills, got {len(canonical)}'
+          print(f'✅ Registry Validated: {len(canonical)} skills across {len(unified)} unified triggers')
+          "
+
+      - name: Test Dynamic Router CLI (ghskill)
+        run: |
+          chmod +x bin/ghskill
+          ./bin/ghskill route "audit my attack surface"
+          ./bin/ghskill route "scrape web data"
+          ./bin/ghskill list --category DEVOPS
+          ./bin/ghskill inject "attack surface audit" | grep "attack-surface-self-audit"
+          echo "✅ Router CLI End-to-End Test Passed"

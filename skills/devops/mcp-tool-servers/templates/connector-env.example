@@ -1,0 +1,13 @@
+# Connector / MCP-server environment file. chmod 600, one file per client or per system.
+# Referenced by the systemd user unit (EnvironmentFile=). Plain KEY=VALUE, no export, no quotes.
+# Config layer rule: env vars WIN over any config file, so the same package serves many clients.
+# Never commit this file; never print values in tool output (only a redacted() helper).
+
+<SYSTEM>_LABEL=<short-name-for-this-target>          # shows up in every tool response for traceability
+<SYSTEM>_BASE_URL=https://<host>                     # sandbox or client system
+<SYSTEM>_ODATA_PATH=/sap/opu/odata/sap               # API root path
+<SYSTEM>_AUTH_MODE=apikey                            # apikey | basic | oauth2
+<SYSTEM>_APIKEY=                                     # EMPTY until a human pastes the real key
+<SYSTEM>_CLIENT=                                     # SAP client / mandant when required
+<SYSTEM>_TIMEOUT_S=30
+<SYSTEM>_WRITE_ENABLED=0                             # governance gate: 0 = dry-run only, 1 = writes allowed (human flip)

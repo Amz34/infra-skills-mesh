@@ -1,0 +1,146 @@
+---
+name: chrome-print-pdf-production
+description: "Use when producing branded PDFs from HTML via Chrome. print CSS, page footers, DOCX+PDF from one source."
+---
+
+# Chrome Print → PDF Production Pipeline
+
+Single-file HTML (WordPress-compatible) → branded A4 PDF via Chrome headless print-to-pdf. Used for eBooks, field guides, teasers, posters.
+
+## Render command
+`cat a.html b.html > final.html` (merge parts), then:
+`google-chrome --headless=new --no-sandbox --disable-gpu --no-pdf-header-footer --print-to-pdf=out.pdf file:///abs/path/final.html`
+CSS `@page{size:A4;margin:16mm}` controls page size. Re-render AFTER every content edit; verify page count each time.
+
+## Same-content-source pattern (DOCX + PDF from one block list)
+When a deliverable must ship as an editable **DOCX** *and* a PDF (client bids, proposals,
+reports), keep ONE content source and emit both — do not author the document twice:
+- Content = python list of blocks `("H1"|"H2"|"H3"|"P"|"B"|"N"|"T"|"PB", value)` in separate
+  modules; `mk_docx.py` (python-docx) writes the master, `mk_pdf.py` renders the same blocks to
+  one HTML file with print CSS and calls Chrome.
+- If no DOCX→PDF converter (`soffice`/`libreoffice`) is available, the HTML route below is the
+  working substitute — no converter install needed. Re-render the HTML after any edit.
+- Verified print CSS for documents: `@page{size:A4;margin:16mm 14mm}`,
+  `body{font-family:Calibri,Arial;font-size:10.5pt;line-height:1.35}`,
+  `table{border-collapse:collapse;width:100%;font-size:9pt}`,
+  `th{background:#0B3C5D;color:#fff}`, `th,td{border:.5pt solid #999;padding:3px 5px;vertical-align:top}`.
+- Chrome print-to-pdf renders no CSS running headers, so put the letterhead block at the top of
+  page 1 and use the `position:fixed` footer pattern (below) for a repeating page footer.
+- Verify each render: `pdfinfo out.pdf` for page count, `pdftotext out.pdf - | head -40` for text;
+  clean up the intermediate HTML afterwards.
+
+## Per-page footer (verified technique)
+Chrome DOES repeat `position:fixed` elements on every printed page — no CSS paged-media margin boxes needed. Pattern:
+- Base: `.pgfoot{display:none}` (screen), `@media print{.pgfoot{display:block;position:fixed;bottom:4mm;left:0;right:0;text-align:center;...}}`
+- Footer sits in the bottom margin (4mm < 16mm) → zero overlap with content, no flow shift.
+- Text via `text-transform:uppercase;letter-spacing:.14em`.
+- **Positive `bottom` values can collide with body text (verified 2026-09, markdown→PDF report).**
+  Chrome lays the fixed element out against the *page content box*, not the paper edge: with
+  `@page{margin:17mm 15mm}` + `bottom:3mm` the footer printed ON TOP of the last body line of
+  pages 1 and 4. Working correction: widen the bottom margin AND push the footer into it —
+  `@page{margin:17mm 15mm 20mm 15mm}` + `@media print{.pgfoot{bottom:-13mm}}` → footer sits ~7mm
+  from the paper edge, no overlap, still repeats. After any margin/footer change, re-render and
+  actually LOOK at page 1 and the LAST page PNG (`pdftoppm -png -r 80 -f N -l N`) — text extraction
+  will never show you an overlap.
+  Pitfall: fixed stops repeating if ANY ancestor has transform/filter/perspective (becomes absolute to that box). Keep the footer a plain descendant.
+- **Negative `bottom` is also NOT stable (verified 2026-09-18):** after the body content changed (added a section, same 4-page count),
+  `bottom:-13mm` drew the footer MID-PAGE, right between two bullets. Do not ship a long-lived doc on this trick.
+- **Preferred, deterministic technique: CDP `Page.printToPDF` with `footerTemplate`.** Drop `.pgfoot` from the HTML entirely
+  (or keep `.pgfoot{display:none}`), launch `google-chrome --headless=new --remote-debugging-port=9333 --user-data-dir=$(mktemp -d) file:///tmp/x.html`,
+  poll `http://127.0.0.1:9333/json/list` for `type=="page"` (~1s; tolerate the first connection refusal — Chrome binds late), then over
+  websocket-client send `{"id":1,"method":"Page.printToPDF","params":{printBackground:True,preferCSSPageSize:True,displayHeaderFooter:True,headerTemplate:"<div></div>",footerTemplate:FOOT,marginTop:0,marginBottom:0,marginLeft:0,marginRight:0}}`
+  and `base64.b64decode(result["data"])` → file. `FOOT` MUST carry an explicit `font-size` on its outer div or Chrome renders it blank:
+  `<div style="font-family:Calibri,Arial;font-size:8px;color:#5c686f;width:100%;padding:0 15mm;"><span>TITLE</span><span style="float:right;">Page <span class="pageNumber"></span> of <span class="totalPages"></span></span></div>`.
+  Real page numbers for free, no negative-offset guessing. Needs `pip install websocket-client`; kill by `pkill -f remote-debugging-port=9333`.
+**Verify with a letterspaced regex, not plain substring**: extracted text is `A A M I R  Z A M E E R` → `r'Z\s*A\s*M\s*E\s*E\s*R'`. Plain 'Aamir Zameer' matches body/bio/cover text and gives false page coverage.
+
+## Inline SVG diagrams
+- `<figure class="diag">` with `svg viewBox="0 0 940 N"`, `svg{width:100%;height:auto}` → scales to content width (~182mm); 1 viewBox unit ≈ 0.19mm.
+- Print text legibility: bold titles ≥16 units, labels ≥12.5 units, captions as HTML under the SVG (12.5px) not inside it.
+- **Unique marker IDs per figure** (`arrA`, `arrB`, `arrC`...) — duplicate `url(#id)` across multiple inline SVGs in one document collide.
+- `figure.diag{break-inside:avoid;page-break-inside:avoid}` to stop splits.
+
+## TOC page-number sync (after page-count shifts)
+1. pypdf-extract text per page, search each section heading → actual start page.
+2. Parse HTML TOC rows (`<span class="n">` + `<span class="t">` + `<span class="pg">NN</span>`), map title → new number, replace. HTML entities (`&amp;`) must be normalized before matching.
+3. Re-render; count must stay stable (numbers are inline, no reflow).
+
+## Teaser / extract-merge pipeline (pypdf)
+- Extract: `PdfReader(out).pages[0:4]` → writer → save.
+- 5th "poster" page = separately rendered standalone A4 HTML (own file, `@page{size:A4;margin:0}`) with big URL + QR.
+- QR: generate PNG via `qrcode` lib, embed `img src="file:///tmp/qr.png"` — Chrome headless loads local file URLs fine.
+- Merge with pypdf `writer.add_page(reader.pages[i])`, then verify page count + text per page.
+
+## Large-HTML surgery pattern
+Never hand-patch dozens of spots. Write a splice script (see references) + fragment files:
+- Fragments as separate HTML files (`frag_fig_a.html` etc.), script reads + inserts at regex anchors with asserts (`count == 1`).
+- Apply edits from LAST index to FIRST (reverse order) so offsets stay valid.
+- **Idempotency marker**: check a comment string already present → skip, so re-runs don't double-apply (part files get re-written once, then guarded).
+
+## "Blue shading" fix — pale tints, not blue hex (verified lesson)
+User: *"remove the blue background shading, easy look easy reading like previous pdf, no other changes"*. Root cause: NO blue hex in source — pale mint/tint fills (`#F4FAF6`, `#FCFEFD`, `#DDF3E4`) have blue channel > red/green, so on screens they read as blue-gray boxes; a dark gradient page reads as heavy shading.
+- Whitening = replace every pale fill with `#FFFFFF`; keep borders/accents (`#0E7A46`/`#BFE0CC` green family) untouched. "No other changes" means: do NOT touch layout/content/TOC/footer.
+- **Patch BOTH the fragment sources AND the already-spliced copies** (part_a/part_b). Fragments get embedded at splice time — editing fragment files alone has ZERO visual effect on the merged PDF. Grep the merged parts for the fills and fix in place.
+- **Duplicate CSS block trap**: a non-idempotent splice that ran twice inserts the personalization `<style>` twice. CSS cascade → the LAST block wins, so whitening the first block shows no effect and looks like a failed patch. Fix: scan all marker occurrences, drop duplicates, confirm `markers now: 1` before trusting output.
+- **Marker matching in generated scripts**: prefer plain `.find()` substring over regex built from escaped strings — JSON file writes double backslashes (`\\*` becomes literal `\*` and never matches); a typo'd needle (missing `===`) silently returns -1. When a script run disagrees with an inline test, the script's own strings are the liar — test the exact bytes.
+- **Pixel verification without vision** (no screenshot review needed): `pdftoppm -png -r 40 in.pdf pg`, then PIL-scan each PNG for bluish pixels (`blue - red > threshold`), report fraction per page. Source can be 100% green-family hex while blue-dominant pale fills still trip the scan — fix fills, re-scan to 0%.
+- Scan the FULL pdf AND the teaser/poster: a dark gradient cover page only shows up on the teaser's extra page, so a full-PDF scan alone gives a false "clean".
+
+## Markdown → branded client document set (SOW / questionnaire / runbook)
+
+Jab source markdown ho aur output pe brand chahiye, HTML hand-author mat karo — ek render
+pipeline likho (working copy: `~/ops/sap-readiness/render/render_docs.py` + `brand.json`
+= colours, letterhead, badge classes, footer text):
+- python-markdown (`tables`, `fenced_code`, `attr_list`) → per-doc HTML + print CSS →
+  Chrome headless → `pdf/<DOC>.pdf`. Ek hi command se poora doc set re-render.
+- **Token gate (hard fail):** `{{CLIENT}}`, `{{DATE}}`, `{{VERSION}}` substitute karo aur
+  agar koi `{{...}}` bacha rahe to render ROOK do (non-zero exit). Adhoora client document
+  bhejna sabse mehnga mistake hai.
+- **Authoring notes ko client face se strip karo:** note `<!--internal-->…<!--/internal-->`
+  me likho; `Client-facing` classification me block HTML se DELETE hota hai, `Internal` me
+  rehta hai. Badge letterhead me visible rakho (kaun sa version kiske liye hai, saaf rahe).
+- **Har render ke baad text-verify karo:** `pdftotext` + grep → leftover `{{` = 0,
+  internal-note text = 0 (client docs), brand mentions > 0. Visual spot-check ke liye
+  page-1 PNG (`pdftoppm`) dekho — cover hi pehla impression hai.
+- **Cover-page markdown trap:** ek paragraph ke andar single newlines collapse ho jati hain —
+  `Prepared for / Prepared by / Date / Validity` ko blank line se alag karo, warna chaar lines
+  ek hi line me chipak jati hain (aur ye sirf render ke baad dikhta hai).
+- Markdown source ko client naam ke liye ek fill-in line ke saath rakho (`Prepared for: ___`) —
+  ek hi SOW har client ke liye reuse hota hai, copy fork nahi karni padti.
+- **Report text-hygiene scan (client-face docs):** before sending, run
+  `python3 ~/.hermes/skills/productivity/client-deliverable-patterns/scripts/ai_tell_scan.py <doc.md>`
+  — asserts 0 em/en dashes, 0 curly quotes, 0 emoji, prints the
+  non-ASCII set and AI-tell word hits (delve/crucial/seamless/"it is worth noting"/"not only"…).
+  A plain-ASCII, sentence-case markdown source with real numbers reads as writer-typed; typographic
+  quotes + em dashes are the giveaway that a model wrote it.
+- Full recipe + script skeleton: `references/markdown-branded-doc-set.md`.
+
+## PNG one-glance cards (same pipeline, `--screenshot`, no @page flow)
+Fixed-canvas HTML → one crisp PNG image (one-glance tender cards, quote cards, status cards):
+`google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars --force-device-scale-factor=2 --window-size=1080,1350 --screenshot=/abs/out.png file:///abs/card.html`
+- Canvas comes from `--window-size`; `--force-device-scale-factor=2` → 2160×2700 PNG (WhatsApp/LinkedIn-crisp). CSS: `html,body{width:1080px;height:1350px;overflow:hidden}` + `@page{size:1080px 1350px;margin:0}`.
+- Footer inside a fixed canvas = `position:absolute;bottom:0`; `position:fixed` is the print-PDF pattern and is wrong here.
+- **Fixed height ⇒ dead space is the #1 defect.** After the first render, actually LOOK at the PNG (`vision_analyze`): a gap between the last block and the bottom-anchored footer means the canvas under-fills. Fix by ADDING a real value section (e.g. a 3-tile "how we can work together" strip), not by stretching margins.
+- **Dark + light twin variants:** ONE markup, swap only the `:root` palette block (bg/surface/text/accent) → identical layout geometry, so edits apply to both; patch both files in a single python replace pass, then re-render and re-verify both.
+- Confirm the scale factor landed by asserting PNG size (PIL → `(2160, 2700)`).
+- Card content rules for this user: pure English, **no faces/living beings, no emoji**, brand + city in footer, and **never invent contact numbers/emails/logos** — omit them and ask for the real ones.
+- Starter card: skill `govt-tender-bid-ops` → `templates/one-glance-tender-card.html`.
+- Card-build path used in practice: `~/clients/az-consultants/tender-cards/fm_tender_card_{dark,light}.html`
+  → `fm_tender_card_{dark,light}.png` (the older `~/hmw_bid/graphics/…` set is FROZEN — that brand is
+  retired for client-facing work).
+- **A rebrand is not a footer swap.** When the client-facing brand changes, the footer, the services /
+  "what we bring" strip, the letterhead monogram and the contact block ALL have to be rebuilt in the
+  target brand's own words — pull the service lines and contact details off the target brand's live
+  site, never recycle the previous brand's capability list. Before delivering, grep the card HTML for
+  every retired brand string (HMW / Air Controls / Triatek / Sanad) and assert zero hits; also keep the
+  no-faces / no-emoji rule. Correction that came with figures (e.g. bid-validity days, a securities
+  detail) doubles as legitimate content for the dead-space filler strip.
+
+## Pitfalls & gotchas
+- pdftoppm output naming: prefix `pg-0` yields `pg-0-01.png` (dash inserted before page num) — rename or use exact `pg-0` + loop.
+- uv-created venvs have NO `pip` binary: use `uv pip install --python /tmp/venv/bin/python <pkgs>`.
+- Verification of text on printed pages: pypdf `extract_text()` order is not visual order — search distinctive tokens, don't assume layout position.
+- Truncation guard: long file writes (SVG/fragments/scripts) can truncate mid-content when built in one shot — write each fragment as its own file via separate calls.
+
+## Session detail
+references/az-ebook-personalization.md — worked pipeline + anchor map + scripts from the 26-page field-guide personalization build.

@@ -1,0 +1,21 @@
+# Canonical entrypoints so a session has ONE verifiable command.
+# Copy to <repo>/Makefile and drop the targets the repo does not have.
+# Recipes MUST be tab-indented (verify: cat -A Makefile | grep -c "^\^I").
+VENV  := venv/bin/python
+PLAYW := $(HOME)/.venvs/playwright/bin/python
+
+.PHONY: help test qa-demo export
+
+help:
+	@echo "test    - full suite (the canonical gate; must be green before a commit)"
+	@echo "qa-demo - live browser QA: make qa-demo URL=https://..."
+	@echo "export  - ONNX sizes: make export CKPT=best.pth SIZES=320,480,640"
+
+test:
+	$(VENV) -m pytest tests -q
+
+qa-demo:
+	$(PLAYW) tools/demo_web_qa.py $(URL)
+
+export:
+	$(VENV) tools/export_yolox_sizes.py --ckpt $(CKPT) --sizes $(SIZES) --outdir $(OUTDIR)

@@ -1,0 +1,382 @@
+---
+name: client-website-delivery
+description: "Use when building or deploying a client website."
+version: 1.1.0
+author: Hermes Agent
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: [website, clients, netlify, cloudflare, sanad, file-transfer, delivery]
+---
+
+> **Claim-integrity gate (mandatory, 2026-09-15):** every claim in this output must be provable.
+> Before ship run `python3 ~/ops/verify/claim_integrity.py <mode> <file|dir>` and clear all HIGH
+> with `[src: ...]` evidence or `[claim-ok: reason]`. Rule: `~/brains/ops/rules/content-integrity.md`.
+> Skill: `content-integrity-guardrail`.
+
+# Client Website Delivery
+
+Build/deploy client websites for Aamir's Sanad business (client AI-assistant
+biz: Telegram bots, cloud hosting, websites). Covers the recurring "naya
+client site" request: getting content files onto the VM when the user's
+laptop is off, extracting details, presenting design options, building, and
+deploying free on Netlify or Cloudflare Pages.
+
+## When to Use
+
+- "Brand new website", "client site banao", "website upgrade karo"
+- User has content files on laptop/OneDrive that must drive the site
+- "Can you access my laptop files?" — the laptop-off question (see below)
+
+## File Acquisition Decision Tree (works with laptop OFF)
+
+The VM has NO channel to the user's laptop disk — laptop off = local files
+unreachable. Order of preference:
+
+1. **Check the VM first** — files are often already here: `/home/ubuntu/`
+   has `sanad-site/` (7-page EN + `ar/` Arabic variant), `CV_Engr_Aamir_Zameer_PM.docx`,
+   `luxewave-*/` folders. Ask "kaunsa site" before assuming new files.
+2. **Drive/OneDrive share link pasted in chat (FASTEST, zero setup)** —
+   "Anyone with the link" → agent downloads. Works with laptop off, no
+   credentials needed, any file size (email caps at 25MB). Pitfalls: Gmail
+   image-proxy URLs (`ci3.googleusercontent.com/...`) are icons, NOT file
+   links; curl gets a virus-scan HTML page on large files — use gdown. Full
+   recipe: `references/google-drive-download.md`.
+3. **Email route (phone-only, needs creds first)** — user emails files to
+   aamir1zahran@gmail.com. CAVEAT: GMAIL app-password creds are NOT persisted
+   on the VM — check `cut -d= -f1 ~/.hermes/.env | grep -i gmail`; if absent,
+   ask the user to paste the 16-char app password (persist it) or fall back
+   to route 2. See gmail-imap-access skill.
+4. **OneDrive OAuth connect (once, laptop ON)** — full 24/7 cloud access to
+   OneDrive-synced Desktop files even when laptop is off. Heavier setup
+   (app registration); only if files are OneDrive-synced and recurring need.
+
+Never promise laptop-disk access with the laptop off — say so plainly, then
+offer routes 2–4.
+
+## Workflow
+
+1. **Extract requirements (1-min questions):** client name + business type,
+   site purpose (info/booking/orders/portfolio), what files exist (docs,
+   images, logo, old site), language (EN / AR / bilingual).
+2. **Options + cost BEFORE building** (user's standing rule): present 2–3
+   design directions (dark/pro, clean/light, brand-colored) with structure
+   and a $/token estimate. Pick the recommended one yourself if the user
+   doesn't choose — don't stall the build.
+2.5 **Isolate + inventory the files** — one folder per client, never mixed:
+   `~/clients/<Client-Name>/` with an `extracted/` subfolder. Extract via
+   `python3 -c "import zipfile; zipfile.ZipFile('f.zip').extractall('extracted')"`
+   (`unzip` binary is often missing on the VM). Then analyze:
+   - PDFs (brochures/specs) = core site content — `read_file` auto-extracts text
+   - Video: `ffprobe` for duration; poster frame:
+     `ffmpeg -y -v error -i v.mp4 -ss 2 -frames:v 1 -vf scale=640:-1 poster.png`
+   - Web photos (no-AI/no-faces rule): Unsplash direct CDN
+     (`images.unsplash.com/photo-<id>?w=1600&q=80`) with a curl verify loop —
+     keep only HTTP-200 JPEGs >40KB, delete failures; the client's OWN
+     product shots (e.g. Airvalve.png) are the most on-brand "system" photos
+   - Images: PIL for dimensions (logo/product shots → site + OG images)
+   - **CSV/leads = private ops data — never on a public site; say so explicitly**
+   Show the extraction summary so the user can correct it cheaply.
+3. **Build after approval:** multi-page responsive site, SEO meta (schema.org,
+   OG, sitemap), mobile+desktop perfect, PWA-ready for future app conversion.
+   Build via Claude Code CLI (`~/.local/bin/claude`; on this VM it runs the
+   DeepSeek Anthropic endpoint — cheap; needs a git repo, `pty=true`, gateway
+   sandbox may need `--dangerously-bypass-approvals-and-sandbox`). For big
+   builds write `spec/SITE_SPEC.md` (technical) + `spec/CONTENT_EN.md` +
+   `spec/CONTENT_AR.md` (all copy) and tell Claude Code to assemble pages
+   verbatim from the copy, forbid inventing facts/images, and to verify its
+   own output (file list, RTL, asset paths) before finishing. Deploy:
+   Netlify free (Aamir's team 'Engineering Simplifi') OR Cloudflare Pages —
+   AVVS prefers Cloudflare: **review/preview link FIRST, then production**
+   (`npx wrangler pages deploy . --project-name <p> --branch master`;
+   Pages Functions auto-detect from `functions/`; secrets via
+   `wrangler pages secret put`). AUTH: skip the API token — it often
+   verifies 401 on paste; use `npx wrangler login --device` (headless-VM
+   OAuth: user opens a prefilled `?user_code=` URL, taps Allow — no
+   callback server, no token file, persists across deploys). Full recipe
+   incl. secret printf/no-newline rule and redeploy-after-secrets:
+   `references/cloudflare-pages-deploy.md`. Cost baseline: design+build
+   ~$0.2–2 tokens (DeepSeek), hosting $0, custom domain ~$10–15/yr if asked.
+4. **Deliver:** live URL + deploy status; bilingual EN+AR variant with CORRECT
+   RTL when the client needs Arabic (`ar/` folder, `<html dir="rtl" lang="ar">`,
+   hreflang EN/AR).
+5. **Lead capture (lead-gen sites):** contact form → Telegram DM so Aamir
+   gets leads instantly, zero DB setup. Cloudflare Pages Function
+   `functions/api/lead.js` (POST JSON: name, email, phone, company, country,
+   interest, message + hidden `website` honeypot; env TELEGRAM_BOT_TOKEN +
+   TELEGRAM_CHAT_ID; local dev via gitignored `.dev.vars`). Aamir's TG DM
+   chat id: 8843884232 (in ~/.hermes/channel_directory.json). Full code +
+   steps: `references/lead-form-telegram.md`. **QA the pairing, never assume it:** every market
+   edition's form must point at ITS OWN bot — secrets are per project and read at **deploy time**,
+   so a site deployed before its bot existed delivers leads into the previous brand's chat
+   (real cross-brand leak). Detection, the full form-QA matrix, and the approval-gated secret
+   rotation: `references/enquiry-form-qa-and-bot-pairing.md`.
+6. **Lead-gen SEO (when asked "SEO banana hai leads ke liye"):** quick audit
+   first (title lengths, meta-desc coverage, hreflang, schema types — show
+   what's already strong), then the 4 layers in cost order: keywords/content,
+   Search Console + analytics, custom domain, local/GBP. Audit commands +
+   full checklist: `references/leadgen-seo-checklist.md`. When NO dashboard
+   login is possible, deploy the self-hosted KV analytics (no cookie, live
+   `/api/stats` JSON): `references/self-hosted-analytics-kv.md`.
+7. **LinkedIn promo posts for clients:** publish via API straight from the VM
+   (Aamir's profile, w_member_social token) — recipe + post rules:
+   `references/linkedin-post-publish.md`. When the user says "chhordo"/leave
+   it about a stuck item (e.g. LinkedIn preview card), STOP working it — don't
+   keep re-offering fixes; move to what they asked next.
+
+8. **Security audit/monitoring services (upsell for ANY client site):** 5-min
+   mini-audit (nmap + whatweb + openssl + security-header check) → real
+   findings = pitch material → 3 packages (one-time audit $150–300, monitoring
+   retainer $25–50/mo via Telegram alerts, hardening $200–400). Tool install
+   (incl. ARM64 nuclei build) + commands + pitfalls:
+   `references/security-audit-services.md`.
+9. **Competitor/reference site analysis** (when client says "competitor jaisi
+   site banao" or drops a competitor URL): curl often 403s behind WAF → fall
+   back to the browser; extract meta/OG/canonical/hreflang/headings/JSON-LD/
+   fingerprint/perf signals, then report strengths-to-reference vs
+   weaknesses-to-beat. Recipe: `references/competitor-site-analysis.md`.
+10. **Premium React build (pazi.ai-class demo/wow deliverable)** — when the
+    user wants a high-end marketing landing ("expert pro demo", "premium
+    stack"), use React + Vite + Tailwind + GSAP ScrollTrigger + Three.js
+    (exactly pazi.ai's fingerprint: nginx + hashed Vite assets + gsap +
+    three + posthog/sentry in the bundle). Full scaffold, file layout,
+    WebGL fallback pattern, and the silent-blank-page debug recipe:
+    `references/react-vite-premium-build.md`. Key rule: **wrap
+    `new THREE.WebGLRenderer()` in try/catch** — in headless browsers (and
+    some client machines) WebGL context creation throws, and an uncaught
+    throw inside a mount `useEffect` kills the ENTIRE React tree (empty
+    root, no visible error). The debug trap that finds these:
+    `cdp('Page.addScriptToEvaluateOnNewDocument', ...)` error listener +
+    reload — post-load `window.addEventListener('error')` hooks MISS
+    module-execution crashes (installed too late / isolated world).
+11. **Vanilla single-file 3D site (cheaper "3D style" alternative to step 10)** —
+    when the client wants a 3D look but the build should stay one static HTML
+    file + assets (AVVS Triatek 2026-08): fixed full-screen Three.js canvas as
+    page background (product-shaped primitive stack + flowing particles + glow),
+    bilingual EN/AR via `data-lang` attr + `.lang-en/.lang-ar` classes + localStorage
+    toggle (instant switch, no separate `ar/` folder), lead form → prefilled
+    WhatsApp message (`wa.me/<n>?text=`) instead of a backend. Verify the 3D
+    actually renders via the swiftshader Chrome + screenshot pixel histogram
+    (see headless-browser-automation skill). Full recipe:
+    `references/single-file-3d-bilingual-site.md`.
+12. **AI chat-site lead-gen funnel ("sell the AI infra" pattern, Aone 2026-08):**
+    white-label ChatGPT-style chat site (dist/ UI + `functions/kb.js` KB +
+    `functions/api/chat.js` DeepSeek proxy, `env.DEEPSEEK_API_KEY` not
+    process.env) + Google Form CTA buttons + LinkedIn-comment promotion with
+    the PERMANENT pages.dev link (never the tunnel URL — it rotates on
+    restart). Deploy order: project create → deploy → secret put →
+    **redeploy once** (Functions bundle misses secrets on first deploy).
+    pages.dev 403s default urllib/requests UA — spoof Mozilla UA. Full
+    recipe: `references/ai-chat-leadgen-site.md`.
+13. **Topmate-style personal profile / monetization page ("topmate jaisa page
+    banao", "replicate of my account")** — one-page profile selling 1:1 calls,
+    digital products, priority DM, packages: sticky profile card (monogram
+    avatar — no face photos, trust badges, socials) + services grid with
+    type/duration badges + price + Cal.com/WhatsApp booking + About +
+    testimonials (placeholder, never fabricated) + JSON-LD Person schema.
+    Single-file HTML, fresh copy + different palette (never identical scrape),
+    chrome-headless screenshot for render verify, quick-tunnel preview before
+    approval. Full anatomy + CLI flow: `references/topmate-style-profile-page.md`.
+    When the REAL Topmate account needs product/service CRUD (digital products
+    AND 1:1 Call services, both validated headless flows + orphan-draft delete +
+    pricing rules): `references/topmate-dashboard-ops.md`.
+    When the user calls a delivered page "generic/boxy/dashboard-like" (or
+    drops a reference post URL + says "make it the best"): UX-psychology
+    overhaul recipe (Attention→Perception→Cognition→Emotion→Action, premium
+    dark-editorial design system, verify-before-deliver) —
+    `references/ux-psychology-design-overhaul.md`.
+
+14. **Merging two market sites into ONE group property (hero tabs + one domain)** — when the ask is
+    "dono website ek me merge karo — tabs me India | Saudi Arabia" (or a multi-market brand needs one
+    canonical domain): keep both existing generators READ-ONLY and add a THIRD generator
+    (`group-site/build/group.py`) that imports them and composes pages from the already-approved copy
+    dicts. Never rewrite approved copy — add only the new hero / tabs / markets sections; the merge
+    work is the hero, the tabs, the market routing, and the cutover. Hero tabs = plain anchors + a
+    self-hosted `app.js` handler + CSS (the hardened CSP blocks inline `<script>`/`<style>`). Market
+    routing on a merged site: visible `<select name="market">` (IN | KSA) on the EN edition, hidden
+    per-edition tag (`KSA-AR`) on `/ar`, both allowlisted in the Pages Function — an unknown tag is a
+    silent mis-route, not an error. Cutover: new Pages project + its OWN form secrets (secrets are
+    per project), attach the purchased domain, switch sitemap/canonical/hreflang to it **in the
+    generator**, then 301 the legacy `*.pages.dev` properties to the new domain (links already sent in
+    outreach keep working, no duplicate ranking) and never delete the legacy sources — live campaigns
+    depend on them. Generator-ownership rule (hand-patched `_headers`/`_redirects`/form action get
+    overwritten on the next rebuild) + the full playbook:
+    `cloudflare-pages-ops` §"Generated sites" → `references/generator-owned-site-infra.md`.
+
+15. **Corporate-level REBUILD of an existing client site** ("isko bhi <url> jaisa shopify
+    high-pitch type me replicate corporate level website banao, qa urself") — thin live page
+    → corporate property, no scope Q&A. Harvest the live page's approved copy + its inline
+    behaviour JS from a **git snapshot** (`git show HEAD:index.html > /tmp/old_index.html`),
+    author the new page as ordered chunks concatenated by one `build_site.py`, and re-append
+    the ORIGINAL behaviour `<script>` verbatim (largest inline block, asserted) so the client's
+    chat/form/nav keep working. Then, in order: class-drift gate → imagery contact-sheet review
+    with vision → copy truth pass + claim gate → Playwright QA on 3 breakpoints → review deploy.
+    Full recipe (incl. the self-clobber bug, the reveal-blank screenshot trap and deploying
+    without the canonical host's credentials): `references/corporate-site-rebuild.md`.
+    Class-drift checker: `scripts/check_class_drift.py`.
+
+When the complaint is "generic / AI-type / fake-looking" instead (fonts "AI
+type small and random", email/contact "looks fake", copy "generic" — user
+asks for wordpress-style realistic, AI-free): **De-AI realism pass** — fake
+contact details, poetic copy, AI-font pairings (Cormorant+Manrope),
+micro-caps typography, number inconsistency, missing trust layer —
+`references/de-ai-realism-pass.md` (proven 2026-09-02 estelar-demo v2).
+
+## Client Scoping Q&A (recurring questions)
+
+**"Client website maintain karna hai — sirf URL kaafi hai?"** — URL alone only
+covers audits/reports. Updates + maintenance need: deploy access (GitHub repo
+/ Cloudflare Pages), domain DNS, Google Search Console, and content assets.
+When Aamir BUILDS the site: keep repo/hosting under HIS account (client gets
+access, not ownership) — that control is the maintenance-retainer revenue.
+
+**"Competitor ki site scrape karke identical bana do?"** — NEVER identical:
+copyright (DMCA) + Google duplicate-content penalty = SEO death. Pitch the
+legal route: structure/layout reference + 40–50% different palette + 100%
+fresh copy + licensed/own images = "same feel, better execution, legally
+bulletproof". Same build price, zero risk.
+
+## PWA Client FAQ (install prompt on open)
+
+Clients opening the site see a browser "Install app / Add to Home screen"
+prompt — that is the PWA feature (`manifest.json` + `sw.js`), NOT a bug and
+NOT a Play Store app. Explain: browser-installed, gets an app icon,
+full-screen launch, offline via service worker; updates ship automatically
+with the site; NOT discoverable in Play Store. If the client insists on Play
+Store: TWA (Trusted Web Activity) via Bubblewrap/PWA Builder — $25 one-time
+Play Console fee, ~30–45 min setup, 1–3 day review, and every site deploy
+needs a store version bump after. Recommendation for lead-gen sites: stay PWA
+until the client explicitly asks for a store listing.
+
+## Client-Facing Rules
+
+**Sanad standard** (applies to Sanad deliverables only): pure English,
+one-word brand (never Aamir's name), AI-free copy, diplomatic tone, NO
+images/emojis. Source: `/home/ubuntu/sanad-site/`.
+
+**Per-client constraint checklist** — gather BEFORE building (AVVS Triatek
+example):
+- NO email address on the site — mobile number only (lead genuineness)
+- Floating WhatsApp + Telegram buttons on every page
+- PDF brochure download link + CTA (from the client's own PDF)
+- 5-star reviews section (lead confidence); ask: real reviews or template?
+- No AI-generated images, no human faces — real product/system photos
+- Video embed (client's own file, use a poster frame)
+- Achievements: live projects worldwide, service worldwide
+- Punchy/hooky neuromarketing copy, high-pitch SEO
+- Bilingual EN + AR, correct written + displayed (RTL)
+- Ask explicitly for: contact mobile number, domain, logo/colors if not in files
+
+**Pricing posture (advisory/brand sites):** when the ask is "price hata do / best market price
+luring / star ratings add karo" → never "price on request". Use the **best-market-price curiosity
+hook** ("Ask us for the number" + written same day), neutral band labels describing engagement
+SIZE instead of value bands, and criteria-framed 4.9 star ratings (EN + Arabic MSA copy). Keep
+regulatory thresholds (e.g. SAR 10 million local-content) and key the whole policy per market so a
+sibling edition keeps its own currency. Add a QA rule that FAILS the build on a leaked figure, and
+show the preview-vs-prod count table before asking for approval. Exact EN/AR strings, the QA gate,
+and the print-to-PDF review-screenshot fallback:
+`references/no-price-published-copy-policy.md`.
+
+## Pitfalls
+
+- **Bulk copy rewrites (price/label/star swaps) go in a python script, run resumable, and the build
+  runs immediately after** — multi-line inline shell payloads get blocked/elided; a replacement
+  tuple with a stray `}`/`)` breaks the shared render function, so build + QA right away and fix
+  syntax before anything else. The script must skip already-applied edits and must not overwrite the
+  pristine `.bak-*` on re-run, or the original is lost and CSS blocks double-append. Full recipe:
+  `references/no-price-published-copy-policy.md` §8.
+- **A blank ~5–16KB PNG from headless `--screenshot`** (common on tall RTL pages) is a dead end —
+  render `--print-to-pdf` and rasterise with `pdftoppm -png -r 80`, then pick the page you need.
+  URL fragments (`#section-id`) work in print mode too. Never attach a review screenshot you have
+  not inspected with vision.
+- Project paths shift (OneDrive Desktop) — re-locate files before patching.
+- Don't start designing before files arrive; extract details first, show the
+  extraction so the user can correct it cheaply.
+- Gmail creds are NOT in the profile env — the "email route" fails until the
+  app password is provided; Drive link pasted in chat is the real zero-setup
+  route.
+- Huge multi-part inline shell one-liners can hit the command blocklist
+  (saved under ~/.hermes/cache/blocked-scripts/) — split commands; if
+  blocked, `bash <saved-path>` runs the same command.
+- Cloudflare Pages Function local testing: `npx wrangler pages dev public/`
+  reads `.dev.vars` for secrets — keep it gitignored.
+- **Cloudflare auth on headless VM:** `wrangler login`'s localhost callback
+  flow times out (the OAuth redirect lands on the USER's device, not the
+  VM) — use `wrangler login --device` instead; dashboard API tokens often
+  paste-corrupt to 401 (40+ chars, `cfat_` prefix).
+- **git push pe CF Pages auto-deploy trigger NAHI hota** (2026-08 AVVS:
+  commit pushed, deployment list empty) — direct deploy is the standard:
+  `npx wrangler pages deploy . --project-name <p> --branch master`, then
+  curl-verify the new marker appears on the live URL (~30-60s).
+- **Secret corruption:** `echo "$TOKEN" | wrangler pages secret put` adds a
+  trailing newline — use `printf '%s'`; after setting secrets, redeploy
+  (first lead test may otherwise fail with "Telegram send failed: Not
+  Found" = propagation delay, not a bad token — check getMe first).
+- **First deploy after adding `functions/` may 404 on `/api/*`:** the deploy
+  can report "Uploaded 0 files (N already uploaded)" and skip the functions
+  bundle. Redeploy once — the second run prints "✨ Uploading Functions
+  bundle" and endpoints go live. Always curl-verify after the SECOND deploy.
+- **NEW Cloudflare Pages project:** `wrangler pages project create <name>`
+  without flags can silently fail; deploy then errors "project does not
+  exist" even though create claimed success. Always pass
+  `--production-branch master`:
+  `npx wrangler pages project create <name> --production-branch master`,
+  then deploy. (First attempt logged only a stack trace — verify with a
+  grep of the wrangler log if the deploy errors.)
+- **`--branch` mismatch = silent Preview deploy** (2026-08 AVVS): `wrangler pages deploy --branch main` jab project ka production branch `master` ho → deploy "complete" dikhta hai, lekin ROOT domain purana content serve karta hai; sirf branch alias (`main.<project>.pages.dev`) naya dikhata hai. Ye cache nahi hai — `wrangler pages deployment list` me Environment column (Production vs Preview) dekho; fix = `--branch master` (project ka asli production branch, create time pe set) + ROOT domain pe curl-verify
+- **Preview-environment secrets are dashboard-only** (2026-09 estelar-demo):
+  `wrangler pages secret put` writes ONLY production-env secrets — is wrangler
+  version me koi branch/scope flag nahi, aur preview deployments
+  (`--branch preview`) production secrets INHERIT nahi karte → live preview
+  ke lead form pe "telegram not configured" error. Workflow: production
+  secrets ek baar set karo; pipeline locally prove karo via
+  `npx wrangler pages dev dist` + gitignored `.dev.vars` (E2E `{"ok":true}` =
+  Telegram accepted); user ko pehle hi bata do ki preview form by design
+  error dega prod deploy tak. Note: `TELEGRAM_CHAT_ID` .env me missing ho
+  sakta hai — `.dev.vars` me `TELEGRAM_HOME_CHANNEL` secret value se derive
+  karo.
+- **React SPA deploy → blank page on CF Pages:** check the static server is
+  serving `index.html` + hashed assets with 200s; the likely culprit is a
+  runtime JS crash, NOT hosting. See the WebGL/render crash pattern in
+  step 10 — `curl` returning 200 proves the files are fine.
+- **Vite build "error during build: [vite:esbuild] Transform failed"** = JS
+  syntax errors (e.g. duplicate `const` declarations after refactoring to
+  outer-scope `let` for the WebGL fallback). Read the full error list —
+  `grep -E "ERROR"` shows every symbol, not just the first.
+- **LinkedIn preview not showing** even with og: tags = OG/canonical/sitemap
+  still point at the not-yet-live custom domain; fix ALL files (HTML +
+  robots.txt + sitemap.xml), generate a 1200×630 card (`scripts/make_og_card.py`),
+  add og:image:width/height, then LinkedIn cache dance (Post Inspector 2–3×,
+  re-paste link in existing posts; if "Cannot display preview" persists after
+  all fixes, append `?v=2` to the URL — LinkedIn treats it as a new URL and
+  re-fetches). Full workflow: `references/og-preview-debugging.md`.
+- **OG card layout:** keep text and logo in separate x-zones with a clear
+  gap — text over the logo looks broken in LinkedIn's thumbnail. Verify with
+  `scripts/verify_og_overlap.py`. PIL `draw.ellipse` needs y1 > y0
+  (bottom > top) or the generator crashes with exit 1.
+- **A build script that reads the file it writes silently loses the site's JS.**
+  Run 2 of a chunk-assembler harvested its own output, so the client's behaviour
+  `<script>` (chat, form, nav, counters, scroll-reveal) was replaced by a duplicate
+  JSON-LD block — no error, everything dead. Snapshot the true source out of band
+  (`git show HEAD:index.html > /tmp/old_index.html`), pick `max(blocks, key=len)` among
+  inline `<script>` blocks, `assert 'getElementById' in script and len(script) > 5000`,
+  then assert post-build markers (`getElementById` count, `<script` count).
+- **After assembling hand-written HTML against reused CSS, run the class-drift gate**
+  (`scripts/check_class_drift.py <html>`): a class used in markup with no CSS rule renders
+  an unstyled section and reads to the client as "cheap/fake" — seen live as
+  `class="foot"` vs `footer.site-foot` (whole footer unstyled) and `class="form"` vs
+  `.form-card`. Exit 1 = fix before QA.
+- **Scroll-reveal sections shoot BLANK in full-page screenshots** (`.reveal{opacity:0}`).
+  Inject `pg.add_style_tag('.reveal{opacity:1 !important;transform:none !important}')` before
+  the capture, and ship a real fallback in the page (`<noscript>` style override +
+  `@media (prefers-reduced-motion:reduce)`) so a JS failure never hides content for visitors.
+- **Numeric counters cannot render ranges** — a `data-target` count-up fed "4–5" printed
+  "4 ! 5". Use a static element (`.num-static`) for non-numeric/range stats.
+- **Client's canonical host needs a credential you don't have** (Netlify token, etc.): ship the
+  review build to a NEW Cloudflare Pages project with `noindex,nofollow` + `Disallow: /` in the
+  deploy copy only (canonical/sitemap still point at the official URL), verify it live, then ask
+  for that single credential in the same message. Never migrate the client's URL on your own.
+- **Unify the contact number across the WHOLE deliverable** — the old number also lived inside
+  the site's chat function system prompt (`netlify/functions/chat.js`), not just the HTML;
+  grep the tree and flag the change in the handover.

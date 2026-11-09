@@ -1,0 +1,423 @@
+---
+name: cron-watchdog
+description: "Use when a cron must wait for an external condition."
+version: 1.0.0
+author: Hermes Agent
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: [cron, watchdog, automation, no_agent, monitoring]
+---
+
+# Cron Watchdog (silent wait-then-act-once)
+
+## Variant: continuous threshold health monitoring (recurring, no marker)
+
+For "monitor this service and alert me when it degrades" (not one-shot): same
+silent no_agent cron, but the script runs every tick, emits NOTHING while
+healthy, and alerts on each bad tick (down / 5xx / TTFB over threshold). No
+marker/state file needed — the condition itself gates output. Generic script:
+`scripts/http-health-watchdog.sh` under the `saas-performance-diagnosis` skill
+(parameterize URL/NAME/THRESHOLD; test the silent path manually before
+scheduling). Full slow-third-party-service diagnosis workflow: skill
+`saas-performance-diagnosis`.
+
+- TTFB threshold rule: 4× the measured healthy baseline, not an arbitrary constant.
+- Verified Sep 2026: Onfra (onfra.io) app — 159ms Gulf→US-East RTT, no CDN,
+  single DigitalOcean origin; watchdog cron `onfra-health-watchdog` (every 10m,
+  silent-while-healthy). Case notes: references/onfra-case.md in that skill.
+
+## Variant: detached poller for multi-hour external jobs (verified Sep 2026)
+
+When the external condition can take HOURS (HF ZeroGPU queue, remote inference
+event, CI run) and the wait may outlive the agent session: put the long
+polling in a **detached, session-independent watcher loop**, keep the cron
+watchdog tick a QUICK check of a shared result file:
+
+1. Poller script (`poll_event.py`) does the long-poll with ~120s read timeout
+   + reconnect; on completion writes `result_<shot>.md` and exits 0.
+2. Launch detached from a **.sh script file**, never inline —
+   Hermes blocks inline `setsid nohup bash -c '…'` in terminal calls, but the
+   same command inside `launch_watchers.sh` works:
+   ```bash
+   setsid nohup bash -c 'until [ -f /tmp/job/result_x.md ]; do
+     python3 /tmp/job/poll_event.py x <event_id> >> x.log 2>&1
+     sleep 3; done' >/dev/null 2>&1 &
+   ```
+   Non-zero exit from the poller → loop retries; the `until` file gate ends it.
+3. Cron watchdog ticks every 10 min, marker/result-file check only (pattern
+   below) — prints the result when it appears, silent otherwise. Watchdog PIDs
+   and event IDs live in logs for manual resume.
+
+The recurring cron stays cheap because ALL long waiting happens in the
+detached loop. Concrete full recipe: skill `hf-spaces-inference`
+(crash-proof delivery section).
+
+## Variant: guard waiting on a remote job to reach a TERMINAL state (verified Sep 2026)
+
+When the condition is "the remote job finished" (Kaggle kernel, training run, CI
+build, batch export) the guard must fire ONLY on a definitive terminal status —
+`COMPLETE|ERROR|CANCELLED|CANCELED|STOPPED` — and stay silent on `RUNNING`, on
+EMPTY output, and on a CLI that errored. An empty/errored CLI result is not a
+completion; treating it as one fires a false "done", consumes the marker, and the
+real result is never announced. Keep the guard's own output empty until a terminal
+status is seen, then print the artifact list once.
+
+Worked case: `firewatch-kaggle-weights-guard` (Sep 2026) — pulls a Kaggle kernel's
+output when training ends. Two rules it encodes:
+
+1. **Cron script must be a REAL file under `~/.hermes/scripts/`.** Hermes rejects a
+   symlink that escapes that directory ("Script path escapes the scripts directory
+   via traversal"). Keep the launcher there as a small real file that `exec`s the
+   repo-owned guard, so the logic stays git-tracked while the cron entry stays legal.
+2. **Verify the STORED schedule, never the string you asked for.** A relative
+   schedule can land as a one-shot (`schedule.kind: once` + fixed `run_at`) instead
+   of recurring: the guard then runs once, finds `RUNNING`, goes permanently silent,
+   and its condition is never checked again — a durability bug with no error.
+   For any wait measured in hours, pass an explicit cron expression
+   (`*/30 * * * *`) plus a `repeat` count, then read the stored job back and assert
+   the shape before trusting it:
+   ```python
+   # scan ~/.hermes/cron/**/*.json, match the job by name (not "the first job")
+   assert job["schedule"]["kind"] == "cron" and job["schedule"]["expr"] == "*/30 * * * *"
+   assert job["repeat_remaining"] > 0 and job["enabled"]
+   ```
+   Caught Sep 2026: asked for `30m`, stored as one-shot at 00:57 → fixed with
+   `*/30 * * * *` + `repeat=48` (~24h) and re-verified.
+
+## Variant: guarding an artifact a SCHEDULED job produces (verified Sep 2026)
+
+A watchdog comparing "newest local artifact" vs "newest remote artifact" cries wolf EVERY
+night while the producing job is still running. Real case: the DR sentinel alerted
+"newest archive … not on Drive" while that very upload was in flight — sentinel ticks
+`:07/:37`, the backup timer fires `02:30`, the remote object only lands `03:10–03:24`.
+A normal one-night gap was reported as a DR outage every night.
+
+1. **Make the verdict schedule-aware.** Before comparing freshness, ask the producing unit
+   for its state — `systemctl is-active <unit>` == `activating`, or an in-flight process
+   exists → log `<thing>_in_flight` and stay SILENT; last night's copy is still on the
+   remote. So the watchdog must know the producer's unit name (`BACKUP_UNIT`).
+2. **Measure staleness in UNITS OF THE SCHEDULE, not in file counts.** Local retention is
+   deliberately longer than remote retention, so counting files invents outages. Parse the
+   date out of the artifact name (`ARCHIVE_RE = ^name-(\d{4})(\d{2})(\d{2})_…$`) and alert
+   only when the remote copy is ≥2 nights behind — that measures the right thing without
+   excusing a genuinely stale backup.
+3. **Never build the in-flight check on `pgrep -af '<pattern>'`.** The check's own wrapper
+   shell matches the pattern, so it is ALWAYS true → every real alert is silently and
+   permanently suppressed; a false negative is worse than the false positive you fixed.
+   Read `/proc` directly: iterate `/proc/[0-9]*/cmdline`, map `\0`→space, require all
+   needle tokens.
+4. **A shimmed unit test cannot validate a shell command — run a LIVE probe.** 16/16 offline
+   tests passed while the live in-flight check was permanently true, because the tests shimmed
+   the shell helper and never exercised the real command. Ship a small probe that calls the
+   REAL check function with its alert side-effect redirected to a temp path, run it on the
+   box, assert it reports "silent", and only then trust the guard.
+5. **Never edit the producing script while it is running.** A long-running `.sh` edited
+   in place mid-flight can resume at a stale byte offset (hit the same night, on a live
+   uploader); park or stop the run first, or ship the change for the next run.
+
+ ## Variant: recurring quota/threshold guard — alert on RISK, not on spend (verified Sep 2026)
+
+ For "watch this counter against a periodic allowance and tell me before it runs out" (Cloudflare
+ KV 1k writes/day shared account-wide, API quotas, SMS quota, storage caps, cost budgets). The
+ naive guard projects `used / fraction_of_period_elapsed` and **cries wolf for the rest of the
+ period the moment the noisy producer is fixed** — the writes burnt before the fix stay in the
+ counter ("fossil alarm"; real one: WARN at 19:54 projecting 95% while the true rate was ~2/h and
+ the day was going to end at 71%). Encode these rules:
+
+ 1. **Alert level = exhaustion risk.** `CRITICAL: actual >= 85% or recent-slope projection >= 95%`,
+ `WARN: projection >= 85%`, and a log-only `NOTE` when spend is high but the slope is
+ sustainable (60% actual, flat rate = no push notification, ever).
+ 2. **Project from the recent slope, sampled.** Keep counter snapshots in the state file and use
+ the newest sample aged 20 min–6 h: `projected = used + rate*hours_left`. If samples exist but
+ none sits in that window, report **no projection** (unknown) — never fall back to cumulative
+ extrapolation, that is exactly what §1 punishes. Cumulative is allowed only when the period
+ has no samples at all. Clamp negative rates to 0 (day-boundary counter reset).
+ 3. **Fix the producer first, thresholds second** — diff-before-write (steady state = 0 writes),
+ cap counters, one heartbeat/hour, `safePut()` so a 429 cannot silence alerting.
+ 4. **"Can we delete junk to fix the quota?" → no.** Deletes have their own allowance and refund
+ nothing to the write counter; a healthy monitor has no spam to clean. The only lever is code.
+ Write-only keys ARE removable (grep their consumers first) and halve per-request cost.
+ 5. The alert must go out of band (straight to the chat / off-host path), not through anything
+ that depends on the monitored box.
+
+ Detail, exact algorithm, the pure-function test recipe (fake clock + stubbed sender + invariant
+ trap for dry-run purity) and the measured before/after numbers:
+ `references/quota-budget-guard-alerting.md`.
+
+ ## Variant: monitor-gated discovery scout (hash-suppressed wake, verified Sep 2026)
+
+For "tell me when something NEW appears" (new repos/tools/releases/feeds) where an LLM
+should triage the delta — but you must not pay for a run on every tick. Use the job's
+`monitor_script` (or `monitor_url`): its stdout is hashed as exact bytes each tick;
+UNCHANGED hash → the agent never runs (no tokens, silent `no_change` tick); CHANGED →
+a MONITOR CHANGE DETECTED block (diff + new output) is injected and the agent runs.
+
+This variant exists for ONE failure mode: **a payload that changes when nothing changed**,
+or that stops looking changed because an upstream API failed. Both make the scout lie.
+
+1. **Emit identity only, one item per line, sorted.** No stars/forks/counts, no dates, no
+   timestamps, no banner header, no "N results" line — any volatile field makes every tick
+   a "change". The item id IS the line, so the injected diff stays readable.
+2. **Authenticate the API you poll.** Unauthenticated GitHub search is ~10 req/min; a
+   multi-query scout hits 403 mid-run and prints a *partial* list — indistinguishable from
+   "10 repos vanished". Use `gh auth token` / `GITHUB_TOKEN` (~30/min).
+3. **On total failure print STABLE memory — never a different shape.** Keep last-good in a
+   cache file and re-print it verbatim when every query fails; with no cache at all, print
+   one fixed sentinel line. Empty stdout on a rate-limit reads as "the world disappeared";
+   a fresh error string reads as "new stuff found". Both are false wakes.
+4. **Cron script location**: `monitor_script` must be a REAL file under `~/.hermes/scripts/`.
+   Keep a ~6-line shim there (`exec /home/ubuntu/ops/scripts/<real>.py "$@"`) so the logic
+   stays repo-owned and the cron entry stays legal.
+5. **Prove stability before scheduling**: run it twice and compare `md5sum` — identical, or
+   the monitor is noise. Then create the job and read the stored schedule back.
+6. **Write the triage prompt for a change-detected wake**: say it was woken by a monitor
+   change, how to read the diff, and the hard boundary — an LLM triage job must NOT
+   auto-install/vendor what it finds; route candidates through the adoption gate
+   (`agent-skill-adoption-gate`) and file a pending decision instead.
+7. Cheap by construction: deterministic HTTP + text, no model, daily cadence; the model only
+   ever runs on a real delta.
+
+Worked case (Sep 2026): `tool-scout (capability discovery)` — GitHub topic/name search for
+agent-skill/agent-tooling repos, cron `0 4 * * *`, deliver telegram, monitor_script
+`tool_scout.sh`; 52 candidates, identical md5 across consecutive runs. Wiring, gaps and what
+stays manual: `references/capability-loops.md` in this skill (discover → gate → measure).
+
+## Variant: state-file delta poller — alert when a REMOTE RECORD list changes (verified Sep 2026)
+
+For "tell me the moment a new order / booking / form response / ticket appears" when no webhook
+endpoint is available (or the registered one is dead): poll the vendor's REST API every few
+minutes, keep a state file of the records you have already seen, and print an alert **only** on
+a genuinely new id or a changed status field. Same silent-when-nothing-happened economics as the
+base pattern, but the trigger is a *delta against memory*, not a boolean condition.
+
+1. **State file = `{id: {comparable fields}}`**, e.g. `{"1001": {"financial_status": "paid",
+   "fulfillment_status": null, "total": "2.00"}}`. First run with no state file = BOOTSTRAP:
+   record everything, print NOTHING (otherwise the first tick re-announces every historical record).
+2. **Alert on new id OR changed tracked field.** Ignore fields you didn't choose — a volatile
+   field in the dict makes every tick an "update" (see the discovery-scout variant's rule 1).
+3. **A failed poll must look EXACTLY like no change: print nothing.** Do not print "0 new orders",
+   do not print an error. A 3–5 minute cadence with any noise on failure becomes spam the user
+   mutes — which loses the alerts that matter. Keep the last-good state on HTTP error.
+4. **Compose the whole user-facing message inside the script** (it is the delivered text for a
+   `no_agent` job): id/name, what it is, money/status, contact/address, and WHERE to act
+   (admin deep link). Deterministic, sorted, stable labels.
+5. **Prove BOTH paths before scheduling** — run with the real state (expect `exit 0`, empty
+   stdout) and once against a doctored copy with the record removed/blanked (expect the real
+   alert text). The delta path is the one nobody tests, and the message formatting is what the
+   user actually sees.
+6. **Cron script must be a REAL file under `~/.hermes/scripts/`** (absolute/traversal paths are
+   rejected); keep the logic repo-owned and put a ~6-line wrapper there that runs it via
+   `subprocess`, passes stdout through, and re-emits stderr with a non-zero exit so the job's
+   built-in error alert carries the traceback.
+7. **Prefer the vendor API over watching an email inbox.** An inbox watcher only sees messages
+   *sent to that address* — for order notifications the "confirmation" goes to the customer, so
+   the merchant-inbox lane silently misses every real customer order. Poll the source of truth.
+
+Worked case (Sep 2026): `luxewave-order-watch` — cron `*/5 * * * *`, `no_agent: true`, wrapper
+`~/.hermes/scripts/luxewave_order_watch.py` → logic `~/ops/luxewave/order_watch.py`, state
+`~/.local/state/luxewave_order_watch.json`, polls Shopify `orders.json?status=any&limit=25` and
+alerts in-chat on a new order or a payment/fulfillment status change; silent ticks verified by
+running the wrapper twice. It exists because the store's registered webhooks pointed at a dead
+quick-tunnel URL, so no order had alerted anywhere.
+
+Copy-ready skeleton for this variant (state file, bootstrap, delta printing, silent-on-error,
+`--selftest`): `templates/delta-poller.py` — replace `fetch_records()` + `format_alert()`.
+
+## Base pattern: silent wait-then-act-once
+
+Schedule a recurring cron job that stays SILENT until an external condition
+becomes true, then performs ONE action exactly once (post, alert, webhook,
+purchase) and never repeats it.
+
+## When to Use
+
+- "Jab X live ho jaye, tab Y karo, aur tab tak kuch mat bhejo" — e.g.:
+  Product Hunt post goes live → auto-post LinkedIn announcement
+  (proven Aug 2026, AI Can Run: `~/.hermes/scripts/ph_carousel_monitor.py`)
+- Product back in stock → notify/buy once
+- Site/page indexed or deployed → announce once
+- Any cron where the trigger is an EXTERNAL state you can only poll
+
+## Why not a one-shot?
+
+A one-shot scheduled at the expected trigger time FAILS SILENTLY when the
+external condition slips (submission delayed, stock arrives late, indexing
+lags). The script burns its retry window, exits non-zero, and the moment
+passes with nothing done. A recurring watchdog retries forever at low cost.
+
+## The Pattern (verified working)
+
+1. **no_agent cron script** (`script: name.py` relative to `~/.hermes/scripts/`):
+   - Marker file exists → `exit 0`, print NOTHING (already acted — stay quiet).
+   - Single QUICK check of the condition (1–2 tries, short sleeps — NO long
+     retry loop; the recurring schedule IS the retry loop).
+   - Condition false → `exit 0` with EMPTY stdout. For a `no_agent` job,
+     empty stdout = silent tick: nothing is delivered, no tokens spent.
+   - Condition true → perform the action, WRITE the marker file, print the
+     result (delivered verbatim to the chat).
+2. **Cron**: `no_agent: true`, `schedule: "every 30m"` (or whatever cadence the
+   condition needs), `deliver: origin`, `script: <name>.py`.
+   - Non-zero exit or stderr → automatic error alert to the user.
+3. **Marker file** (e.g. `<launch_dir>/.<action>_done`): guarantees exactly
+   ONE action even when the condition stays true forever. Check it FIRST,
+   before even hitting the external API.
+
+## Script skeleton
+
+```python
+#!/usr/bin/env python3
+import os, sys, urllib.request
+
+MARKER = "/path/to/.action_done"
+
+def condition_met() -> bool:
+    # quick single check; return True when the external state is live
+    ...
+
+def act():
+    # the one-time action (API post, notify, etc.)
+    ...
+
+def main():
+    if os.path.exists(MARKER):
+        return 0                      # already acted — silent forever
+    if not condition_met():
+        return 0                      # not yet — silent tick (empty stdout)
+    act()
+    with open(MARKER, "w") as f:
+        f.write("done\n")
+    print("ACTION DONE — details for the user")   # delivered by cron
+    return 0
+
+if __name__ == "__main__":
+    sys.exit(main())
+```
+
+## Variant: self-healing watchdog — restart the silently broken dependency (verified Sep 2026)
+
+For "the dependency is silently broken — fix it, and alert only if the fix fails" (hung tunnel
+relay, wedged worker, dead proxy). The healing action is *itself* disruptive, so it needs guards an
+alert-only watchdog never needed:
+
+1. **Split the failure classes before acting.** Heal only on a *transport* failure (timeout /
+   connection refused) while the LOCAL dependency answers fine. An HTTP-class failure (404/5xx) is
+   often just the dependency's own warm-up and clears by itself.
+2. **Confirm with TWO clients** (`urllib` AND `curl`). One client can see 404 while the other sees
+   200 for the same URL in the same second — a single-client probe produced a whole afternoon of
+   false "DOWN" alerts here. Only a failure both clients see is evidence.
+3. **Probe N times before healing** (3 tries, ~12 s apart): the first miss right after a restart is
+   warm-up, not an outage.
+4. **Cooldown the heal in a state file** (`~/ops/state/<thing>-last-heal.json`, 12 min): a restart
+   whose own recovery window (3–5 min for a devtunnel) still fails the next probe will otherwise be
+   restarted again → a self-inflicted restart loop that keeps the thing down. One heal per tick, max.
+5. **Don't wait the recovery out inside the tick** — keep the tick under ~180 s and let the NEXT tick
+   verify. A long in-tick wait is also what makes a cron timeout / crash look like an outage.
+6. **Separate NOTICE outcomes from ALERT outcomes** in the status vocabulary (`healed` = fine ·
+   `started`/`warming` = notice, no alert · `stalled`/`failed` = alert). Alerting on warm-up trains
+   the user to ignore alerts.
+7. **Throttle repeats per problem SET** (state file + `ALERT_REPEAT_HOURS = 6`): a 5-day outage on a
+   15-min watchdog is ~480 identical messages. Unchanged set → re-alert at most every 6 h; a *changed*
+   set alerts immediately.
+8. **Test the heal branches without firing real restarts** — monkeypatch the probe/runner and set the
+   wait to 0; then run one LIVE healthy tick to prove the silent path before trusting the cron.
+
+Worked case (Sep 2026): `teams_infra_watchdog.py` (ops profile) — a devtunnel relay hung for 5 days
+while its host process stayed `active`; watchdog now self-heals with cooldown, dual-client probes, 6 h
+alert throttle. Full detail: `hermes-cloud-vm-ops` → `references/devtunnel-ingress.md`.
+
+## Anti-pattern: a watchdog that keeps re-firing on the same message
+
+If the same alert arrives again and again (same wording, same numbers), the watchdog is
+healing a **symptom at the wrong granularity** — and the user sees noise instead of a fix.
+Real case (Sep 2026): a sentinel kept reaping "leaked chrome renderer" processes; the
+actual leak was *tabs accumulating inside* those renderers (37 CDP tabs vs 7 renderers),
+so killing renderers only shuffled which ones were fat, and the alert returned within the
+hour. Correct order of work:
+
+1. **Measure the accumulator, not the process.** The thing whose count keeps growing
+   (tabs, temp files, open handles, queue depth, rows) is the leak. The process it happens
+   to live in is just where it becomes visible — killing that process loses the evidence.
+2. **Build a governor for the accumulator** on a short cadence: idempotent, silent when
+   there is nothing to do, keep-list for live work so you never destroy in-flight state,
+   verify each action, and log every close with a stable JSON shape.
+3. **Demote the old watchdog to backstop.** Raise its thresholds well above the governor's
+   operating range (so it stops firing on normal operation), and make its alert text name
+   the governor (`systemctl --user status <governor>.timer`) so the next reader debugs the
+   right layer instead of re-reaping the symptom.
+4. **Cap the blast radius separately.** A cgroup `MemoryHigh`/`MemoryMax` on the offender
+   means a future leak degrades that unit instead of the whole box, while you tune.
+5. **Prove the protected path end-to-end afterwards** (open a real page / send a real test),
+   not by reading the guard's log — the log says what it closed, not that what you care
+   about still runs.
+
+Report it as: what was wrong (symptom vs root cause, with the two counts), the layers added,
+before/after numbers, and the kill switch.
+
+## Pitfalls
+
+- NEVER put a long retry loop (7×120s etc.) inside a recurring watchdog —
+  it blocks the tick and is redundant with the schedule. Short tries only.
+- Empty stdout = silent ONLY for `no_agent` jobs. For LLM-agent jobs the run
+  still costs tokens; use no_agent for pure polling watchdogs.
+- The marker check must come BEFORE the API call — saves rate-limit quota on
+  every silent tick.
+- Test the silent path manually once before scheduling: run the script with
+  the condition absent and confirm `exit=0` with no output.
+- **Read the job back after creating it.** `cronjob(action=update, ...)` or create
+  can leave a relative schedule stored as `schedule.kind: "once"` + fixed `run_at`
+  (seen Sep 2026: `30m` → one-shot at 00:57). A one-shot watchdog whose condition is
+  still false at that instant dies silently and never checks again — assert
+  `kind == "cron"` + the expression + `repeat_remaining > 0` before walking away.
+  Scan `~/.hermes/cron/**/*.json` and match the job **by name**; matching the first
+  dict you find verifies the wrong record and will pass a broken job.
+- `script:` must be a REAL file inside `~/.hermes/scripts/` — a symlink escaping that
+  directory is rejected at creation ("Script path escapes the scripts directory via
+  traversal"). Keep the launcher there as a real file that `exec`s the repo-owned
+  guard, so cron stays legal while the logic stays git-tracked. Never `rm`-then-symlink
+  over a repo script (a symlink write clobbered a tracked file once); write both as
+  real files.
+- Killing the foreground watcher after the cron guard is live is correct — re-check
+  with `pgrep` before assuming duplicates. `pkill -f watch_x.sh` matches its own
+  command line and kills the shell that ran it: bracket the pattern
+  (`pkill -f 'watch_x[.]sh'`) or kill an explicit pid.
+- **Absence of an ERROR line is not success, and name presence is not content.** A guard that
+  greps its own log for errors will pass a job that silently re-sends or repeats forever; and
+  an object can be listed at the destination before the tool reports it committed. Verify the
+  end artifact by CONTENT (hash / parity check) before you call the night good.
+- A recurring watchdog that never fires still runs forever — that is the
+  point (condition may take days), but tell the user it will keep polling.
+- **When a check FAILS, re-verify the check before touching the code.** Two failed assertions in
+  one session were both harness bugs, not code bugs: (a) the scenario's own step order ended in a
+  *suppressed* alert, so the path under test never executed; (b) a restore-before-assert ordering
+  bug restored the real state path before the assertion inspected the temp one. Also
+  `subprocess.run(...)` without `capture_output=True` gives `stdout=None` → `TypeError` on
+  `+`/`.strip()`. Fix the harness, re-run, and say so in the report.
+- **Prove the fix is DEPLOYED, not just committed.** A local file mtime newer than the deployed
+  build timestamp means the edge is still running the old code (Cloudflare: compare the script's
+  `modified_on` from the workers/scripts API with the local mtime). A green local test on an
+  undeployed fix is not a fixed service.
+- **Give the guard's own logic a regression test + silent cron.** Alert thresholds are code:
+  package the decision tests as a `scripts/*.sh` that prints nothing on pass and exits non-zero
+  with detail on failure, wrap it in a REAL file under `~/.hermes/scripts/`, and schedule it with
+  `no_agent: true`. Empty stdout = silent tick; a broken guard then announces itself instead of
+  rotting quietly.
+- **Alert on the invariant, not on usage — and gate signals that only matter in combination.**
+  Verified 2026-09-21: the VM watchdog fired whenever zram crossed 85% of total while MemAvailable
+  was still 40% — but swapping idle pages is *by design* on that box, so the alert was pure noise and
+  the real signal (ceiling + memory actually short) got ignored. Write down the condition that
+  genuinely precedes harm and require **all** of it: `zramfull` now needs zram ≥92% **AND** disk
+  swap ≥2 GB backing it. Before tightening or loosening a threshold, re-derive it from that condition
+  instead of nudging the number.
+- **Give every alert condition a `WATCHDOG_TEST=<signal>` self-test hook.** Running the real script
+  with one signal forced exercises the alert path end-to-end (`WATCHDOG_TEST=zramfull bash
+  resource_watchdog.sh`) instead of trusting thresholds by reading them. Add a hook per signal
+  (`zramfull`, `swapcapgap`, …) and confirm the *silent* path too: a healthy run must print 0 lines.
+- **Watchdog thresholds and the containment checker are two halves of one policy.** The watchdog
+  reports live pressure; a separate deterministic checker asserts the *guarantees* still exist
+  (`~/ops/scripts/mem_containment_check.py`: swap ceilings per service, user-manager ceiling,
+  keep-alive ceiling, no oversize local model) and is the thing that fails when a cap is removed.
+  Keep the checker in the silent Layer-3 suite so "someone unset MemorySwapMax" surfaces as a red
+  gate rather than as tomorrow's outage. See `hybrid-compute-infra` →
+  `references/memory-containment-small-box.md`.

@@ -1,0 +1,172 @@
+#!/usr/bin/env python3
+"""
+ghskill: Enterprise 2-Tier Dynamic Skill Router & Execution Engine
+Provides sub-millisecond intent routing, automated skill discovery,
+and minimal-token injection into AI coding agent workflows.
+"""
+
+import sys
+import os
+import json
+import argparse
+import re
+from pathlib import Path
+
+REGISTRY_PATH = Path(__file__).resolve().parent.parent / "registry" / "unified_index.json"
+CANONICAL_PATH = Path(__file__).resolve().parent.parent / "registry" / "canonical_index.json"
+SKILLS_DIR = Path(__file__).resolve().parent.parent / "skills"
+
+# Fallback paths if installed globally
+if not REGISTRY_PATH.exists():
+    REGISTRY_PATH = Path("/home/ubuntu/projects/infra-skills-mesh/registry/unified_index.json")
+    SKILLS_DIR = Path("/home/ubuntu/projects/infra-skills-mesh/skills")
+
+def load_registry():
+    if not REGISTRY_PATH.exists():
+        print(f"Error: Registry file not found at {REGISTRY_PATH}", file=sys.stderr)
+        sys.exit(1)
+    with open(REGISTRY_PATH, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+def score_task(query, hubs):
+    q = query.lower().strip()
+    words = re.findall(r'\b\w+\b', q)
+    scored = []
+
+    for hub in hubs:
+        score = 0
+        ut = hub["unified_trigger"].lower()
+        aliases = [a.lower() for a in hub.get("aliases", [])]
+        cat = hub["category"].lower()
+        sub_texts = " ".join([f"{s['name']} {s['usecase']}" for s in hub["subskills"]]).lower()
+
+        # Acronym boosters
+        if "egm" in words and any(k in sub_texts for k in ["audit", "review", "qa", "codebase", "inspection"]):
+            score += 40
+        if "rea" in words and any(k in sub_texts for k in ["reverse", "eval", "audit"]):
+            score += 40
+        if "qa" in words and any(k in sub_texts for k in ["qa", "test", "audit", "verify"]):
+            score += 40
+        if "scraping" in words and "scraper" in ut:
+            score += 40
+
+        # Exact trigger match
+        if ut in words:
+            score += 35
+        for a in aliases:
+            if a in words:
+                score += 25
+
+        # Term frequency scoring
+        for w in words:
+            if len(w) < 3:
+                continue
+            if w in ut:
+                score += 15
+            if w in cat:
+                score += 8
+            if w in sub_texts:
+                score += 6
+
+        if score > 0:
+            scored.append((hub, score))
+
+    scored.sort(key=lambda x: x[1], reverse=True)
+    return scored
+
+def cmd_route(args):
+    hubs = load_registry()
+    matches = score_task(args.query, hubs)
+    
+    if not matches:
+        print(f"⚠️  No high-confidence skill match for: '{args.query}'")
+        print("💡 Suggestion: Try querying a domain category (e.g., 'devops', 'scraping', 'audit', 'media').")
+        return
+
+    top = matches[:args.limit]
+    print(f"\n⚡ [GHSKILL ROUTER] Recommended Skills for Task: \"{args.query}\"\n" + "═"*70)
+
+    for i, (hub, score) in enumerate(top, 1):
+        print(f"\n{i}. Unified Suite: /{hub['unified_trigger']}  (Category: {hub['category']} | Confidence: {score})")
+        print(f"   Prompt Action : {hub['prompt']}")
+        print(f"   Subskills Included ({hub['subskill_count']}):")
+        for sub in hub['subskills'][:3]:
+            print(f"     • {sub['name']} — {sub['usecase']}")
+        if hub['subskill_count'] > 3:
+            print(f"     ... and {hub['subskill_count'] - 3} more subskills")
+
+    print("\n" + "═"*70)
+    print(f"👉 Fast Trigger Token: /{top[0][0]['unified_trigger']}")
+
+def cmd_inject(args):
+    hubs = load_registry()
+    matches = score_task(args.query, hubs)
+    if not matches:
+        print(f"<!-- No skill matched for: {args.query} -->")
+        return
+
+    top_hub = matches[0][0]
+    sub_name = top_hub['subskills'][0]['name']
+
+    # Locate actual SKILL.md
+    found_spec = None
+    for root, dirs, files in os.walk(SKILLS_DIR):
+        if os.path.basename(root) == sub_name and "SKILL.md" in files:
+            with open(os.path.join(root, "SKILL.md"), "r", encoding="utf-8", errors="ignore") as f:
+                found_spec = f.read()
+            break
+
+    if found_spec:
+        print(f"<!-- GHSKILL INJECTED: {sub_name} (Unified: /{top_hub['unified_trigger']}) -->")
+        print(found_spec)
+    else:
+        print(f"# {sub_name}\n\n{top_hub['subskills'][0]['usecase']}\n\nTrigger: /{top_hub['unified_trigger']}")
+
+def cmd_list(args):
+    hubs = load_registry()
+    total_subskills = sum(h['subskill_count'] for h in hubs)
+    print(f"\n⚡ [GHSKILL REGISTRY] 205 Unified Trigger Hubs ({total_subskills} Total Skills)\n" + "═"*70)
+    
+    cat_filter = args.category.upper() if args.category else None
+
+    for h in hubs:
+        if cat_filter and cat_filter not in [c.upper() for c in h.get('categories', [h['category']])]:
+            continue
+        print(f"• /{h['unified_trigger']:<20} [{h['subskill_count']} subskills]  [{h['category']}]")
+
+def main():
+    parser = argparse.ArgumentParser(description="Enterprise Dynamic Skill Router & Injection Gateway")
+    subparsers = parser.add_subparsers(dest="command", help="Command to execute")
+
+    # Route command
+    p_route = subparsers.add_parser("route", help="Analyze task and output recommended skill triggers")
+    p_route.add_argument("query", type=str, help="Natural language description of the task")
+    p_route.add_argument("--limit", type=int, default=2, help="Number of skill matches to return")
+
+    # Inject command
+    p_inject = subparsers.add_parser("inject", help="Output minimal targeted SKILL.md body for agent context injection")
+    p_inject.add_argument("query", type=str, help="Task to inject skills for")
+
+    # List command
+    p_list = subparsers.add_parser("list", help="List all unified skill suites")
+    p_list.add_argument("--category", type=str, default=None, help="Optional category filter")
+
+    args = parser.parse_args()
+
+    if args.command == "route":
+        cmd_route(args)
+    elif args.command == "inject":
+        cmd_inject(args)
+    elif args.command == "list":
+        cmd_list(args)
+    else:
+        # Default behavior: if string passed directly
+        if len(sys.argv) > 1 and not sys.argv[1].startswith("-"):
+            args.query = " ".join(sys.argv[1:])
+            args.limit = 2
+            cmd_route(args)
+        else:
+            parser.print_help()
+
+if __name__ == "__main__":
+    main()

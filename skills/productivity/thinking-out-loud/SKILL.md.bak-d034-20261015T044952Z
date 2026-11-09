@@ -1,0 +1,131 @@
+---
+name: thinking-out-loud
+description: "Use when a voice ramble lands before any build. Echo brief first."
+version: 1.0.0
+author: Hermes Agent (rewrite of Shubhamsaboo/awesome-llm-apps agent_skills, Apache-2.0)
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: [voice-note, brief, requirements, intake, clarification]
+    related_skills: [document-to-action-items, client-brief-generator, discovery-call-prep, brainstorming]
+---
+
+# Thinking Out Loud — Echo Brief
+
+A long, unstructured voice note is not a spec. Before building anything from it,
+echo it back as a dense brief that separates **decided** from **open** from
+**your own fills** — so the requester can correct you in seconds instead of
+discovering your guesses after the work is done.
+
+**Core principle:** the brief contains only what the ramble said, plus a clearly
+labelled section for everything **you** added. The requester reads the labelled
+section first. Anything you silently resolved is a bug.
+
+**Why this exists:** a ten-minute ramble holds maybe five real decisions and
+three unanswered questions. Without the echo pass, the unanswered questions get
+filled by the builder, invisibly, and the build is judged against a spec the
+requester never wrote.
+
+## When to Use
+
+- A voice note, long chat dump, or rambling brief arrives as the task input.
+- A live call ends and you are about to act on it (`live-meeting-attendance`,
+  `discovery-call-prep`).
+- The requester says "you know what I mean", "just build it", "some kind of X".
+- Any input where the same topic flips direction mid-note (Slack then email,
+  free then paid) — the flip must be recorded, not silently resolved.
+- Before a multi-hour build, a client site, or an agent run: the echo costs one
+  message and saves the whole lane.
+
+**Not for:** a written, structured brief (already ordered — just execute), or a
+single clear instruction like "restart the service".
+
+## How to Run
+
+No script. It is a contract you follow on the first reply, using
+`references/echo-format.md` (template + worked example).
+
+1. Listen/read the whole input once without planning anything.
+2. Extract into five sections: **Mission**, **Locked**, **Open**, **Ledger**,
+   **My additions**.
+3. Send it as the reply, then the closing line, then stop and wait.
+
+Closing line: "Correct anything that's off, especially My additions. Want the
+interview for the Open items?"
+
+## Rules
+
+- **One line per item.** Nothing appears twice; no recap of what the requester
+  said ("you said…" is noise — everything outside My additions is theirs).
+- **Quantifiers go to Open or Guessed.** "usual", "soon", "standard", "a
+  proper one" never silently become a locked value.
+- **Flips are recorded, not resolved.** Second position wins, and the first is
+  logged as `Flipped:` so the requester can un-flip it.
+- **Guess nothing silently.** Inferred (implied but unstated) and Guessed (a gap
+  you filled) are both listed under My additions, most-load-bearing first.
+- **Mark the stated priority** with **top priority** — the ramble usually has
+  one, and it is what everything else is traded against.
+- **Do not start work in the same reply.** The echo is the deliverable; the only
+  permitted next step is the interview for the Open items.
+- **Length:** well under 250 words for a ten-minute ramble. Dense, no padding.
+- **Language:** mirror the requester's chat language for the brief (with this
+  user, Hinglish is normal). Any **file** deliverable written afterwards is pure
+  English, per the user's standing rule.
+- **Brand/safety:** the brief may name a client internally, but the echo goes to
+  the channel it came from; never blend two clients' material, and never paste
+  credentials, tokens, or phone numbers that were spoken aloud.
+
+## Output contract
+
+```markdown
+## Mission
+<one sentence: what is actually being achieved>
+
+## Locked (decisions and constraints)
+- <one line each; mark the stated priority **top priority**>
+
+## Open (needs an answer)
+- <question the ramble raised but never answered>
+
+## Ledger
+- Flipped: <position A>, then <position B>. Going with B.
+- Parked: <tangent in one line>
+
+## My additions (correct these first)
+- Inferred: <implied but never stated>
+- Guessed: <gap I filled>
+```
+
+## Pitfalls
+
+- **Treating the echo as a summary.** A summary compresses; the echo *separates
+  ownership*. If the requester cannot point at exactly what you invented, it
+  failed.
+- **Over-locking.** Promoting a vague idea to Locked makes you look decisive and
+  builds the wrong thing. Vague goes to Open.
+- **Dropping the tangent.** Parked items are cheap and often return. One line.
+- **Building after the echo without an answer.** Silence is not consent; wait
+  for the correction or an explicit "go".
+- **Answering your own Open item** because the answer "seems obvious". That is
+  the exact failure this skill exists to prevent.
+- **Padding with politeness.** No preamble, no "great idea!", no emojis in the
+  brief.
+
+## Verification
+
+Before sending, check the echo against the input:
+
+- Every Locked line is quotable back to something the requester said.
+- Every fill, assumption, or timezone/unit decision appears in My additions.
+- Every contradiction is in Ledger as `Flipped:`, not resolved silently.
+- Word count under 250; no item appears in two sections.
+- You ended with the closing line and did not start the work.
+
+## Provenance
+
+Concept: `Shubhamsaboo/awesome-llm-apps` → `agent_skills/thinking-out-loud`
+(Apache-2.0). Upstream material frozen read-only at
+`~/ops/vendor/skills/Shubhamsaboo/thinking-out-loud/` with hashes. This rewrite
+keeps the separation contract and re-anchors it to this store's language,
+file-output, brand-isolation and no-faces rules.
