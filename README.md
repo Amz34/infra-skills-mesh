@@ -77,3 +77,7 @@ ghskill list --category DEVOPS
 - **EGM & REA Standardized**: Every skill includes falsifiable verification gates and single-line actionable use cases.
 - **Enterprise Pre-Commit Validated**: Clean code, zero UI slop, zero credential leaks.
 - **Integrated Cockpit**: Live telemetry rendered in [AeroFleet Terminal PWA](https://hermes-vnic.tail34b7f2.ts.net:8970/).
+
+---
+
+Part of [my always-on agent stack](https://github.com/Amz34) · [Awesome Agent Infrastructure](https://github.com/Amz34/awesome-agent-infrastructure) (135 live-checked building blocks).
